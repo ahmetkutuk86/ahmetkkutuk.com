@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ahmet Kütük — İstanbul merkezli belgesel fotoğrafçı. Analog, karanlık oda, large format, fine art.">
+  <meta name="keywords" content="belgesel fotoğraf, analog fotoğraf, karanlık oda, large format, fine art, İstanbul, Ahmet Kütük">
+  <meta property="og:title" content="Ahmet Kütük — Documentary & Fine Art Photography">
+  <meta property="og:description" content="İstanbul merkezli belgesel fotoğrafçı. Analog süreçler, karanlık oda, large format.">
+  <meta property="og:url" content="https://ahmetkutuk.com">
+  <title>Ahmet Kütük — Documentary & Fine Art Photography</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Jost',sans-serif;font-weight:300;background:#f8f7f5;color:#1c1c1a;}
+    .page{display:none;}
+    .page.active{display:block;}
+
+    /* NAV */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      display:flex;justify-content:space-between;align-items:center;
+      padding:0 3rem;height:58px;
+      background:#ffffff;border-bottom:1px solid #e8e5e0;
+    }
+    .logo{
+      font-family:'Cormorant Garamond',serif;
+      font-size:20px;font-weight:400;
+      letter-spacing:0.08em;text-transform:uppercase;
+      color:#1c1c1a;cursor:pointer;white-space:nowrap;
+      text-decoration:none;
+    }
+    .nav-right{display:flex;align-items:center;}
+    .nav-links{display:flex;list-style:none;align-items:center;}
+    .nav-links li a{
+      display:block;padding:0 1.1rem;
+      height:58px;line-height:58px;
+      font-size:10.5px;font-weight:400;
+      letter-spacing:0.18em;text-transform:uppercase;
+      color:#777;text-decoration:none;cursor:pointer;
+      white-space:nowrap;
+      border-bottom:2px solid transparent;
+      transition:color .15s;
+    }
+    .nav-links li a:hover{color:#1c1c1a;}
+    .nav-links li a.active{color:#1c1c1a;border-bottom-color:#1c1c1a;}
+    .nav-lang{
+      padding:0 0 0 1.2rem;
+      font-size:10px;letter-spacing:0.18em;
+      color:#bbb;cursor:pointer;
+      border-left:1px solid #e8e5e0;
+      margin-left:0.5rem;
+      height:58px;line-height:58px;
+    }
+
+    /* PAGE OFFSET FOR FIXED NAV */
+    .page-offset{padding-top:58px;}
+
+    /* HERO */
+    .hero{position:relative;height:calc(100vh - 58px);max-height:680px;overflow:hidden;background:#1a1814;}
+    .slides{display:flex;height:100%;transition:transform .95s cubic-bezier(.77,0,.18,1);}
+    .slide{
+      min-width:100%;height:100%;
+      display:flex;align-items:flex-end;padding:2.5rem 3rem;
+      background-size:cover;background-position:center;
+    }
+    /* Fotoğraf eklemek için: style="background-image:url('fotografin-yolu.jpg')" */
+    .s1{background-color:#2a2420;}
+    .s2{background-color:#1e1c18;}
+    .s3{background-color:#26221e;}
+    .slide-cap{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,236,228,0.5);}
+    .hero-dots{position:absolute;bottom:2rem;right:3rem;display:flex;gap:12px;}
+    .dot{width:28px;height:1px;background:rgba(255,255,255,0.2);cursor:pointer;transition:background .3s;}
+    .dot.active{background:rgba(255,255,255,0.8);}
+    .harrow{
+      position:absolute;top:50%;transform:translateY(-50%);
+      background:none;border:none;cursor:pointer;
+      color:rgba(255,255,255,0.3);font-size:22px;
+      padding:1rem;transition:color .2s;
+    }
+    .harrow:hover{color:rgba(255,255,255,0.85);}
+
+    /* HOME INTRO */
+    .home-intro{
+      padding:3rem 3rem 2.5rem;
+      display:flex;justify-content:space-between;align-items:baseline;
+      border-bottom:0.5px solid #e0ddd6;
+    }
+    .home-intro h1{
+      font-family:'Cormorant Garamond',serif;
+      font-size:38px;font-weight:300;line-height:1.3;
+      max-width:500px;color:#1c1c1a;
+    }
+    .home-intro h1 em{font-style:italic;color:#999;}
+    .home-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#bbb;text-align:right;line-height:2.4;}
+
+    /* GRID */
+    .section-wrap{padding:3rem 3rem 0;}
+    .sec-row{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2rem;}
+    .sec-label{font-size:10px;letter-spacing:0.28em;text-transform:uppercase;color:#bbb;}
+    .sec-more{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#aaa;cursor:pointer;border-bottom:0.5px solid #ccc;padding-bottom:1px;}
+    .home-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:2px;background:#e0ddd6;}
+    .gi{overflow:hidden;cursor:pointer;position:relative;background:#c8c4bc;}
+    .gi:first-child{grid-row:1/3;height:440px;}
+    .gi:not(:first-child){height:218px;}
+    .gi-fill{
+      width:100%;height:100%;
+      background-size:cover;background-position:center;
+      transition:transform .7s ease;
+    }
+    .gi:hover .gi-fill{transform:scale(1.04);}
+    /* Renk yer tutucular — fotoğraf ekleyince background-image ile değiştir */
+    .f1{background-color:#4a4540;}
+    .f2{background-color:#6a6258;}
+    .f3{background-color:#5a5550;}
+    .f4{background-color:#3e3a35;}
+    .f5{background-color:#585450;}
+    .gi-overlay{
+      position:absolute;bottom:0;left:0;right:0;
+      padding:2rem 1.2rem 1rem;
+      background:linear-gradient(transparent,rgba(8,6,4,.55));
+      opacity:0;transition:opacity .35s;
+    }
+    .gi:hover .gi-overlay{opacity:1;}
+    .gi-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#f0ece4;}
+    .gi-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#b0aca4;margin-top:4px;}
+
+    /* DARKROOM HOME BLOCK */
+    .home-dr{margin:3rem 3rem 0;display:grid;grid-template-columns:1fr 1.5fr;gap:2px;background:#e0ddd6;}
+    .dr-left{background:#1a1814;padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;}
+    .dr-lbl{font-size:10px;letter-spacing:0.26em;text-transform:uppercase;color:#555;margin-bottom:1.5rem;}
+    .dr-h{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;line-height:1.35;color:#e8e4dc;}
+    .dr-h em{font-style:italic;color:#857e74;}
+    .dr-p{font-size:12px;line-height:1.95;color:#68645c;margin-top:1rem;letter-spacing:.02em;}
+    .dr-cta{margin-top:2rem;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#777;border-bottom:0.5px solid #3a3830;padding-bottom:2px;display:inline-block;cursor:pointer;}
+    .dr-films{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#444;margin-top:2rem;line-height:2;}
+    .dr-right{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#e0ddd6;}
+    .di{background-size:cover;background-position:center;}
+    .di1{background-color:#3a3530;}
+    .di2{background-color:#504a44;}
+    .di3{background-color:#282420;}
+    .di4{background-color:#404038;}
+
+    /* JOURNAL HOME */
+    .home-journal{padding:3rem;}
+    .blog-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-top:2rem;}
+    .bc{cursor:pointer;}
+    .bc-img{aspect-ratio:3/2;overflow:hidden;margin-bottom:1.2rem;background-size:cover;background-position:center;}
+    .bc-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .bc:hover .bc-fill{transform:scale(1.04);}
+    .bi1{background-color:#7a7268;}
+    .bi2{background-color:#5a5855;}
+    .bi3{background-color:#686058;}
+    .bc-date{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem;}
+    .bc-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.4;color:#1c1c1a;margin-bottom:.5rem;}
+    .bc:first-child .bc-title{font-size:25px;}
+    .bc-ex{font-size:12px;color:#999;line-height:1.85;}
+
+    /* PAGE TITLES */
+    .page-hero{padding:3.5rem 3rem 2.5rem;border-bottom:0.5px solid #e0ddd6;}
+    .page-hero h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:#1c1c1a;}
+    .page-hero p{font-size:11px;color:#bbb;letter-spacing:.1em;text-transform:uppercase;margin-top:.7rem;}
+
+    /* PROJECTS */
+    .proj-list{padding:0 3rem 4rem;}
+    .proj-item{
+      display:grid;grid-template-columns:1fr 2fr;
+      gap:2px;background:#e0ddd6;margin-top:2px;cursor:pointer;
+    }
+    .proj-thumb{height:240px;overflow:hidden;}
+    .pt-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .proj-item:hover .pt-fill{transform:scale(1.04);}
+    .pt1{background-color:#4a4540;}
+    .pt2{background-color:#6a6258;}
+    .pt3{background-color:#585450;}
+    .pt4{background-color:#3e3a35;}
+    .proj-info{background:#f8f7f5;padding:2.5rem;}
+    .proj-num{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#ccc;margin-bottom:1rem;}
+    .proj-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1c1c1a;margin-bottom:1rem;}
+    .proj-desc{font-size:13px;color:#888;line-height:1.95;}
+    .proj-meta{margin-top:1.5rem;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;}
+
+    /* DARKROOM PAGE */
+    .dr-page-intro{
+      padding:3.5rem 3rem 2.5rem;
+      display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:end;
+      border-bottom:0.5px solid #e0ddd6;
+    }
+    .dr-page-intro h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;}
+    .dr-page-intro p{font-size:13px;color:#888;line-height:2;}
+    .dr-process{padding:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e0ddd6;}
+    .dp-card{background:#f8f7f5;padding:2rem 1.8rem;}
+    .dp-num{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#ccc;margin-bottom:1rem;}
+    .dp-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#1c1c1a;margin-bottom:.8rem;}
+    .dp-text{font-size:12px;color:#999;line-height:1.95;}
+    .dr-gallery{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:2px;background:#e0ddd6;
+      margin:0 3rem 3rem;
+    }
+    .dg-item{aspect-ratio:3/4;cursor:pointer;overflow:hidden;}
+    .dg-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .7s ease;}
+    .dg-item:hover .dg-fill{transform:scale(1.05);}
+    .dg1{background-color:#3a3530;}.dg2{background-color:#504a44;}
+    .dg3{background-color:#282420;}.dg4{background-color:#404038;}
+    .dg5{background-color:#2e2a26;}.dg6{background-color:#484440;}
+    .dg7{background-color:#1e1c18;}.dg8{background-color:#3c3835;}
+
+    /* LARGE FORMAT */
+    .lf-intro{padding:3.5rem 3rem 2.5rem;border-bottom:0.5px solid #e0ddd6;}
+    .lf-intro h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;}
+    .lf-sub{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#bbb;margin-top:.6rem;}
+    .lf-intro p{font-size:13px;color:#888;line-height:1.95;max-width:520px;margin-top:1.2rem;}
+    .lf-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e0ddd6;margin:3rem 3rem;}
+    .lf-item{cursor:pointer;overflow:hidden;position:relative;height:340px;}
+    .lf-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .lf-item:hover .lf-fill{transform:scale(1.04);}
+    .lf1{background-color:#4a4540;}.lf2{background-color:#5a5550;}
+    .lf3{background-color:#3e3a35;}.lf4{background-color:#686058;}
+    .lf-cap{
+      position:absolute;bottom:0;left:0;right:0;
+      padding:2rem 1.5rem 1rem;
+      background:linear-gradient(transparent,rgba(10,8,6,.55));
+      opacity:0;transition:opacity .3s;
+    }
+    .lf-item:hover .lf-cap{opacity:1;}
+    .lf-cap-t{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:#f0ece4;}
+    .lf-cap-s{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#b0aca4;margin-top:4px;}
+
+    /* JOURNAL */
+    .j-intro{padding:3.5rem 3rem 2.5rem;border-bottom:0.5px solid #e0ddd6;}
+    .j-intro h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;}
+    .j-grid{padding:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:3rem;}
+    .jc{cursor:pointer;}
+    .jc-img{aspect-ratio:3/2;overflow:hidden;margin-bottom:1.2rem;}
+    .jc-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .jc:hover .jc-fill{transform:scale(1.04);}
+    .jc1{background-color:#7a7268;}.jc2{background-color:#5a5855;}
+    .jc3{background-color:#686058;}.jc4{background-color:#606050;}
+    .jc5{background-color:#585250;}.jc6{background-color:#706860;}
+    .jc-date{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem;}
+    .jc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1.4;color:#1c1c1a;margin-bottom:.5rem;}
+    .jc-ex{font-size:12px;color:#999;line-height:1.85;}
+    .jc-tag{
+      display:inline-block;margin-top:.9rem;
+      font-size:9px;letter-spacing:.2em;text-transform:uppercase;
+      color:#aaa;border:0.5px solid #ddd;padding:3px 10px;
+    }
+
+    /* ABOUT */
+    .about-wrap{padding:3.5rem 3rem;display:grid;grid-template-columns:2fr 1fr;gap:5rem;}
+    .about-text h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;margin-bottom:2.5rem;}
+    .about-text p{font-size:13px;color:#666;line-height:2.1;margin-bottom:1.4rem;}
+    .about-photo{background-color:#5a5550;aspect-ratio:3/4;background-size:cover;background-position:center;}
+    /* Fotoğraf için: style="background-image:url('fotograf.jpg')" */
+    .about-facts{margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid #e0ddd6;}
+    .af-row{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:0.5px solid #eee;}
+    .af-k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;}
+    .af-v{font-size:12px;color:#555;letter-spacing:.04em;}
+
+    /* FOOTER */
+    footer{
+      border-top:0.5px solid #e0ddd6;
+      padding:2rem 3rem;
+      display:flex;justify-content:space-between;align-items:center;
+      margin-top:2rem;
+    }
+    .fl{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;}
+    .flinks{display:flex;gap:2rem;list-style:none;}
+    .flinks a{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;text-decoration:none;}
+    .flinks a:hover{color:#1c1c1a;}
+    .fc{font-size:10px;color:#ccc;letter-spacing:.06em;}
+  </style>
+</head>
+<body>
+
+<nav>
+  <a class="logo" onclick="goPage('home')">Ahmet Kütük</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a onclick="goPage('home')" id="nav-home" class="active">Home</a></li>
+      <li><a onclick="goPage('projects')" id="nav-projects">Projects</a></li>
+      <li><a onclick="goPage('darkroom')" id="nav-darkroom">Darkroom</a></li>
+      <li><a onclick="goPage('largeformat')" id="nav-largeformat">Large Format</a></li>
+      <li><a onclick="goPage('journal')" id="nav-journal">Journal</a></li>
+      <li><a onclick="goPage('about')" id="nav-about">About</a></li>
+    </ul>
+    <span class="nav-lang">TR / EN</span>
+  </div>
+</nav>
+
+<!-- ===================== HOME ===================== -->
+<div class="page active page-offset" id="page-home">
+  <section class="hero">
+    <div class="slides" id="slides">
+      <!-- SLIDE 1 — Fotoğraf eklemek için: <div class="slide s1" style="background-image:url('foto1.jpg')"> -->
+      <div class="slide s1"><span class="slide-cap">Seri Adı — 2024</span></div>
+      <div class="slide s2"><span class="slide-cap">Seri Adı — 2023</span></div>
+      <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
+    </div>
+    <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
+    <button class="harrow" style="right:1.5rem" onclick="go(cur+1)">&#8594;</button>
+    <div class="hero-dots">
+      <div class="dot active" onclick="go(0)"></div>
+      <div class="dot" onclick="go(1)"></div>
+      <div class="dot" onclick="go(2)"></div>
+    </div>
+  </section>
+
+  <div class="home-intro">
+    <h1>Belgesel fotografinin<br><em>ham dili.</em></h1>
+    <div class="home-meta">
+      İstanbul merkezli<br>
+      Film · Analog · Darkroom<br>
+      Large Format · Fine Art
+    </div>
+  </div>
+
+  <div class="section-wrap">
+    <div class="sec-row">
+      <span class="sec-label">Seçili Seriler</span>
+      <span class="sec-more" onclick="goPage('projects')">Tümünü gör →</span>
+    </div>
+    <div class="home-grid">
+      <div class="gi">
+        <div class="gi-fill f1"></div>
+        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2024 · 18 kare · 35mm</div></div>
+      </div>
+      <div class="gi">
+        <div class="gi-fill f2"></div>
+        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 24 kare</div></div>
+      </div>
+      <div class="gi">
+        <div class="gi-fill f3"></div>
+        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 31 kare</div></div>
+      </div>
+      <div class="gi">
+        <div class="gi-fill f4"></div>
+        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 14 kare · 120</div></div>
+      </div>
+      <div class="gi">
+        <div class="gi-fill f5"></div>
+        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 20 kare</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-dr">
+    <div class="dr-left">
+      <div>
+        <div class="dr-lbl">Darkroom</div>
+        <h2 class="dr-h">Kimyasal sürecin<br><em>sessiz ritmi</em></h2>
+        <p class="dr-p">Film bazlı çalışmalar, elle baskı süreçleri. Her baskı tektir — dijital kopyası yoktur.</p>
+        <span class="dr-cta" onclick="goPage('darkroom')">Süreci keşfet →</span>
+      </div>
+      <div class="dr-films">HP5 · Tri-X · Delta 400<br>Ilford Multigrade · Fomabrom</div>
+    </div>
+    <div class="dr-right">
+      <div class="di di1"></div>
+      <div class="di di2"></div>
+      <div class="di di3"></div>
+      <div class="di di4"></div>
+    </div>
+  </div>
+
+  <div class="home-journal">
+    <div class="sec-row">
+      <span class="sec-label">Journal</span>
+      <span class="sec-more" onclick="goPage('journal')">Tümünü gör →</span>
+    </div>
+    <div class="blog-grid">
+      <div class="bc">
+        <div class="bc-img"><div class="bc-fill bi1"></div></div>
+        <div class="bc-date">Mayıs 2025</div>
+        <div class="bc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div>
+        <div class="bc-ex">HP5, Tri-X ve Delta 400 üzerine uzun alan notları.</div>
+      </div>
+      <div class="bc">
+        <div class="bc-img"><div class="bc-fill bi2"></div></div>
+        <div class="bc-date">Şubat 2025</div>
+        <div class="bc-title">Üretan geliştirici denemeleri</div>
+        <div class="bc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div>
+      </div>
+      <div class="bc">
+        <div class="bc-img"><div class="bc-fill bi3"></div></div>
+        <div class="bc-date">Kasım 2024</div>
+        <div class="bc-title">Belgesel ve fine art nasıl bir arada var olur?</div>
+        <div class="bc-ex">Kavramsal bir çerçeve üzerine notlar.</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks">
+      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
+      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
+    </ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- ===================== PROJECTS ===================== -->
+<div class="page page-offset" id="page-projects">
+  <div class="page-hero">
+    <h2>Projects</h2>
+    <p>Belgesel seriler · Analog · Fine Art</p>
+  </div>
+  <div class="proj-list">
+    <div class="proj-item">
+      <div class="proj-thumb"><div class="pt-fill pt1"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">001</div>
+        <div class="proj-title">Seri Adı</div>
+        <div class="proj-desc">Seri açıklaması buraya gelecek. Konuyu, yeri ve dönemi anlatan kısa bir paragraf.</div>
+        <div class="proj-meta">2024 · 18 kare · 35mm · HP5</div>
+      </div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-thumb"><div class="pt-fill pt2"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">002</div>
+        <div class="proj-title">Seri Adı</div>
+        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
+        <div class="proj-meta">2023 · 24 kare · Analog</div>
+      </div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-thumb"><div class="pt-fill pt3"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">003</div>
+        <div class="proj-title">Seri Adı</div>
+        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
+        <div class="proj-meta">2023 · 31 kare · 35mm</div>
+      </div>
+    </div>
+    <div class="proj-item">
+      <div class="proj-thumb"><div class="pt-fill pt4"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">004</div>
+        <div class="proj-title">Seri Adı</div>
+        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
+        <div class="proj-meta">2022 · 14 kare · 120 film</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- ===================== DARKROOM ===================== -->
+<div class="page page-offset" id="page-darkroom">
+  <div class="dr-page-intro">
+    <div><h2>Darkroom</h2></div>
+    <p>Karanlık oda, dijital olmayan bir sürecin tam ortasında durmaktır. Kimyasal banyolar, elle yapılan baskılar, tekrarlanamayan anlar. Her baskı tek bir nüshadır — dijital kopyası yoktur.</p>
+  </div>
+  <div class="dr-process">
+    <div class="dp-card">
+      <div class="dp-num">01</div>
+      <div class="dp-title">Film Banyosu</div>
+      <div class="dp-text">HP5, Tri-X ve Delta 400 ile çalışıyorum. D-76, Rodinal ve HC-110 geliştirici testleri. Sıcaklık ve süre kontrolü.</div>
+    </div>
+    <div class="dp-card">
+      <div class="dp-num">02</div>
+      <div class="dp-title">Elle Baskı</div>
+      <div class="dp-text">Ilford Multigrade kağıt. Manuel dodge & burn teknikleriyle her baskı ayrı ayrı üretilir. Standart baskı yoktur.</div>
+    </div>
+    <div class="dp-card">
+      <div class="dp-num">03</div>
+      <div class="dp-title">Toning</div>
+      <div class="dp-text">Selenium ve sepia toning denemeleri. Arşiv kalitesi için sabitleyici banyoları ve uzun yıkama süreleri.</div>
+    </div>
+  </div>
+  <div class="dr-gallery">
+    <div class="dg-item"><div class="dg-fill dg1"></div></div>
+    <div class="dg-item"><div class="dg-fill dg2"></div></div>
+    <div class="dg-item"><div class="dg-fill dg3"></div></div>
+    <div class="dg-item"><div class="dg-fill dg4"></div></div>
+    <div class="dg-item"><div class="dg-fill dg5"></div></div>
+    <div class="dg-item"><div class="dg-fill dg6"></div></div>
+    <div class="dg-item"><div class="dg-fill dg7"></div></div>
+    <div class="dg-item"><div class="dg-fill dg8"></div></div>
+  </div>
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- ===================== LARGE FORMAT ===================== -->
+<div class="page page-offset" id="page-largeformat">
+  <div class="lf-intro">
+    <h2>Large Format</h2>
+    <div class="lf-sub">4×5 · 8×10</div>
+    <p>View camera ile alan çalışmaları. Yavaş süreç, tek negatif, geri dönüşü olmayan anlar. Her kare öncesinde uzun bir bekleme ve düşünme eylemi.</p>
+  </div>
+  <div class="lf-grid">
+    <div class="lf-item">
+      <div class="lf-fill lf1"></div>
+      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 1</div><div class="lf-cap-s">4×5 · 2024</div></div>
+    </div>
+    <div class="lf-item">
+      <div class="lf-fill lf2"></div>
+      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 2</div><div class="lf-cap-s">4×5 · 2024</div></div>
+    </div>
+    <div class="lf-item">
+      <div class="lf-fill lf3"></div>
+      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">8×10 · 2023</div></div>
+    </div>
+    <div class="lf-item">
+      <div class="lf-fill lf4"></div>
+      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">8×10 · 2023</div></div>
+    </div>
+  </div>
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- ===================== JOURNAL ===================== -->
+<div class="page page-offset" id="page-journal">
+  <div class="j-intro"><h2>Journal</h2></div>
+  <div class="j-grid">
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc1"></div></div><div class="jc-date">Mayıs 2025</div><div class="jc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div><div class="jc-ex">HP5, Tri-X ve Delta 400 üzerine alan notları. Tahıl yapısı, kontrast ve ışığa tepki.</div><span class="jc-tag">Film</span></div>
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc2"></div></div><div class="jc-date">Şubat 2025</div><div class="jc-title">Üretan geliştirici denemeleri</div><div class="jc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi üzerine notlar.</div><span class="jc-tag">Darkroom</span></div>
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc3"></div></div><div class="jc-date">Kasım 2024</div><div class="jc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="jc-ex">Kavramsal bir çerçeve ve pratik süreç üzerine kısa notlar.</div><span class="jc-tag">Düşünceler</span></div>
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc4"></div></div><div class="jc-date">Eylül 2024</div><div class="jc-title">4×5 ile ilk çekim: yavaşlamanın değeri</div><div class="jc-ex">Large format'a geçiş süreci ve beklentilerin ötesindeki sonuçlar.</div><span class="jc-tag">Large Format</span></div>
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc5"></div></div><div class="jc-date">Haziran 2024</div><div class="jc-title">Selenium toning: arşiv mi estetik mi?</div><div class="jc-ex">Kimyasal toning süreçleri ve uzun vadeli arşiv kalitesi.</div><span class="jc-tag">Darkroom</span></div>
+    <div class="jc"><div class="jc-img"><div class="jc-fill jc6"></div></div><div class="jc-date">Mart 2024</div><div class="jc-title">Taşra serisinin arka planı</div><div class="jc-ex">Anadolu kasabalarına üç yolculuk ve ortaya çıkan görsel dil.</div><span class="jc-tag">Projeler</span></div>
+  </div>
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<div class="page page-offset" id="page-about">
+  <div class="about-wrap">
+    <div class="about-text">
+      <h2>About</h2>
+      <p>İstanbul merkezli belgesel fotoğrafçı. 2015'ten bu yana analog süreçlerle çalışıyor, karanlık oda baskıları üretiyor.</p>
+      <p>Belgesel fotoğrafçılığı ve fine art arasındaki geçirgen sınırda çalışıyorum. Her seri uzun soluklu alan çalışmalarının ürünü — günler, bazen haftalar süren gözlem ve beklemenin sonunda ortaya çıkıyor.</p>
+      <p>Large format çalışmalar, karanlık oda baskıları ve alternatif süreçler üzerine atölyeler düzenliyorum.</p>
+      <div class="about-facts">
+        <div class="af-row"><span class="af-k">Konum</span><span class="af-v">İstanbul, Türkiye</span></div>
+        <div class="af-row"><span class="af-k">Formatlar</span><span class="af-v">35mm · 120 · 4×5 · 8×10</span></div>
+        <div class="af-row"><span class="af-k">Filmler</span><span class="af-v">HP5 · Tri-X · Delta 400</span></div>
+        <div class="af-row"><span class="af-k">Geliştirici</span><span class="af-v">D-76 · Rodinal · HC-110</span></div>
+        <div class="af-row"><span class="af-k">İletişim</span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
+      </div>
+    </div>
+    <div class="about-photo">
+      <!-- Fotoğraf için: style="background-image:url('ahmet-kutuk.jpg')" ekle -->
+    </div>
+  </div>
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<script>
+  let cur = 0;
+  const slidesEl = document.getElementById('slides');
+  const dotEls = document.querySelectorAll('.dot');
+
+  function go(n) {
+    cur = (n + 3) % 3;
+    slidesEl.style.transform = 'translateX(-' + (cur * 100) + '%)';
+    dotEls.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
+  }
+
+  setInterval(function() { go(cur + 1); }, 5000);
+
+  function goPage(id) {
+    document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+    document.getElementById('page-' + id).classList.add('active');
+    document.querySelectorAll('.nav-links li a').forEach(function(a) { a.classList.remove('active'); });
+    document.getElementById('nav-' + id).classList.add('active');
+    window.scrollTo(0, 0);
+  }
+</script>
+
+</body>
+</html>
