@@ -4,16 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Ahmet Kütük — İstanbul merkezli belgesel fotoğrafçı. Analog, karanlık oda, large format, fine art.">
-  <meta name="keywords" content="belgesel fotoğraf, analog fotoğraf, karanlık oda, large format, fine art, İstanbul, Ahmet Kütük">
-  <meta property="og:title" content="Ahmet Kütük — Documentary & Fine Art Photography">
-  <meta property="og:description" content="İstanbul merkezli belgesel fotoğrafçı. Analog süreçler, karanlık oda, large format.">
-  <meta property="og:url" content="https://ahmetkutuk.com">
   <title>Ahmet Kütük — Documentary & Fine Art Photography</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
   <style>
     *{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
+    html,body{width:100%;overflow-x:hidden;}
     body{font-family:'Jost',sans-serif;font-weight:300;background:#f8f7f5;color:#1c1c1a;}
     .page{display:none;}
     .page.active{display:block;}
@@ -24,70 +20,56 @@
       padding:0 3rem;height:58px;
       background:#ffffff;border-bottom:1px solid #e8e5e0;
     }
-    .logo{
-      font-family:'Cormorant Garamond',serif;
-      font-size:20px;font-weight:400;
-      letter-spacing:0.08em;text-transform:uppercase;
-      color:#1c1c1a;cursor:pointer;white-space:nowrap;
-      text-decoration:none;
-    }
+    .logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:#1c1c1a;cursor:pointer;white-space:nowrap;text-decoration:none;}
     .nav-right{display:flex;align-items:center;}
     .nav-links{display:flex;list-style:none;align-items:center;}
-    .nav-links li a{
-      display:block;padding:0 1.1rem;
-      height:58px;line-height:58px;
-      font-size:10.5px;font-weight:400;
-      letter-spacing:0.18em;text-transform:uppercase;
-      color:#777;text-decoration:none;cursor:pointer;
-      white-space:nowrap;
-      border-bottom:2px solid transparent;
-      transition:color .15s;
-    }
+    .nav-links li a{display:block;padding:0 1.1rem;height:58px;line-height:58px;font-size:10.5px;font-weight:400;letter-spacing:0.18em;text-transform:uppercase;color:#777;text-decoration:none;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s;}
     .nav-links li a:hover{color:#1c1c1a;}
     .nav-links li a.active{color:#1c1c1a;border-bottom-color:#1c1c1a;}
-    .nav-lang{
-      padding:0 0 0 1.2rem;
-      font-size:10px;letter-spacing:0.18em;
-      color:#bbb;cursor:pointer;
-      border-left:1px solid #e8e5e0;
-      margin-left:0.5rem;
-      height:58px;line-height:58px;
-    }
+    .nav-lang{padding:0 0 0 1.2rem;font-size:10px;letter-spacing:0.18em;color:#bbb;cursor:pointer;border-left:1px solid #e8e5e0;margin-left:0.5rem;height:58px;line-height:58px;}
 
     .page-offset{padding-top:58px;}
 
-    .hero{position:relative;height:calc(100vh - 58px);max-height:680px;overflow:hidden;background:#1a1814;margin-top:0;}
-    .slides{display:flex;height:100%;transition:transform .95s cubic-bezier(.77,0,.18,1);}
+    /* HERO - DÜZELTİLDİ */
+    .hero{
+      position:relative;
+      width:100%;
+      height:calc(100vh - 58px);
+      max-height:680px;
+      overflow:hidden;
+      background:#1a1814;
+    }
+    .slides{
+      display:flex;
+      flex-direction:row;
+      width:100%;
+      height:100%;
+      transition:transform .95s cubic-bezier(.77,0,.18,1);
+      will-change:transform;
+    }
     .slide{
-      min-width:100%;height:100%;
-      display:flex;align-items:flex-end;padding:2.5rem 3rem;
-      background-size:cover;background-position:center;
+      flex:0 0 100%;
+      width:100%;
+      height:100%;
+      display:flex;
+      align-items:flex-end;
+      padding:2.5rem 3rem;
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
     }
     .s1{background-color:#2a2420;}
     .s2{background-color:#1e1c18;}
     .s3{background-color:#26221e;}
-    .slide-cap{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,236,228,0.5);}
+    .slide-cap{font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:rgba(240,236,228,0.6);}
     .hero-dots{position:absolute;bottom:2rem;right:3rem;display:flex;gap:12px;}
     .dot{width:28px;height:1px;background:rgba(255,255,255,0.2);cursor:pointer;transition:background .3s;}
     .dot.active{background:rgba(255,255,255,0.8);}
-    .harrow{
-      position:absolute;top:50%;transform:translateY(-50%);
-      background:none;border:none;cursor:pointer;
-      color:rgba(255,255,255,0.3);font-size:22px;
-      padding:1rem;transition:color .2s;
-    }
+    .harrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:none;cursor:pointer;color:rgba(255,255,255,0.3);font-size:22px;padding:1rem;transition:color .2s;}
     .harrow:hover{color:rgba(255,255,255,0.85);}
 
-    .home-intro{
-      padding:3rem 3rem 2.5rem;
-      display:flex;justify-content:space-between;align-items:baseline;
-      border-bottom:0.5px solid #e0ddd6;
-    }
-    .home-intro h1{
-      font-family:'Cormorant Garamond',serif;
-      font-size:38px;font-weight:300;line-height:1.3;
-      max-width:500px;color:#1c1c1a;
-    }
+    .home-intro{padding:3rem 3rem 2.5rem;display:flex;justify-content:space-between;align-items:baseline;border-bottom:0.5px solid #e0ddd6;}
+    .home-intro h1{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;line-height:1.3;max-width:500px;color:#1c1c1a;}
     .home-intro h1 em{font-style:italic;color:#999;}
     .home-meta{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:#bbb;text-align:right;line-height:2.4;}
 
@@ -101,17 +83,8 @@
     .gi:not(:first-child){height:218px;}
     .gi-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .7s ease;}
     .gi:hover .gi-fill{transform:scale(1.04);}
-    .f1{background-color:#4a4540;}
-    .f2{background-color:#6a6258;}
-    .f3{background-color:#5a5550;}
-    .f4{background-color:#3e3a35;}
-    .f5{background-color:#585450;}
-    .gi-overlay{
-      position:absolute;bottom:0;left:0;right:0;
-      padding:2rem 1.2rem 1rem;
-      background:linear-gradient(transparent,rgba(8,6,4,.55));
-      opacity:0;transition:opacity .35s;
-    }
+    .f1{background-color:#4a4540;}.f2{background-color:#6a6258;}.f3{background-color:#5a5550;}.f4{background-color:#3e3a35;}.f5{background-color:#585450;}
+    .gi-overlay{position:absolute;bottom:0;left:0;right:0;padding:2rem 1.2rem 1rem;background:linear-gradient(transparent,rgba(8,6,4,.55));opacity:0;transition:opacity .35s;}
     .gi:hover .gi-overlay{opacity:1;}
     .gi-title{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;color:#f0ece4;}
     .gi-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#b0aca4;margin-top:4px;}
@@ -126,10 +99,7 @@
     .dr-films{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#444;margin-top:2rem;line-height:2;}
     .dr-right{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#e0ddd6;}
     .di{background-size:cover;background-position:center;}
-    .di1{background-color:#3a3530;}
-    .di2{background-color:#504a44;}
-    .di3{background-color:#282420;}
-    .di4{background-color:#404038;}
+    .di1{background-color:#3a3530;}.di2{background-color:#504a44;}.di3{background-color:#282420;}.di4{background-color:#404038;}
 
     .home-journal{padding:3rem;}
     .blog-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;margin-top:2rem;}
@@ -137,9 +107,7 @@
     .bc-img{aspect-ratio:3/2;overflow:hidden;margin-bottom:1.2rem;}
     .bc-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
     .bc:hover .bc-fill{transform:scale(1.04);}
-    .bi1{background-color:#7a7268;}
-    .bi2{background-color:#5a5855;}
-    .bi3{background-color:#686058;}
+    .bi1{background-color:#7a7268;}.bi2{background-color:#5a5855;}.bi3{background-color:#686058;}
     .bc-date{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem;}
     .bc-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;line-height:1.4;color:#1c1c1a;margin-bottom:.5rem;}
     .bc:first-child .bc-title{font-size:25px;}
@@ -148,7 +116,6 @@
     .page-hero{padding:3.5rem 3rem 0;border-bottom:0.5px solid #e0ddd6;}
     .page-hero h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;color:#1c1c1a;padding-bottom:2rem;}
 
-    /* PROJECTS FİLTRE */
     .filter-bar{display:flex;padding:1.5rem 3rem;border-bottom:0.5px solid #e0ddd6;}
     .fbtn{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:#aaa;background:none;border:none;cursor:pointer;padding:0.5rem 0;margin-right:2rem;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;font-family:'Jost',sans-serif;font-weight:300;}
     .fbtn:hover{color:#1c1c1a;}
@@ -161,10 +128,7 @@
     .proj-thumb{height:240px;overflow:hidden;}
     .pt-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
     .proj-item:hover .pt-fill{transform:scale(1.04);}
-    .pt1{background-color:#4a4540;}
-    .pt2{background-color:#6a6258;}
-    .pt3{background-color:#585450;}
-    .pt4{background-color:#3e3a35;}
+    .pt1{background-color:#4a4540;}.pt2{background-color:#6a6258;}.pt3{background-color:#585450;}.pt4{background-color:#3e3a35;}
     .proj-info{background:#f8f7f5;padding:2.5rem;}
     .proj-num{font-size:10px;letter-spacing:.26em;text-transform:uppercase;color:#ccc;margin-bottom:1rem;}
     .proj-title{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:300;color:#1c1c1a;margin-bottom:1rem;}
@@ -183,10 +147,8 @@
     .dg-item{aspect-ratio:3/4;cursor:pointer;overflow:hidden;}
     .dg-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .7s ease;}
     .dg-item:hover .dg-fill{transform:scale(1.05);}
-    .dg1{background-color:#3a3530;}.dg2{background-color:#504a44;}
-    .dg3{background-color:#282420;}.dg4{background-color:#404038;}
-    .dg5{background-color:#2e2a26;}.dg6{background-color:#484440;}
-    .dg7{background-color:#1e1c18;}.dg8{background-color:#3c3835;}
+    .dg1{background-color:#3a3530;}.dg2{background-color:#504a44;}.dg3{background-color:#282420;}.dg4{background-color:#404038;}
+    .dg5{background-color:#2e2a26;}.dg6{background-color:#484440;}.dg7{background-color:#1e1c18;}.dg8{background-color:#3c3835;}
 
     .lf-intro{padding:3.5rem 3rem 2.5rem;border-bottom:0.5px solid #e0ddd6;}
     .lf-intro h2{font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:300;}
@@ -196,8 +158,7 @@
     .lf-item{cursor:pointer;overflow:hidden;position:relative;height:340px;}
     .lf-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
     .lf-item:hover .lf-fill{transform:scale(1.04);}
-    .lf1{background-color:#4a4540;}.lf2{background-color:#5a5550;}
-    .lf3{background-color:#3e3a35;}.lf4{background-color:#686058;}
+    .lf1{background-color:#4a4540;}.lf2{background-color:#5a5550;}.lf3{background-color:#3e3a35;}.lf4{background-color:#686058;}
     .lf-cap{position:absolute;bottom:0;left:0;right:0;padding:2rem 1.5rem 1rem;background:linear-gradient(transparent,rgba(10,8,6,.55));opacity:0;transition:opacity .3s;}
     .lf-item:hover .lf-cap{opacity:1;}
     .lf-cap-t{font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:300;color:#f0ece4;}
@@ -210,9 +171,8 @@
     .jc-img{aspect-ratio:3/2;overflow:hidden;margin-bottom:1.2rem;}
     .jc-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .6s ease;}
     .jc:hover .jc-fill{transform:scale(1.04);}
-    .jc1{background-color:#7a7268;}.jc2{background-color:#5a5855;}
-    .jc3{background-color:#686058;}.jc4{background-color:#606050;}
-    .jc5{background-color:#585250;}.jc6{background-color:#706860;}
+    .jc1{background-color:#7a7268;}.jc2{background-color:#5a5855;}.jc3{background-color:#686058;}
+    .jc4{background-color:#606050;}.jc5{background-color:#585250;}.jc6{background-color:#706860;}
     .jc-date{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;margin-bottom:.5rem;}
     .jc-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;line-height:1.4;color:#1c1c1a;margin-bottom:.5rem;}
     .jc-ex{font-size:12px;color:#999;line-height:1.85;}
@@ -252,14 +212,19 @@
   </div>
 </nav>
 
-<!-- ===================== HOME ===================== -->
+<!-- HOME -->
 <div class="page active page-offset" id="page-home">
   <section class="hero">
     <div class="slides" id="slides">
-      <!-- Fotoğraf eklemek için örnek: style="background-image:url('images/banner1.jpg')" -->
       <div class="slide s1" style="background-image:url('fp4banner.jpg')">
-      <div class="slide s2"><span class="slide-cap">Seri Adı — 2023</span></div>
-      <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
+        <span class="slide-cap">Seri Adı — 2024</span>
+      </div>
+      <div class="slide s2">
+        <span class="slide-cap">Seri Adı — 2023</span>
+      </div>
+      <div class="slide s3">
+        <span class="slide-cap">Seri Adı — 2023</span>
+      </div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
     <button class="harrow" style="right:1.5rem" onclick="go(cur+1)">&#8594;</button>
@@ -272,11 +237,7 @@
 
   <div class="home-intro">
     <h1>Belgesel fotografinin<br><em>ham dili.</em></h1>
-    <div class="home-meta">
-      İstanbul merkezli<br>
-      Film · Analog · Darkroom<br>
-      Large Format · Fine Art
-    </div>
+    <div class="home-meta">İstanbul merkezli<br>Film · Analog · Darkroom<br>Large Format · Fine Art</div>
   </div>
 
   <div class="section-wrap">
@@ -285,26 +246,11 @@
       <span class="sec-more" onclick="goPage('projects')">Tümünü gör →</span>
     </div>
     <div class="home-grid">
-      <div class="gi">
-        <div class="gi-fill f1"></div>
-        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2024 · 18 kare · 35mm</div></div>
-      </div>
-      <div class="gi">
-        <div class="gi-fill f2"></div>
-        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 24 kare</div></div>
-      </div>
-      <div class="gi">
-        <div class="gi-fill f3"></div>
-        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 31 kare</div></div>
-      </div>
-      <div class="gi">
-        <div class="gi-fill f4"></div>
-        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 14 kare · 120</div></div>
-      </div>
-      <div class="gi">
-        <div class="gi-fill f5"></div>
-        <div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 20 kare</div></div>
-      </div>
+      <div class="gi"><div class="gi-fill f1"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2024 · 18 kare · 35mm</div></div></div>
+      <div class="gi"><div class="gi-fill f2"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 24 kare</div></div></div>
+      <div class="gi"><div class="gi-fill f3"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 31 kare</div></div></div>
+      <div class="gi"><div class="gi-fill f4"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 14 kare · 120</div></div></div>
+      <div class="gi"><div class="gi-fill f5"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 20 kare</div></div></div>
     </div>
   </div>
 
@@ -313,16 +259,13 @@
       <div>
         <div class="dr-lbl">Darkroom</div>
         <h2 class="dr-h">Kimyasal sürecin<br><em>sessiz ritmi</em></h2>
-        <p class="dr-p">Film bazlı çalışmalar, elle baskı süreçleri. Her baskı tektir — dijital kopyası yoktur.</p>
+        <p class="dr-p">Film bazlı çalışmalar, elle baskı süreçleri. Her baskı tektir.</p>
         <span class="dr-cta" onclick="goPage('darkroom')">Süreci keşfet →</span>
       </div>
       <div class="dr-films">HP5 · Tri-X · Delta 400<br>Ilford Multigrade · Fomabrom</div>
     </div>
     <div class="dr-right">
-      <div class="di di1"></div>
-      <div class="di di2"></div>
-      <div class="di di3"></div>
-      <div class="di di4"></div>
+      <div class="di di1"></div><div class="di di2"></div><div class="di di3"></div><div class="di di4"></div>
     </div>
   </div>
 
@@ -332,146 +275,66 @@
       <span class="sec-more" onclick="goPage('journal')">Tümünü gör →</span>
     </div>
     <div class="blog-grid">
-      <div class="bc">
-        <div class="bc-img"><div class="bc-fill bi1"></div></div>
-        <div class="bc-date">Mayıs 2025</div>
-        <div class="bc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div>
-        <div class="bc-ex">HP5, Tri-X ve Delta 400 üzerine uzun alan notları.</div>
-      </div>
-      <div class="bc">
-        <div class="bc-img"><div class="bc-fill bi2"></div></div>
-        <div class="bc-date">Şubat 2025</div>
-        <div class="bc-title">Üretan geliştirici denemeleri</div>
-        <div class="bc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div>
-      </div>
-      <div class="bc">
-        <div class="bc-img"><div class="bc-fill bi3"></div></div>
-        <div class="bc-date">Kasım 2024</div>
-        <div class="bc-title">Belgesel ve fine art nasıl bir arada var olur?</div>
-        <div class="bc-ex">Kavramsal bir çerçeve üzerine notlar.</div>
-      </div>
+      <div class="bc"><div class="bc-img"><div class="bc-fill bi1"></div></div><div class="bc-date">Mayıs 2025</div><div class="bc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div><div class="bc-ex">HP5, Tri-X ve Delta 400 üzerine uzun alan notları.</div></div>
+      <div class="bc"><div class="bc-img"><div class="bc-fill bi2"></div></div><div class="bc-date">Şubat 2025</div><div class="bc-title">Üretan geliştirici denemeleri</div><div class="bc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div></div>
+      <div class="bc"><div class="bc-img"><div class="bc-fill bi3"></div></div><div class="bc-date">Kasım 2024</div><div class="bc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="bc-ex">Kavramsal bir çerçeve üzerine notlar.</div></div>
     </div>
   </div>
 
   <footer>
     <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
     <span class="fc">© 2025 Ahmet Kütük</span>
   </footer>
 </div>
 
-<!-- ===================== PROJECTS ===================== -->
+<!-- PROJECTS -->
 <div class="page page-offset" id="page-projects">
-  <div class="page-hero">
-    <h2>Projects</h2>
-  </div>
-
+  <div class="page-hero"><h2>Projects</h2></div>
   <div class="filter-bar">
     <button class="fbtn active" onclick="filter(this,'all')">All</button>
     <button class="fbtn" onclick="filter(this,'35mm')">35mm</button>
     <button class="fbtn" onclick="filter(this,'120mm')">120mm</button>
   </div>
-
   <div class="proj-list">
     <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt1"></div></div>
-      <div class="proj-info">
-        <div class="proj-num">001</div>
-        <div class="proj-title">Seri Adı</div>
-        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
-        <div class="proj-meta">2024 · 18 kare · HP5</div>
-        <span class="proj-tag">35mm</span>
-      </div>
+      <div class="proj-info"><div class="proj-num">001</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2024 · 18 kare · HP5</div><span class="proj-tag">35mm</span></div>
     </div>
     <div class="proj-item" data-cat="120mm">
       <div class="proj-thumb"><div class="pt-fill pt2"></div></div>
-      <div class="proj-info">
-        <div class="proj-num">002</div>
-        <div class="proj-title">Seri Adı</div>
-        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
-        <div class="proj-meta">2023 · 12 kare · Delta 400</div>
-        <span class="proj-tag">120mm</span>
-      </div>
+      <div class="proj-info"><div class="proj-num">002</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 12 kare · Delta 400</div><span class="proj-tag">120mm</span></div>
     </div>
     <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt3"></div></div>
-      <div class="proj-info">
-        <div class="proj-num">003</div>
-        <div class="proj-title">Seri Adı</div>
-        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
-        <div class="proj-meta">2023 · 31 kare · Tri-X</div>
-        <span class="proj-tag">35mm</span>
-      </div>
+      <div class="proj-info"><div class="proj-num">003</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 31 kare · Tri-X</div><span class="proj-tag">35mm</span></div>
     </div>
     <div class="proj-item" data-cat="120mm">
       <div class="proj-thumb"><div class="pt-fill pt4"></div></div>
-      <div class="proj-info">
-        <div class="proj-num">004</div>
-        <div class="proj-title">Seri Adı</div>
-        <div class="proj-desc">Seri açıklaması buraya gelecek.</div>
-        <div class="proj-meta">2022 · 14 kare · HP5</div>
-        <span class="proj-tag">120mm</span>
-      </div>
+      <div class="proj-info"><div class="proj-num">004</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2022 · 14 kare · HP5</div><span class="proj-tag">120mm</span></div>
     </div>
   </div>
-
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- ===================== DARKROOM ===================== -->
+<!-- DARKROOM -->
 <div class="page page-offset" id="page-darkroom">
-  <div class="dr-page-intro">
-    <div><h2>Darkroom</h2></div>
-    <p>Karanlık oda, dijital olmayan bir sürecin tam ortasında durmaktır. Kimyasal banyolar, elle yapılan baskılar, tekrarlanamayan anlar. Her baskı tek bir nüshadır.</p>
-  </div>
+  <div class="dr-page-intro"><div><h2>Darkroom</h2></div><p>Karanlık oda, dijital olmayan bir sürecin tam ortasında durmaktır. Kimyasal banyolar, elle yapılan baskılar, tekrarlanamayan anlar. Her baskı tek bir nüshadır.</p></div>
   <div class="dr-process">
-    <div class="dp-card">
-      <div class="dp-num">01</div>
-      <div class="dp-title">Film Banyosu</div>
-      <div class="dp-text">HP5, Tri-X ve Delta 400 ile çalışıyorum. D-76, Rodinal ve HC-110 geliştirici testleri.</div>
-    </div>
-    <div class="dp-card">
-      <div class="dp-num">02</div>
-      <div class="dp-title">Elle Baskı</div>
-      <div class="dp-text">Ilford Multigrade kağıt. Manuel dodge & burn teknikleriyle her baskı ayrı üretilir.</div>
-    </div>
-    <div class="dp-card">
-      <div class="dp-num">03</div>
-      <div class="dp-title">Toning</div>
-      <div class="dp-text">Selenium ve sepia toning denemeleri. Arşiv kalitesi için sabitleyici banyoları.</div>
-    </div>
+    <div class="dp-card"><div class="dp-num">01</div><div class="dp-title">Film Banyosu</div><div class="dp-text">HP5, Tri-X ve Delta 400. D-76, Rodinal ve HC-110 geliştirici testleri.</div></div>
+    <div class="dp-card"><div class="dp-num">02</div><div class="dp-title">Elle Baskı</div><div class="dp-text">Ilford Multigrade kağıt. Manuel dodge & burn teknikleriyle her baskı ayrı üretilir.</div></div>
+    <div class="dp-card"><div class="dp-num">03</div><div class="dp-title">Toning</div><div class="dp-text">Selenium ve sepia toning denemeleri. Arşiv kalitesi için sabitleyici banyoları.</div></div>
   </div>
   <div class="dr-gallery">
-    <div class="dg-item"><div class="dg-fill dg1"></div></div>
-    <div class="dg-item"><div class="dg-fill dg2"></div></div>
-    <div class="dg-item"><div class="dg-fill dg3"></div></div>
-    <div class="dg-item"><div class="dg-fill dg4"></div></div>
-    <div class="dg-item"><div class="dg-fill dg5"></div></div>
-    <div class="dg-item"><div class="dg-fill dg6"></div></div>
-    <div class="dg-item"><div class="dg-fill dg7"></div></div>
-    <div class="dg-item"><div class="dg-fill dg8"></div></div>
+    <div class="dg-item"><div class="dg-fill dg1"></div></div><div class="dg-item"><div class="dg-fill dg2"></div></div>
+    <div class="dg-item"><div class="dg-fill dg3"></div></div><div class="dg-item"><div class="dg-fill dg4"></div></div>
+    <div class="dg-item"><div class="dg-fill dg5"></div></div><div class="dg-item"><div class="dg-fill dg6"></div></div>
+    <div class="dg-item"><div class="dg-fill dg7"></div></div><div class="dg-item"><div class="dg-fill dg8"></div></div>
   </div>
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- ===================== LARGE FORMAT ===================== -->
+<!-- LARGE FORMAT -->
 <div class="page page-offset" id="page-largeformat">
   <div class="lf-intro">
     <h2>Large Format</h2>
@@ -479,34 +342,15 @@
     <p>View camera ile alan çalışmaları. Yavaş süreç, tek negatif, geri dönüşü olmayan anlar.</p>
   </div>
   <div class="lf-grid">
-    <div class="lf-item">
-      <div class="lf-fill lf1"></div>
-      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 1</div><div class="lf-cap-s">4×5 · 2024</div></div>
-    </div>
-    <div class="lf-item">
-      <div class="lf-fill lf2"></div>
-      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 2</div><div class="lf-cap-s">4×5 · 2024</div></div>
-    </div>
-    <div class="lf-item">
-      <div class="lf-fill lf3"></div>
-      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">8×10 · 2023</div></div>
-    </div>
-    <div class="lf-item">
-      <div class="lf-fill lf4"></div>
-      <div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">8×10 · 2023</div></div>
-    </div>
+    <div class="lf-item"><div class="lf-fill lf1"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 1</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
+    <div class="lf-item"><div class="lf-fill lf2"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 2</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
+    <div class="lf-item"><div class="lf-fill lf3"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">8×10 · 2023</div></div></div>
+    <div class="lf-item"><div class="lf-fill lf4"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">8×10 · 2023</div></div></div>
   </div>
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- ===================== JOURNAL ===================== -->
+<!-- JOURNAL -->
 <div class="page page-offset" id="page-journal">
   <div class="j-intro"><h2>Journal</h2></div>
   <div class="j-grid">
@@ -517,17 +361,10 @@
     <div class="jc"><div class="jc-img"><div class="jc-fill jc5"></div></div><div class="jc-date">Haziran 2024</div><div class="jc-title">Selenium toning: arşiv mi estetik mi?</div><div class="jc-ex">Kimyasal toning ve arşiv kalitesi.</div><span class="jc-tag">Darkroom</span></div>
     <div class="jc"><div class="jc-img"><div class="jc-fill jc6"></div></div><div class="jc-date">Mart 2024</div><div class="jc-title">Taşra serisinin arka planı</div><div class="jc-ex">Anadolu kasabalarına üç yolculuk.</div><span class="jc-tag">Projeler</span></div>
   </div>
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- ===================== ABOUT ===================== -->
+<!-- ABOUT -->
 <div class="page page-offset" id="page-about">
   <div class="about-wrap">
     <div class="about-text">
@@ -543,18 +380,9 @@
         <div class="af-row"><span class="af-k">İletişim</span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
       </div>
     </div>
-    <div class="about-photo">
-      <!-- Fotoğraf için style="background-image:url('images/ahmet.jpg')" ekle -->
-    </div>
+    <div class="about-photo"></div>
   </div>
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks">
-      <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-      <li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li>
-    </ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <script>
