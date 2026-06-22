@@ -193,6 +193,15 @@
     .flinks a{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;text-decoration:none;}
     .flinks a:hover{color:#1c1c1a;}
     .fc{font-size:10px;color:#ccc;letter-spacing:.06em;}
+    .yurt-intro{padding:4rem 3rem 3rem;max-width:720px;margin:0 auto;}
+.yurt-intro h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;margin-bottom:2.5rem;text-align:center;}
+.yurt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;}
+.yurt-text p{margin-bottom:1.6rem;}
+.yurt-meta-line{text-align:center;font-family:'Jost',sans-serif;font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;margin-top:3rem;line-height:2.2;}
+.yurt-gallery{max-width:900px;margin:0 auto;padding:0 3rem 4rem;}
+.yurt-photo{width:100%;margin-bottom:1.5rem;aspect-ratio:3/2;background-size:cover;background-position:center;background-color:#3a3530;}
+.yurt-back{display:block;text-align:center;padding:3rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
+.yurt-back:hover{color:#1c1c1a;}
   </style>
 </head>
 <body>
@@ -217,7 +226,9 @@
   <section class="hero">
     <div class="slides" id="slides">
       <div class="slide s1" style="background-image:url('fp4banner.jpg')">
-        <span class="slide-cap">Seri Adı — 2024</span>
+       <div class="slide s1" style="background-image:url('yurt-1.jpg');cursor:pointer;" onclick="goPage('yurt')">
+  <span class="slide-cap">Yurt</span>
+</div>
       </div>
       <div class="slide s2">
         <span class="slide-cap">Seri Adı — 2023</span>
@@ -295,8 +306,19 @@
     <button class="fbtn active" onclick="filter(this,'all')">All</button>
     <button class="fbtn" onclick="filter(this,'35mm')">35mm</button>
     <button class="fbtn" onclick="filter(this,'120mm')">120mm</button>
+    <button class="fbtn" onclick="filter(this,'digital')">Digital</button>
   </div>
   <div class="proj-list">
+    <div class="proj-item" data-cat="digital" onclick="goPage('yurt')">
+  <div class="proj-thumb"><div class="pt-fill" style="background-image:url('yurt-1.jpg');background-size:cover;background-position:center;"></div></div>
+  <div class="proj-info">
+    <div class="proj-num">000</div>
+    <div class="proj-title">Yurt</div>
+    <div class="proj-desc">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</div>
+    <div class="proj-meta">2017–2018 · 40 kare · Dijital</div>
+    <span class="proj-tag">Digital</span>
+  </div>
+</div>
     <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt1"></div></div>
       <div class="proj-info"><div class="proj-num">001</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2024 · 18 kare · HP5</div><span class="proj-tag">35mm</span></div>
@@ -316,7 +338,76 @@
   </div>
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
+<!-- ===================== YURT ===================== -->
+<div class="page page-offset" id="page-yurt">
+  <div class="yurt-intro">
+    <h2>Yurt</h2>
+    <div class="yurt-text">
+      <p>Bazı coğrafyalar insanı misafir olarak kabul etmez; yalnızca bir süreliğine kendilerine tanıklık etmesine izin verir.</p>
+      <p>Kırgızistan'a yaptığım üç yolculuk boyunca, kırk beş gün boyunca süren uzun yolların sonunda anladığım şey, bu ülkenin haritalarda görünen sınırlarından daha büyük olduğuydu. Tanrı Dağları'nın gölgesinde, Issık Göl kıyılarında, Tacikistan'a açılan vadilerde, Özbekistan ve Kazakistan sınırlarında aynı hissin farklı biçimlerine rastladım. Birbirinden uzak görünen bu yerleri görünmez bir bağ bir arada tutuyordu.</p>
+      <p>Bozkır.</p>
+      <p>Belki de Türk halklarının gerçek hafızası şehirlerde, saraylarda ya da yazılı tarihte değil; rüzgârın yönünde, atların adımlarında ve mevsimlerin dönüşünde saklıdır.</p>
+      <p>Eski Türk anlatılarında gök yalnızca yukarıda duran bir boşluk değildir. Tengri, insanla yeryüzü arasında sessiz bir düzen kurar. Dağlar, göller ve geniş otlaklar, yaşayan varlıklar kadar hafızaya da ev sahipliği yapar. Bu nedenle göç, bir yerden ayrılmak değil; dünyanın ritmine yeniden katılmaktır.</p>
+      <p>Yüzyıllar boyunca Altaylardan batıya doğru yayılan halkların taşıdığı şey yalnızca dilleri ya da gelenekleri değildi. Beraberlerinde gökyüzünü okuma biçimlerini, hayvanlarla kurdukları ilişkiyi, ateşin etrafında anlatılan hikâyeleri ve zamanı anlama şekillerini de taşıdılar.</p>
+      <p>Bugün Kırgız bozkırlarında hâlâ yaşayan göçebe kültürü, geçmişten kalmış bir görüntü gibi değil, uzun bir yolculuğun bugüne ulaşan yankısı gibi görünür. Yaz aylarında yükselen yaylalar, keçeden yapılmış yurtlar, atların etrafında şekillenen gündelik hayat ve dağların arasında kaybolup giden yollar, kesintiye uğramış bir tarihten çok, devam eden bir döngünün parçalarıdır.</p>
+      <p>Ergenekon anlatısında demiri eriterek dağdan çıkan halkın hikâyesi, belki de yalnızca bir başlangıç efsanesi değildir. Her kuşakta yeniden hatırlanan, yeniden unutulan ve yeniden kurulan bir hafızanın hikâyesidir. Bozkurtun yol göstericiliği, yönünü kaybeden insanın içindeki eski bilgiyi temsil eder. Çünkü bazen yol, haritalarda değil, hatırlayabildiğimiz şeylerde saklıdır.</p>
+      <p>Bu fotoğraflar bir ülkenin portresi olmaktan çok, bir hafızanın peşinde geçirilen günlerin izleridir.</p>
+      <p>Üç yolculuk.<br>Kırk beş gün.<br>Binlerce kilometre.<br>Ve her seferinde aynı his:<br>İnsan, bazı topraklara ulaşmaz.<br>Bazı topraklar, insanın içinde uzun zamandır unuttuğu bir yere ulaşır.</p>
+    </div>
+    <div class="yurt-meta-line">Kırgızistan · 2017 – 2018<br>Üç Yolculuk · 45 Gün · Dijital</div>
+  </div>
 
+  <div class="yurt-gallery">
+    <div class="yurt-photo" style="background-image:url('yurt-1.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-2.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-3.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-4.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-5.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-6.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-7.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-8.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-9.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-10.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-11.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-12.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-13.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-14.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-15.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-16.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-17.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-18.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-19.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-20.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-21.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-22.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-23.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-24.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-25.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-26.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-27.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-28.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-29.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-30.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-31.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-32.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-33.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-34.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-35.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-36.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-37.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-38.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-39.jpg')"></div>
+    <div class="yurt-photo" style="background-image:url('yurt-40.jpg')"></div>
+  </div>
+
+  <span class="yurt-back" onclick="goPage('projects')">← Projects'e dön</span>
+
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
 <!-- DARKROOM -->
 <div class="page page-offset" id="page-darkroom">
   <div class="dr-page-intro"><div><h2>Darkroom</h2></div><p>Karanlık oda, dijital olmayan bir sürecin tam ortasında durmaktır. Kimyasal banyolar, elle yapılan baskılar, tekrarlanamayan anlar. Her baskı tek bir nüshadır.</p></div>
