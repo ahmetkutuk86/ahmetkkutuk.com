@@ -14,12 +14,7 @@
     .page{display:none;}
     .page.active{display:block;}
 
-    nav{
-      position:fixed;top:0;left:0;right:0;z-index:200;
-      display:flex;justify-content:space-between;align-items:center;
-      padding:0 3rem;height:58px;
-      background:#ffffff;border-bottom:1px solid #e8e5e0;
-    }
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:0 3rem;height:58px;background:#ffffff;border-bottom:1px solid #e8e5e0;}
     .logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:400;letter-spacing:0.08em;text-transform:uppercase;color:#1c1c1a;cursor:pointer;white-space:nowrap;text-decoration:none;}
     .nav-right{display:flex;align-items:center;}
     .nav-links{display:flex;list-style:none;align-items:center;}
@@ -27,37 +22,12 @@
     .nav-links li a:hover{color:#1c1c1a;}
     .nav-links li a.active{color:#1c1c1a;border-bottom-color:#1c1c1a;}
     .nav-lang{padding:0 0 0 1.2rem;font-size:10px;letter-spacing:0.18em;color:#bbb;cursor:pointer;border-left:1px solid #e8e5e0;margin-left:0.5rem;height:58px;line-height:58px;}
-
     .page-offset{padding-top:58px;}
 
-    /* HERO - DÜZELTİLDİ */
-    .hero{
-      position:relative;
-      width:100%;
-      height:calc(100vh - 58px);
-      max-height:680px;
-      overflow:hidden;
-      background:#1a1814;
-    }
-    .slides{
-      display:flex;
-      flex-direction:row;
-      width:100%;
-      height:100%;
-      transition:transform .95s cubic-bezier(.77,0,.18,1);
-      will-change:transform;
-    }
-    .slide{
-      flex:0 0 100%;
-      width:100%;
-      height:100%;
-      display:flex;
-      align-items:flex-end;
-      padding:2.5rem 3rem;
-      background-size:cover;
-      background-position:center;
-      background-repeat:no-repeat;
-    }
+    /* HERO */
+    .hero{position:relative;width:100%;height:calc(100vh - 58px);max-height:680px;overflow:hidden;background:#1a1814;}
+    .slides{display:flex;flex-direction:row;width:100%;height:100%;transition:transform .95s cubic-bezier(.77,0,.18,1);will-change:transform;}
+    .slide{flex:0 0 100%;width:100%;height:100%;display:flex;align-items:flex-end;padding:2.5rem 3rem;background-size:cover;background-position:center;background-repeat:no-repeat;}
     .s1{background-color:#2a2420;}
     .s2{background-color:#1e1c18;}
     .s3{background-color:#26221e;}
@@ -187,21 +157,59 @@
     .af-k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;}
     .af-v{font-size:12px;color:#555;letter-spacing:.04em;}
 
+    /* YURT SAYFASI */
+    .yurt-intro{padding:4rem 3rem 3rem;max-width:720px;margin:0 auto;}
+    .yurt-intro h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;margin-bottom:2.5rem;text-align:center;}
+    .yurt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;}
+    .yurt-text p{margin-bottom:1.6rem;}
+    .yurt-meta-line{text-align:center;font-family:'Jost',sans-serif;font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;margin-top:3rem;line-height:2.2;}
+    .yurt-gallery{max-width:900px;margin:0 auto;padding:0 3rem 4rem;}
+    .yurt-photo{width:100%;margin-bottom:1.5rem;aspect-ratio:3/2;background-size:cover;background-position:center;background-color:#3a3530;cursor:pointer;}
+    .yurt-photo:hover{opacity:.92;}
+    .yurt-back{display:block;text-align:center;padding:3rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
+    .yurt-back:hover{color:#1c1c1a;}
+
+    /* BOZKIRIN GÜMÜŞ İZİ */
+    .bozkir-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
+    .bozkir-intro-text{max-width:800px;margin:0 auto;}
+    .bozkir-intro h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:#1c1c1a;margin-bottom:.6rem;}
+    .bozkir-subtitle{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#bbb;margin-bottom:2.5rem;display:block;}
+    .bozkir-body p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;margin-bottom:1.4rem;}
+    .bozkir-gear{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid #e0ddd6;}
+    .bozkir-gear-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#bbb;margin-bottom:1rem;}
+    .bozkir-gear-item{font-size:12px;color:#888;line-height:2;letter-spacing:.02em;}
+    .bozkir-filter{display:flex;padding:1.5rem 3rem;border-bottom:0.5px solid #e0ddd6;}
+    .bfbtn{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#aaa;background:none;border:none;cursor:pointer;padding:.5rem 0;margin-right:2rem;border-bottom:1px solid transparent;transition:color .2s,border-color .2s;font-family:'Jost',sans-serif;font-weight:300;}
+    .bfbtn:hover{color:#1c1c1a;}
+    .bfbtn.active{color:#1c1c1a;border-bottom-color:#1c1c1a;}
+    .bozkir-gallery{display:grid;grid-template-columns:1fr 1fr;gap:3px;background:#e0ddd6;padding:3px;margin:0 3rem 3rem;}
+    .bg-item{cursor:pointer;overflow:hidden;position:relative;}
+    .bg-item.hidden{display:none;}
+    .bg-fill{aspect-ratio:5/4;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .bg-item:hover .bg-fill{transform:scale(1.03);}
+    .bozkir-back{display:block;text-align:center;padding:2.5rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
+    .bozkir-back:hover{color:#1c1c1a;}
+
+    /* LIGHTBOX */
+    .lb-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(8,6,4,.96);z-index:1000;align-items:center;justify-content:center;}
+    .lb-overlay.open{display:flex;}
+    .lb-inner{position:relative;max-width:90vw;max-height:90vh;display:flex;flex-direction:column;align-items:center;}
+    .lb-img{max-width:90vw;max-height:80vh;object-fit:contain;}
+    .lb-info{margin-top:1.2rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,196,188,.6);}
+    .lb-close{position:fixed;top:2rem;right:2rem;color:rgba(255,255,255,.5);font-size:24px;cursor:pointer;background:none;border:none;transition:color .2s;line-height:1;}
+    .lb-close:hover{color:#fff;}
+    .lb-prev,.lb-next{position:fixed;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.4);font-size:22px;cursor:pointer;background:none;border:none;padding:1.5rem;transition:color .2s;}
+    .lb-prev:hover,.lb-next:hover{color:#fff;}
+    .lb-prev{left:1rem;}
+    .lb-next{right:1rem;}
+    .lb-counter{position:fixed;bottom:2rem;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.3);}
+
     footer{border-top:0.5px solid #e0ddd6;padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;margin-top:2rem;}
     .fl{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#aaa;}
     .flinks{display:flex;gap:2rem;list-style:none;}
     .flinks a{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:#bbb;text-decoration:none;}
     .flinks a:hover{color:#1c1c1a;}
     .fc{font-size:10px;color:#ccc;letter-spacing:.06em;}
-    .yurt-intro{padding:4rem 3rem 3rem;max-width:720px;margin:0 auto;}
-.yurt-intro h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;margin-bottom:2.5rem;text-align:center;}
-.yurt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;}
-.yurt-text p{margin-bottom:1.6rem;}
-.yurt-meta-line{text-align:center;font-family:'Jost',sans-serif;font-style:normal;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;margin-top:3rem;line-height:2.2;}
-.yurt-gallery{max-width:900px;margin:0 auto;padding:0 3rem 4rem;}
-.yurt-photo{width:100%;margin-bottom:1.5rem;aspect-ratio:3/2;background-size:cover;background-position:center;background-color:#3a3530;}
-.yurt-back{display:block;text-align:center;padding:3rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
-.yurt-back:hover{color:#1c1c1a;}
   </style>
 </head>
 <body>
@@ -225,15 +233,11 @@
 <div class="page active page-offset" id="page-home">
   <section class="hero">
     <div class="slides" id="slides">
-     <div class="slide s1" style="background-image:url('yurt-1.jpg');cursor:pointer;" onclick="goPage('yurt')">
-  <span class="slide-cap">Yurt</span>
-</div>
-      <div class="slide s2">
-        <span class="slide-cap">Seri Adı — 2023</span>
+      <div class="slide s1" style="background-image:url('yurt-1.jpg');cursor:pointer;" onclick="goPage('yurt')">
+        <span class="slide-cap">Yurt — 2017–2018</span>
       </div>
-      <div class="slide s3">
-        <span class="slide-cap">Seri Adı — 2023</span>
-      </div>
+      <div class="slide s2"><span class="slide-cap">Seri Adı — 2023</span></div>
+      <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
     <button class="harrow" style="right:1.5rem" onclick="go(cur+1)">&#8594;</button>
@@ -243,26 +247,23 @@
       <div class="dot" onclick="go(2)"></div>
     </div>
   </section>
-
   <div class="home-intro">
     <h1>Belgesel fotografinin<br><em>ham dili.</em></h1>
     <div class="home-meta">İstanbul merkezli<br>Film · Analog · Darkroom<br>Large Format · Fine Art</div>
   </div>
-
   <div class="section-wrap">
     <div class="sec-row">
       <span class="sec-label">Seçili Seriler</span>
       <span class="sec-more" onclick="goPage('projects')">Tümünü gör →</span>
     </div>
     <div class="home-grid">
-      <div class="gi"><div class="gi-fill f1"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2024 · 18 kare · 35mm</div></div></div>
+      <div class="gi" onclick="goPage('yurt')"><div class="gi-fill" style="background-image:url('yurt-1.jpg')"></div><div class="gi-overlay"><div class="gi-title">Yurt</div><div class="gi-sub">2017–2018 · Dijital</div></div></div>
       <div class="gi"><div class="gi-fill f2"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 24 kare</div></div></div>
       <div class="gi"><div class="gi-fill f3"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 31 kare</div></div></div>
       <div class="gi"><div class="gi-fill f4"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 14 kare · 120</div></div></div>
       <div class="gi"><div class="gi-fill f5"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 20 kare</div></div></div>
     </div>
   </div>
-
   <div class="home-dr">
     <div class="dr-left">
       <div>
@@ -277,24 +278,23 @@
       <div class="di di1"></div><div class="di di2"></div><div class="di di3"></div><div class="di di4"></div>
     </div>
   </div>
-
   <div class="home-journal">
     <div class="sec-row">
       <span class="sec-label">Journal</span>
       <span class="sec-more" onclick="goPage('journal')">Tümünü gör →</span>
     </div>
     <div class="blog-grid">
-      <div class="bc"><div class="bc-img"><div class="bc-fill bi1"></div></div><div class="bc-date">Mayıs 2025</div><div class="bc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div><div class="bc-ex">HP5, Tri-X ve Delta 400 üzerine uzun alan notları.</div></div>
+      <div class="bc" onclick="goPage('bozkir')">
+        <div class="bc-img"><div class="bc-fill" style="background-image:url('yurt-p67-portra400-1.jpg')"></div></div>
+        <div class="bc-date">2017 – 2018</div>
+        <div class="bc-title">Bozkırın Gümüş İzi — Kırgızistan Analog Notları</div>
+        <div class="bc-ex">Pentax 67 ve 35mm ile çekilen analog notlar. 79 kare, altı farklı film.</div>
+      </div>
       <div class="bc"><div class="bc-img"><div class="bc-fill bi2"></div></div><div class="bc-date">Şubat 2025</div><div class="bc-title">Üretan geliştirici denemeleri</div><div class="bc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div></div>
       <div class="bc"><div class="bc-img"><div class="bc-fill bi3"></div></div><div class="bc-date">Kasım 2024</div><div class="bc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="bc-ex">Kavramsal bir çerçeve üzerine notlar.</div></div>
     </div>
   </div>
-
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- PROJECTS -->
@@ -308,35 +308,32 @@
   </div>
   <div class="proj-list">
     <div class="proj-item" data-cat="digital" onclick="goPage('yurt')">
-  <div class="proj-thumb"><div class="pt-fill" style="background-image:url('yurt-1.jpg');background-size:cover;background-position:center;"></div></div>
-  <div class="proj-info">
-    <div class="proj-num">000</div>
-    <div class="proj-title">Yurt</div>
-    <div class="proj-desc">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</div>
-    <div class="proj-meta">2017–2018 · 40 kare · Dijital</div>
-    <span class="proj-tag">Digital</span>
-  </div>
-</div>
-    <div class="proj-item" data-cat="35mm">
-      <div class="proj-thumb"><div class="pt-fill pt1"></div></div>
-      <div class="proj-info"><div class="proj-num">001</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2024 · 18 kare · HP5</div><span class="proj-tag">35mm</span></div>
+      <div class="proj-thumb"><div class="pt-fill" style="background-image:url('yurt-1.jpg')"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">000</div>
+        <div class="proj-title">Yurt</div>
+        <div class="proj-desc">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</div>
+        <div class="proj-meta">2017–2018 · 40 kare · Dijital</div>
+        <span class="proj-tag">Digital</span>
+      </div>
     </div>
-    <div class="proj-item" data-cat="120mm">
+    <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt2"></div></div>
-      <div class="proj-info"><div class="proj-num">002</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 12 kare · Delta 400</div><span class="proj-tag">120mm</span></div>
-    </div>
-    <div class="proj-item" data-cat="35mm">
-      <div class="proj-thumb"><div class="pt-fill pt3"></div></div>
-      <div class="proj-info"><div class="proj-num">003</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 31 kare · Tri-X</div><span class="proj-tag">35mm</span></div>
+      <div class="proj-info"><div class="proj-num">001</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 12 kare · Delta 400</div><span class="proj-tag">35mm</span></div>
     </div>
     <div class="proj-item" data-cat="120mm">
+      <div class="proj-thumb"><div class="pt-fill pt3"></div></div>
+      <div class="proj-info"><div class="proj-num">002</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 31 kare · Tri-X</div><span class="proj-tag">120mm</span></div>
+    </div>
+    <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt4"></div></div>
-      <div class="proj-info"><div class="proj-num">004</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2022 · 14 kare · HP5</div><span class="proj-tag">120mm</span></div>
+      <div class="proj-info"><div class="proj-num">003</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2022 · 14 kare · HP5</div><span class="proj-tag">35mm</span></div>
     </div>
   </div>
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
-<!-- ===================== YURT ===================== -->
+
+<!-- YURT -->
 <div class="page page-offset" id="page-yurt">
   <div class="yurt-intro">
     <h2>Yurt</h2>
@@ -346,66 +343,57 @@
       <p>Bozkır.</p>
       <p>Belki de Türk halklarının gerçek hafızası şehirlerde, saraylarda ya da yazılı tarihte değil; rüzgârın yönünde, atların adımlarında ve mevsimlerin dönüşünde saklıdır.</p>
       <p>Eski Türk anlatılarında gök yalnızca yukarıda duran bir boşluk değildir. Tengri, insanla yeryüzü arasında sessiz bir düzen kurar. Dağlar, göller ve geniş otlaklar, yaşayan varlıklar kadar hafızaya da ev sahipliği yapar. Bu nedenle göç, bir yerden ayrılmak değil; dünyanın ritmine yeniden katılmaktır.</p>
-      <p>Yüzyıllar boyunca Altaylardan batıya doğru yayılan halkların taşıdığı şey yalnızca dilleri ya da gelenekleri değildi. Beraberlerinde gökyüzünü okuma biçimlerini, hayvanlarla kurdukları ilişkiyi, ateşin etrafında anlatılan hikâyeleri ve zamanı anlama şekillerini de taşıdılar.</p>
-      <p>Bugün Kırgız bozkırlarında hâlâ yaşayan göçebe kültürü, geçmişten kalmış bir görüntü gibi değil, uzun bir yolculuğun bugüne ulaşan yankısı gibi görünür. Yaz aylarında yükselen yaylalar, keçeden yapılmış yurtlar, atların etrafında şekillenen gündelik hayat ve dağların arasında kaybolup giden yollar, kesintiye uğramış bir tarihten çok, devam eden bir döngünün parçalarıdır.</p>
-      <p>Ergenekon anlatısında demiri eriterek dağdan çıkan halkın hikâyesi, belki de yalnızca bir başlangıç efsanesi değildir. Her kuşakta yeniden hatırlanan, yeniden unutulan ve yeniden kurulan bir hafızanın hikâyesidir. Bozkurtun yol göstericiliği, yönünü kaybeden insanın içindeki eski bilgiyi temsil eder. Çünkü bazen yol, haritalarda değil, hatırlayabildiğimiz şeylerde saklıdır.</p>
       <p>Bu fotoğraflar bir ülkenin portresi olmaktan çok, bir hafızanın peşinde geçirilen günlerin izleridir.</p>
       <p>Üç yolculuk.<br>Kırk beş gün.<br>Binlerce kilometre.<br>Ve her seferinde aynı his:<br>İnsan, bazı topraklara ulaşmaz.<br>Bazı topraklar, insanın içinde uzun zamandır unuttuğu bir yere ulaşır.</p>
     </div>
     <div class="yurt-meta-line">Kırgızistan · 2017 – 2018<br>Üç Yolculuk · 45 Gün · Dijital</div>
   </div>
-
-  <div class="yurt-gallery">
-    <div class="yurt-photo" style="background-image:url('yurt-1.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-2.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-3.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-4.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-5.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-6.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-7.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-8.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-9.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-10.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-11.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-12.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-13.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-14.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-15.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-16.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-17.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-18.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-19.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-20.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-21.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-22.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-23.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-24.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-25.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-26.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-27.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-28.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-29.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-30.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-31.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-32.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-33.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-34.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-35.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-36.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-37.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-38.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-39.jpg')"></div>
-    <div class="yurt-photo" style="background-image:url('yurt-40.jpg')"></div>
+  <div class="yurt-gallery" id="yurtGallery">
+    <div class="yurt-photo" data-src="yurt-1.jpg" data-film="Dijital" style="background-image:url('yurt-1.jpg')" onclick="openLightbox('yurt',0)"></div>
+    <div class="yurt-photo" data-src="yurt-2.jpg" data-film="Dijital" style="background-image:url('yurt-2.jpg')" onclick="openLightbox('yurt',1)"></div>
+    <div class="yurt-photo" data-src="yurt-3.jpg" data-film="Dijital" style="background-image:url('yurt-3.jpg')" onclick="openLightbox('yurt',2)"></div>
+    <div class="yurt-photo" data-src="yurt-4.jpg" data-film="Dijital" style="background-image:url('yurt-4.jpg')" onclick="openLightbox('yurt',3)"></div>
+    <div class="yurt-photo" data-src="yurt-5.jpg" data-film="Dijital" style="background-image:url('yurt-5.jpg')" onclick="openLightbox('yurt',4)"></div>
+    <div class="yurt-photo" data-src="yurt-6.jpg" data-film="Dijital" style="background-image:url('yurt-6.jpg')" onclick="openLightbox('yurt',5)"></div>
+    <div class="yurt-photo" data-src="yurt-7.jpg" data-film="Dijital" style="background-image:url('yurt-7.jpg')" onclick="openLightbox('yurt',6)"></div>
+    <div class="yurt-photo" data-src="yurt-8.jpg" data-film="Dijital" style="background-image:url('yurt-8.jpg')" onclick="openLightbox('yurt',7)"></div>
+    <div class="yurt-photo" data-src="yurt-9.jpg" data-film="Dijital" style="background-image:url('yurt-9.jpg')" onclick="openLightbox('yurt',8)"></div>
+    <div class="yurt-photo" data-src="yurt-10.jpg" data-film="Dijital" style="background-image:url('yurt-10.jpg')" onclick="openLightbox('yurt',9)"></div>
+    <div class="yurt-photo" data-src="yurt-11.jpg" data-film="Dijital" style="background-image:url('yurt-11.jpg')" onclick="openLightbox('yurt',10)"></div>
+    <div class="yurt-photo" data-src="yurt-12.jpg" data-film="Dijital" style="background-image:url('yurt-12.jpg')" onclick="openLightbox('yurt',11)"></div>
+    <div class="yurt-photo" data-src="yurt-13.jpg" data-film="Dijital" style="background-image:url('yurt-13.jpg')" onclick="openLightbox('yurt',12)"></div>
+    <div class="yurt-photo" data-src="yurt-14.jpg" data-film="Dijital" style="background-image:url('yurt-14.jpg')" onclick="openLightbox('yurt',13)"></div>
+    <div class="yurt-photo" data-src="yurt-15.jpg" data-film="Dijital" style="background-image:url('yurt-15.jpg')" onclick="openLightbox('yurt',14)"></div>
+    <div class="yurt-photo" data-src="yurt-16.jpg" data-film="Dijital" style="background-image:url('yurt-16.jpg')" onclick="openLightbox('yurt',15)"></div>
+    <div class="yurt-photo" data-src="yurt-17.jpg" data-film="Dijital" style="background-image:url('yurt-17.jpg')" onclick="openLightbox('yurt',16)"></div>
+    <div class="yurt-photo" data-src="yurt-18.jpg" data-film="Dijital" style="background-image:url('yurt-18.jpg')" onclick="openLightbox('yurt',17)"></div>
+    <div class="yurt-photo" data-src="yurt-19.jpg" data-film="Dijital" style="background-image:url('yurt-19.jpg')" onclick="openLightbox('yurt',18)"></div>
+    <div class="yurt-photo" data-src="yurt-20.jpg" data-film="Dijital" style="background-image:url('yurt-20.jpg')" onclick="openLightbox('yurt',19)"></div>
+    <div class="yurt-photo" data-src="yurt-21.jpg" data-film="Dijital" style="background-image:url('yurt-21.jpg')" onclick="openLightbox('yurt',20)"></div>
+    <div class="yurt-photo" data-src="yurt-22.jpg" data-film="Dijital" style="background-image:url('yurt-22.jpg')" onclick="openLightbox('yurt',21)"></div>
+    <div class="yurt-photo" data-src="yurt-23.jpg" data-film="Dijital" style="background-image:url('yurt-23.jpg')" onclick="openLightbox('yurt',22)"></div>
+    <div class="yurt-photo" data-src="yurt-24.jpg" data-film="Dijital" style="background-image:url('yurt-24.jpg')" onclick="openLightbox('yurt',23)"></div>
+    <div class="yurt-photo" data-src="yurt-25.jpg" data-film="Dijital" style="background-image:url('yurt-25.jpg')" onclick="openLightbox('yurt',24)"></div>
+    <div class="yurt-photo" data-src="yurt-26.jpg" data-film="Dijital" style="background-image:url('yurt-26.jpg')" onclick="openLightbox('yurt',25)"></div>
+    <div class="yurt-photo" data-src="yurt-27.jpg" data-film="Dijital" style="background-image:url('yurt-27.jpg')" onclick="openLightbox('yurt',26)"></div>
+    <div class="yurt-photo" data-src="yurt-28.jpg" data-film="Dijital" style="background-image:url('yurt-28.jpg')" onclick="openLightbox('yurt',27)"></div>
+    <div class="yurt-photo" data-src="yurt-29.jpg" data-film="Dijital" style="background-image:url('yurt-29.jpg')" onclick="openLightbox('yurt',28)"></div>
+    <div class="yurt-photo" data-src="yurt-30.jpg" data-film="Dijital" style="background-image:url('yurt-30.jpg')" onclick="openLightbox('yurt',29)"></div>
+    <div class="yurt-photo" data-src="yurt-31.jpg" data-film="Dijital" style="background-image:url('yurt-31.jpg')" onclick="openLightbox('yurt',30)"></div>
+    <div class="yurt-photo" data-src="yurt-32.jpg" data-film="Dijital" style="background-image:url('yurt-32.jpg')" onclick="openLightbox('yurt',31)"></div>
+    <div class="yurt-photo" data-src="yurt-33.jpg" data-film="Dijital" style="background-image:url('yurt-33.jpg')" onclick="openLightbox('yurt',32)"></div>
+    <div class="yurt-photo" data-src="yurt-34.jpg" data-film="Dijital" style="background-image:url('yurt-34.jpg')" onclick="openLightbox('yurt',33)"></div>
+    <div class="yurt-photo" data-src="yurt-35.jpg" data-film="Dijital" style="background-image:url('yurt-35.jpg')" onclick="openLightbox('yurt',34)"></div>
+    <div class="yurt-photo" data-src="yurt-36.jpg" data-film="Dijital" style="background-image:url('yurt-36.jpg')" onclick="openLightbox('yurt',35)"></div>
+    <div class="yurt-photo" data-src="yurt-37.jpg" data-film="Dijital" style="background-image:url('yurt-37.jpg')" onclick="openLightbox('yurt',36)"></div>
+    <div class="yurt-photo" data-src="yurt-38.jpg" data-film="Dijital" style="background-image:url('yurt-38.jpg')" onclick="openLightbox('yurt',37)"></div>
+    <div class="yurt-photo" data-src="yurt-39.jpg" data-film="Dijital" style="background-image:url('yurt-39.jpg')" onclick="openLightbox('yurt',38)"></div>
+    <div class="yurt-photo" data-src="yurt-40.jpg" data-film="Dijital" style="background-image:url('yurt-40.jpg')" onclick="openLightbox('yurt',39)"></div>
   </div>
-
   <span class="yurt-back" onclick="goPage('projects')">← Projects'e dön</span>
-
-  <footer>
-    <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
-    <span class="fc">© 2025 Ahmet Kütük</span>
-  </footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
+
 <!-- DARKROOM -->
 <div class="page page-offset" id="page-darkroom">
   <div class="dr-page-intro"><div><h2>Darkroom</h2></div><p>Karanlık oda, dijital olmayan bir sürecin tam ortasında durmaktır. Kimyasal banyolar, elle yapılan baskılar, tekrarlanamayan anlar. Her baskı tek bir nüshadır.</p></div>
@@ -427,14 +415,14 @@
 <div class="page page-offset" id="page-largeformat">
   <div class="lf-intro">
     <h2>Large Format</h2>
-    <div class="lf-sub">4×5 · 8×10</div>
+    <div class="lf-sub">4×5 · Medium Format</div>
     <p>View camera ile alan çalışmaları. Yavaş süreç, tek negatif, geri dönüşü olmayan anlar.</p>
   </div>
   <div class="lf-grid">
     <div class="lf-item"><div class="lf-fill lf1"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 1</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
     <div class="lf-item"><div class="lf-fill lf2"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 2</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
-    <div class="lf-item"><div class="lf-fill lf3"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">8×10 · 2023</div></div></div>
-    <div class="lf-item"><div class="lf-fill lf4"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">8×10 · 2023</div></div></div>
+    <div class="lf-item"><div class="lf-fill lf3"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
+    <div class="lf-item"><div class="lf-fill lf4"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
   </div>
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
@@ -443,7 +431,13 @@
 <div class="page page-offset" id="page-journal">
   <div class="j-intro"><h2>Journal</h2></div>
   <div class="j-grid">
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc1"></div></div><div class="jc-date">Mayıs 2025</div><div class="jc-title">Film seçimi: kentsel belgesel için hangi emülsiyon?</div><div class="jc-ex">HP5, Tri-X ve Delta 400 üzerine alan notları.</div><span class="jc-tag">Film</span></div>
+    <div class="jc" onclick="goPage('bozkir')">
+      <div class="jc-img"><div class="jc-fill" style="background-image:url('yurt-p67-portra400-1.jpg');background-size:cover;background-position:center;"></div></div>
+      <div class="jc-date">2017 – 2018</div>
+      <div class="jc-title">Bozkırın Gümüş İzi</div>
+      <div class="jc-ex">Kırgızistan'a üç yolculuk. Pentax 67 ve 35mm ile analog notlar. 79 kare.</div>
+      <span class="jc-tag">Analog</span>
+    </div>
     <div class="jc"><div class="jc-img"><div class="jc-fill jc2"></div></div><div class="jc-date">Şubat 2025</div><div class="jc-title">Üretan geliştirici denemeleri</div><div class="jc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div><span class="jc-tag">Darkroom</span></div>
     <div class="jc"><div class="jc-img"><div class="jc-fill jc3"></div></div><div class="jc-date">Kasım 2024</div><div class="jc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="jc-ex">Kavramsal bir çerçeve üzerine notlar.</div><span class="jc-tag">Düşünceler</span></div>
     <div class="jc"><div class="jc-img"><div class="jc-fill jc4"></div></div><div class="jc-date">Eylül 2024</div><div class="jc-title">4×5 ile ilk çekim: yavaşlamanın değeri</div><div class="jc-ex">Large format'a geçiş süreci.</div><span class="jc-tag">Large Format</span></div>
@@ -453,31 +447,141 @@
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
+<!-- BOZKIRIN GÜMÜŞ İZİ -->
+<div class="page page-offset" id="page-bozkir">
+  <div class="bozkir-intro">
+    <div class="bozkir-intro-text">
+      <h2>Bozkırın Gümüş İzi</h2>
+      <span class="bozkir-subtitle">Kırgızistan · 2017–2018 · Analog Notlar</span>
+      <div class="bozkir-body">
+        <p>Bazı insanlar için fotoğraf bir tercih meselesidir. Benim için analog, bir tercihten çok bir duyu organı — altıncı his, gözle görülemeyen ama her karede hissedilen bir şey.</p>
+        <p>Kırgızistan'a üç kez gittim. Her seferinde yanımda dijital bir sistem de vardı — ama asıl iş filmde yapıldı. Çünkü Tanrı Dağları'nın gölgesi ve Issık Göl'ün kıyıları; hızlı ve sonsuz görüntüler için değil, her pozlama öncesinde durup düşünmek için davet ediyor insanı. Film bu yavaşlamayı zorunlu kılıyor. Ve bu zorunluluk, aslında bir özgürlük.</p>
+        <p>Pentax 67, bu yolculukların omurgasıydı. 105mm f/2.4 ile orta mesafede insan ve coğrafyanın birbirine karıştığı anlara, 55mm f/3.5 ile daha geniş, daha kapsayıcı bir bakışa ulaştım. 6×7 negatifin getirdiği ton zenginliği ve alan derinliği kontrolü, bozkırın o uçsuz bucaksız hissini taşıyabilecek tek format gibiydi.</p>
+        <p>Pentax'ın yetişemediği anlarda ise 35mm sistemler devreye girdi. Üç yolculukta farklı beraberlikler oldu — kiminde Nikon F5, kiminde F6. 70-200mm f/2.8 ile uzak ama yakın hissettiren kareler; 14-24mm f/2.8 ile bozkırın tamamını bir kareye sığdırma çabası. Leica M6 ise 50mm Elmarit ile sessizce ve görünmeden çalıştı. Sigma Art 35mm her iki sistemin arasında köprü kurdu.</p>
+        <p>Film seçimleri de bu coğrafyayla konuştu. Kodak Portra'nın toprak tonları, Fujifilm Pro 160NS'in soğuk ve derin gölgeleri, Fujifilm Pro 400H'ın yumuşak geçişleri, CineStill 800T'nin gündüz ışığında yarattığı o kendine özgü renk karakteri. Hepsi orijinal — hiçbir kare dönüştürülmedi, manipüle edilmedi. Filmin gördüğü, sizin gördüğünüz.</p>
+        <p>Bu fotoğraflar bir belge değil, bir his kaydı. Altıncı duyunun gördükleri.</p>
+      </div>
+      <div class="bozkir-gear">
+        <div class="bozkir-gear-col">
+          <div class="bozkir-gear-title">Ekipman</div>
+          <div class="bozkir-gear-item">Pentax 67 · 105mm f/2.4 · 55mm f/3.5</div>
+          <div class="bozkir-gear-item">Nikon F5 / F6 · 70-200mm f/2.8 · 14-24mm f/2.8</div>
+          <div class="bozkir-gear-item">Leica M6 · 50mm Elmarit</div>
+          <div class="bozkir-gear-item">Sigma Art 35mm</div>
+        </div>
+        <div class="bozkir-gear-col">
+          <div class="bozkir-gear-title">Filmler</div>
+          <div class="bozkir-gear-item">Fujifilm Pro 160NS · Fujifilm Pro 400H</div>
+          <div class="bozkir-gear-item">Kodak Portra 160 · Kodak Portra 400</div>
+          <div class="bozkir-gear-item">Ilford Delta 100 · Ilford Delta 400</div>
+          <div class="bozkir-gear-item">Fujifilm Xtra 400 · CineStill 800T</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bozkir-filter">
+    <button class="bfbtn active" onclick="bozkirFilter(this,'all')">All</button>
+    <button class="bfbtn" onclick="bozkirFilter(this,'p67')">Pentax 67</button>
+    <button class="bfbtn" onclick="bozkirFilter(this,'35mm')">35mm</button>
+  </div>
+  <div class="bozkir-gallery" id="bozkirGallery">
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-1.jpg" onclick="openLightbox('bozkir',0)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-2.jpg" onclick="openLightbox('bozkir',1)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-3.jpg" onclick="openLightbox('bozkir',2)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-4.jpg" onclick="openLightbox('bozkir',3)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-5.jpg" onclick="openLightbox('bozkir',4)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-6.jpg" onclick="openLightbox('bozkir',5)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · CineStill 800T" data-src="yurt-p67-cine800-7.jpg" onclick="openLightbox('bozkir',6)"><div class="bg-fill" style="background-image:url('yurt-p67-cine800-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Ilford Delta 100" data-src="yurt-p67-delta100-1.jpg" onclick="openLightbox('bozkir',7)"><div class="bg-fill" style="background-image:url('yurt-p67-delta100-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Ilford Delta 100" data-src="yurt-p67-delta100-2.jpg" onclick="openLightbox('bozkir',8)"><div class="bg-fill" style="background-image:url('yurt-p67-delta100-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Ilford Delta 100" data-src="yurt-p67-delta100-3.jpg" onclick="openLightbox('bozkir',9)"><div class="bg-fill" style="background-image:url('yurt-p67-delta100-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Ilford Delta 100" data-src="yurt-p67-delta100-4.jpg" onclick="openLightbox('bozkir',10)"><div class="bg-fill" style="background-image:url('yurt-p67-delta100-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-1.jpg" onclick="openLightbox('bozkir',11)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-2.jpg" onclick="openLightbox('bozkir',12)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-3.jpg" onclick="openLightbox('bozkir',13)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-4.jpg" onclick="openLightbox('bozkir',14)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-5.jpg" onclick="openLightbox('bozkir',15)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-6.jpg" onclick="openLightbox('bozkir',16)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-7.jpg" onclick="openLightbox('bozkir',17)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-8.jpg" onclick="openLightbox('bozkir',18)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-8.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-9.jpg" onclick="openLightbox('bozkir',19)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-9.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 160" data-src="yurt-p67-portra160-10.jpg" onclick="openLightbox('bozkir',20)"><div class="bg-fill" style="background-image:url('yurt-p67-portra160-10.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-1.jpg" onclick="openLightbox('bozkir',21)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-2.jpg" onclick="openLightbox('bozkir',22)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-3.jpg" onclick="openLightbox('bozkir',23)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-4.jpg" onclick="openLightbox('bozkir',24)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-5.jpg" onclick="openLightbox('bozkir',25)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-6.jpg" onclick="openLightbox('bozkir',26)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-7.jpg" onclick="openLightbox('bozkir',27)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-8.jpg" onclick="openLightbox('bozkir',28)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-8.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-9.jpg" onclick="openLightbox('bozkir',29)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-9.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-10.jpg" onclick="openLightbox('bozkir',30)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-10.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-11.jpg" onclick="openLightbox('bozkir',31)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-11.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-12.jpg" onclick="openLightbox('bozkir',32)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-12.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-13.jpg" onclick="openLightbox('bozkir',33)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-13.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-14.jpg" onclick="openLightbox('bozkir',34)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-14.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-15.jpg" onclick="openLightbox('bozkir',35)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-15.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-16.jpg" onclick="openLightbox('bozkir',36)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-16.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-17.jpg" onclick="openLightbox('bozkir',37)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-17.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-18.jpg" onclick="openLightbox('bozkir',38)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-18.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-19.jpg" onclick="openLightbox('bozkir',39)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-19.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Kodak Portra 400" data-src="yurt-p67-portra400-20.jpg" onclick="openLightbox('bozkir',40)"><div class="bg-fill" style="background-image:url('yurt-p67-portra400-20.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-1.jpg" onclick="openLightbox('bozkir',41)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-2.jpg" onclick="openLightbox('bozkir',42)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-3.jpg" onclick="openLightbox('bozkir',43)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-4.jpg" onclick="openLightbox('bozkir',44)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-5.jpg" onclick="openLightbox('bozkir',45)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-6.jpg" onclick="openLightbox('bozkir',46)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-7.jpg" onclick="openLightbox('bozkir',47)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-8.jpg" onclick="openLightbox('bozkir',48)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-8.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-9.jpg" onclick="openLightbox('bozkir',49)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-9.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-10.jpg" onclick="openLightbox('bozkir',50)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-10.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-11.jpg" onclick="openLightbox('bozkir',51)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-11.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-12.jpg" onclick="openLightbox('bozkir',52)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-12.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-13.jpg" onclick="openLightbox('bozkir',53)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-13.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 160NS" data-src="yurt-p67-pro160-14.jpg" onclick="openLightbox('bozkir',54)"><div class="bg-fill" style="background-image:url('yurt-p67-pro160-14.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-1.jpg" onclick="openLightbox('bozkir',55)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-2.jpg" onclick="openLightbox('bozkir',56)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-5.jpg" onclick="openLightbox('bozkir',57)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-6.jpg" onclick="openLightbox('bozkir',58)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-7.jpg" onclick="openLightbox('bozkir',59)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-8.jpg" onclick="openLightbox('bozkir',60)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-8.jpg')"></div></div>
+    <div class="bg-item" data-cat="p67" data-film="Pentax 67 · Fujifilm Pro 400H" data-src="yurt-p67-pro400h-9.jpg" onclick="openLightbox('bozkir',61)"><div class="bg-fill" style="background-image:url('yurt-p67-pro400h-9.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Ilford Delta 400" data-src="yurt-35mm-delta400-1.jpg" onclick="openLightbox('bozkir',62)"><div class="bg-fill" style="background-image:url('yurt-35mm-delta400-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Ilford Delta 400" data-src="yurt-35mm-delta400-2.jpg" onclick="openLightbox('bozkir',63)"><div class="bg-fill" style="background-image:url('yurt-35mm-delta400-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Ilford Delta 400" data-src="yurt-35mm-delta400-3.jpg" onclick="openLightbox('bozkir',64)"><div class="bg-fill" style="background-image:url('yurt-35mm-delta400-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-1.jpg" onclick="openLightbox('bozkir',65)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-2.jpg" onclick="openLightbox('bozkir',66)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-3.jpg" onclick="openLightbox('bozkir',67)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-3.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-4.jpg" onclick="openLightbox('bozkir',68)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-4.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-5.jpg" onclick="openLightbox('bozkir',69)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-5.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-6.jpg" onclick="openLightbox('bozkir',70)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-6.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-7.jpg" onclick="openLightbox('bozkir',71)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-7.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-8.jpg" onclick="openLightbox('bozkir',72)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-8.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-9.jpg" onclick="openLightbox('bozkir',73)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-9.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-10.jpg" onclick="openLightbox('bozkir',74)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-10.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Kodak Portra 400" data-src="yurt-35mm-portra400-11.jpg" onclick="openLightbox('bozkir',75)"><div class="bg-fill" style="background-image:url('yurt-35mm-portra400-11.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Fujifilm Xtra 400" data-src="yurt-35mm-xtra400-1.jpg" onclick="openLightbox('bozkir',76)"><div class="bg-fill" style="background-image:url('yurt-35mm-xtra400-1.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Fujifilm Xtra 400" data-src="yurt-35mm-xtra400-2.jpg" onclick="openLightbox('bozkir',77)"><div class="bg-fill" style="background-image:url('yurt-35mm-xtra400-2.jpg')"></div></div>
+    <div class="bg-item" data-cat="35mm" data-film="35mm · Fujifilm Xtra 400" data-src="yurt-35mm-xtra400-3.jpg" onclick="openLightbox('bozkir',78)"><div class="bg-fill" style="background-image:url('yurt-35mm-xtra400-3.jpg')"></div></div>
+  </div>
+  <span class="bozkir-back" onclick="goPage('journal')">← Journal'a dön</span>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+</div>
+
 <!-- ABOUT -->
 <div class="page page-offset" id="page-about">
   <div class="about-wrap">
-  <div class="about-text">
-    <h2>About</h2>
-    <p>Fotoğraf benim için bir görüntü üretme aracı olmaktan çok, zamanla kurulan bir ilişki biçimi.</p>
-    <p>Çalışmalarımın merkezinde insan, coğrafya ve belleğin birbirine bıraktığı izler yer alıyor. Hızla tüketilen görüntüler yerine, uzun süre bakmayı gerektiren hikâyelerin peşinden gidiyorum. Her proje, yalnızca belgelediği anı değil; o anın öncesini ve sonrasını da düşündüren bir araştırma sürecinin parçası.</p>
-    <p>Üretimlerimin büyük bölümünü analog yöntemlerle gerçekleştiriyorum. Özellikle 4×5 büyük format ve medium format kameralarla çalışıyor, negatiften baskıya kadar uzanan süreci karanlık odada tamamlamayı önemsiyorum. Kimyasal süreçlerin, ışığın ve zamanın bıraktığı izler, fotoğrafın ayrılmaz bir parçası olarak çalışmalarımın içinde yer alıyor.</p>
-    <p>Belgesel fotoğraf ile kişisel anlatı arasında kurduğum denge, beni farklı coğrafyalara ve kültürlere taşıyor. Göçebe yaşamlar, gelenekler, kolektif hafıza ve insanın yaşadığı toprakla kurduğu ilişki, uzun soluklu projelerimin ortak eksenini oluşturuyor. Fotoğrafın yalnızca gördüğümüzü değil, hissettiğimizi de aktarabileceğine inanıyorum.</p>
-    <p>Bu web sitesi, devam eden projelerimi, büyük format çalışmalarımı, karanlık oda üretimlerimi ve zaman içinde oluşan görsel arşivimi bir araya getiren yaşayan bir kayıt niteliği taşıyor. Buradaki her seri, tamamlanmış bir sonuçtan çok, hâlâ devam eden bir yolculuğun parçası.</p>
-    <div class="about-facts">
-      <div class="af-row"><span class="af-k">Konum</span><span class="af-v">İstanbul, Türkiye</span></div>
-      <div class="af-row"><span class="af-k">Formatlar</span><span class="af-v">35mm · 120 · 4×5 · Medium Format</span></div>
-      <div class="af-row"><span class="af-k">Filmler</span><span class="af-v">HP5 · Tri-X · Delta 400</span></div>
-      <div class="af-row"><span class="af-k">Geliştirici</span><span class="af-v">D-76 · Rodinal · HC-110</span></div>
-      <div class="af-row"><span class="af-k">İletişim</span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
-    </div>
-  </div>
-  <div class="about-photo">
-    <!-- Fotoğraf için: style="background-image:url('ahmet.jpg')" ekle -->
-  </div>
-</div>
+    <div class="about-text">
+      <h2>About</h2>
+      <p>Fotoğraf benim için bir görüntü üretme aracı olmaktan çok, zamanla kurulan bir ilişki biçimi.</p>
+      <p>Çalışmalarımın merkezinde insan, coğrafya ve belleğin birbirine bıraktığı izler yer alıyor. Hızla tüketilen görüntüler yerine, uzun süre bakmayı gerektiren hikâyelerin peşinden gidiyorum. Her proje, yalnızca belgelediği anı değil; o anın öncesini ve sonrasını da düşündüren bir araştırma sürecinin parçası.</p>
+      <p>Üretimlerimin büyük bölümünü analog yöntemlerle gerçekleştiriyorum. Özellikle 4×5 büyük format ve medium format kameralarla çalışıyor, negatiften baskıya kadar uzanan süreci karanlık odada tamamlamayı önemsiyorum. Kimyasal süreçlerin, ışığın ve zamanın bıraktığı izler, fotoğrafın ayrılmaz bir parçası olarak çalışmalarımın içinde yer alıyor.</p>
+      <p>Belgesel fotoğraf ile kişisel anlatı arasında kurduğum denge, beni farklı coğrafyalara ve kültürlere taşıyor. Göçebe yaşamlar, gelenekler, kolektif hafıza ve insanın yaşadığı toprakla kurduğu ilişki, uzun soluklu projelerimin ortak eksenini oluşturuyor.</p>
+      <p>Bu web sitesi, devam eden projelerimi, büyük format çalışmalarımı, karanlık oda üretimlerimi ve zaman içinde oluşan görsel arşivimi bir araya getiren yaşayan bir kayıt niteliği taşıyor.</p>
       <div class="about-facts">
         <div class="af-row"><span class="af-k">Konum</span><span class="af-v">İstanbul, Türkiye</span></div>
-        <div class="af-row"><span class="af-k">Formatlar</span><span class="af-v">35mm · 120 · 4×5 · 8×10</span></div>
+        <div class="af-row"><span class="af-k">Formatlar</span><span class="af-v">35mm · 120 · 4×5 · Medium Format</span></div>
         <div class="af-row"><span class="af-k">Filmler</span><span class="af-v">HP5 · Tri-X · Delta 400</span></div>
         <div class="af-row"><span class="af-k">Geliştirici</span><span class="af-v">D-76 · Rodinal · HC-110</span></div>
         <div class="af-row"><span class="af-k">İletişim</span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
@@ -488,27 +592,42 @@
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<script>
-  let cur = 0;
-  const slidesEl = document.getElementById('slides');
-  const dotEls = document.querySelectorAll('.dot');
+<!-- LIGHTBOX -->
+<div class="lb-overlay" id="lbOverlay" onclick="closeLightbox()">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <button class="lb-prev" onclick="event.stopPropagation();lbPrev()">&#8592;</button>
+  <button class="lb-next" onclick="event.stopPropagation();lbNext()">&#8594;</button>
+  <div class="lb-inner" onclick="event.stopPropagation()">
+    <img class="lb-img" id="lbImg" src="" alt="">
+    <div class="lb-info" id="lbInfo"></div>
+  </div>
+  <div class="lb-counter" id="lbCounter"></div>
+</div>
 
+<script>
+  // SLIDER
+  var cur = 0;
+  var slidesEl = document.getElementById('slides');
+  var dotEls = document.querySelectorAll('.dot');
   function go(n) {
     cur = (n + 3) % 3;
     slidesEl.style.transform = 'translateX(-' + (cur * 100) + '%)';
     dotEls.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
   }
-
   setInterval(function() { go(cur + 1); }, 5000);
 
+  // NAVİGASYON
   function goPage(id) {
     document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
     document.getElementById('page-' + id).classList.add('active');
     document.querySelectorAll('.nav-links li a').forEach(function(a) { a.classList.remove('active'); });
-    document.getElementById('nav-' + id).classList.add('active');
+    var navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
     window.scrollTo(0, 0);
+    updateLightboxItems();
   }
 
+  // PROJECTS FİLTRE
   function filter(btn, cat) {
     document.querySelectorAll('.fbtn').forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
@@ -516,6 +635,71 @@
       item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
     });
   }
+
+  // BOZKIR FİLTRE
+  function bozkirFilter(btn, cat) {
+    document.querySelectorAll('.bfbtn').forEach(function(b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+    document.querySelectorAll('.bg-item').forEach(function(item) {
+      item.classList.toggle('hidden', cat !== 'all' && item.dataset.cat !== cat);
+    });
+    updateLightboxItems();
+  }
+
+  // LIGHTBOX
+  var lbItems = [];
+  var lbCurrent = 0;
+  var lbMode = '';
+
+  function updateLightboxItems() {
+    if (lbMode === 'yurt') {
+      lbItems = Array.from(document.querySelectorAll('.yurt-photo'));
+    } else if (lbMode === 'bozkir') {
+      lbItems = Array.from(document.querySelectorAll('.bg-item:not(.hidden)'));
+    }
+  }
+
+  function openLightbox(mode, idx) {
+    lbMode = mode;
+    updateLightboxItems();
+    lbCurrent = idx;
+    showLightboxPhoto();
+    document.getElementById('lbOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showLightboxPhoto() {
+    if (lbItems.length === 0) return;
+    var item = lbItems[lbCurrent];
+    var src = item.dataset.src;
+    var film = item.dataset.film || '';
+    document.getElementById('lbImg').src = src;
+    document.getElementById('lbInfo').textContent = film;
+    document.getElementById('lbCounter').textContent = (lbCurrent + 1) + ' / ' + lbItems.length;
+  }
+
+  function lbPrev() {
+    lbCurrent = (lbCurrent - 1 + lbItems.length) % lbItems.length;
+    showLightboxPhoto();
+  }
+
+  function lbNext() {
+    lbCurrent = (lbCurrent + 1) % lbItems.length;
+    showLightboxPhoto();
+  }
+
+  function closeLightbox() {
+    document.getElementById('lbOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var lb = document.getElementById('lbOverlay');
+    if (!lb || !lb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') lbPrev();
+    if (e.key === 'ArrowRight') lbNext();
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
 
 </body>
