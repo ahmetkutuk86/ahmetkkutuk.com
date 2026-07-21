@@ -659,10 +659,21 @@
     }
   }
 
-  function openLightbox(mode, idx) {
+ unction openLightbox(mode, idx) {
     lbMode = mode;
     updateLightboxItems();
-    lbCurrent = idx;
+    if (mode === 'bozkir') {
+      var allItems = Array.from(document.querySelectorAll('.bg-item'));
+      var visibleIdx = 0;
+      for (var i = 0; i < allItems.length; i++) {
+        if (!allItems[i].classList.contains('hidden')) {
+          if (i === idx) { lbCurrent = visibleIdx; break; }
+          visibleIdx++;
+        }
+      }
+    } else {
+      lbCurrent = idx;
+    }
     showLightboxPhoto();
     document.getElementById('lbOverlay').classList.add('open');
     document.body.style.overflow = 'hidden';
