@@ -167,11 +167,11 @@
     .suya-gear{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid #e0ddd6;}
     .suya-gear-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#bbb;margin-bottom:1rem;}
     .suya-gear-item{font-size:12px;color:#888;line-height:2;}
-
     .suya-gallery{padding:3rem;}
+
     .suya-row-pano{margin-bottom:4px;}
     .suya-pano{cursor:pointer;overflow:hidden;width:100%;}
-    .suya-pano-fill{aspect-ratio:2/1;background-size:cover;background-position:center;transition:transform .6s ease;width:100%;}
+    .suya-pano-fill{aspect-ratio:2/1;background-size:cover;background-position:center;transition:transform .6s ease;}
     .suya-pano:hover .suya-pano-fill{transform:scale(1.02);}
 
     .suya-row-kare{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
@@ -179,25 +179,23 @@
     .suya-kare-fill{aspect-ratio:1/1;background-size:cover;background-position:center;transition:transform .6s ease;}
     .suya-kare:hover .suya-kare-fill{transform:scale(1.02);}
 
-    .suya-row-tek{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
-    .suya-tek{cursor:pointer;overflow:hidden;grid-column:1;}
-    .suya-tek-fill{aspect-ratio:1/1;background-size:cover;background-position:center;transition:transform .6s ease;}
-    .suya-tek:hover .suya-tek-fill{transform:scale(1.02);}
-
     .suya-row-xpan{margin-bottom:4px;}
     .suya-xpan{cursor:pointer;overflow:hidden;width:100%;}
     .suya-xpan-fill{aspect-ratio:65/24;background-size:cover;background-position:center;transition:transform .6s ease;}
     .suya-xpan:hover .suya-xpan-fill{transform:scale(1.02);}
 
-    .suya-row-dikey{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
-    .suya-dikey{cursor:pointer;overflow:hidden;grid-column:2;}
-    .suya-dikey-fill{aspect-ratio:1/2;background-size:cover;background-position:center;transition:transform .6s ease;}
-    .suya-dikey:hover .suya-dikey-fill{transform:scale(1.02);}
+    .suya-row-son{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;align-items:start;}
+    .suya-tek-genis{cursor:pointer;overflow:hidden;}
+    .suya-tek-genis-fill{aspect-ratio:1/1;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-tek-genis:hover .suya-tek-genis-fill{transform:scale(1.02);}
+    .suya-dikey-genis{cursor:pointer;overflow:hidden;}
+    .suya-dikey-genis-fill{aspect-ratio:1/2;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-dikey-genis:hover .suya-dikey-genis-fill{transform:scale(1.02);}
 
     .suya-back{display:block;text-align:center;padding:2.5rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
     .suya-back:hover{color:#1c1c1a;}
 
-    /* YURT SAYFASI */
+        /* YURT SAYFASI */
     .yurt-intro{padding:4rem 3rem 3rem;max-width:720px;margin:0 auto;}
     .yurt-intro h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;margin-bottom:2.5rem;text-align:center;}
     .yurt-text{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;}
@@ -277,7 +275,7 @@
         <span class="slide-cap">Yurt — 2017–2018</span>
       </div>
       <div class="slide s2" style="background-image:url('suya-2.jpg');cursor:pointer;" onclick="goPage('suya')">
-        <span class="slide-cap">Suya Yazılan Hayatlar — 2023–2026</span>
+        <span class="slide-cap">2023–2026</span>
       </div>
       <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
     </div>
@@ -471,9 +469,10 @@
           <div class="suya-gear-item">Xpan Panoramik</div>
         </div>
         <div class="suya-gear-col">
-          <div class="suya-gear-title">Yıl</div>
+          <div class="suya-gear-title">Proje</div>
           <div class="suya-gear-item">2023 – 2026</div>
           <div class="suya-gear-item">Analog Film · Karanlık Oda</div>
+          <div class="suya-gear-item">Güzel Sanatlar Bitirme Projesi</div>
         </div>
       </div>
     </div>
@@ -529,14 +528,12 @@
         <div class="suya-kare-fill" style="background-image:url('suya-11.jpg')"></div>
       </div>
     </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-12.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(11)">
-        <div class="suya-tek-fill" style="background-image:url('suya-12.jpg')"></div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-12.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(11)">
+        <div class="suya-kare-fill" style="background-image:url('suya-12.jpg')"></div>
       </div>
-    </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-13.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(12)">
-        <div class="suya-tek-fill" style="background-image:url('suya-13.jpg')"></div>
+      <div class="suya-kare" data-src="suya-13.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(12)">
+        <div class="suya-kare-fill" style="background-image:url('suya-13.jpg')"></div>
       </div>
     </div>
     <div class="suya-row-pano">
@@ -552,14 +549,12 @@
         <div class="suya-kare-fill" style="background-image:url('suya-16.jpg')"></div>
       </div>
     </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-17.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(16)">
-        <div class="suya-tek-fill" style="background-image:url('suya-17.jpg')"></div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-17.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(16)">
+        <div class="suya-kare-fill" style="background-image:url('suya-17.jpg')"></div>
       </div>
-    </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-18.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(17)">
-        <div class="suya-tek-fill" style="background-image:url('suya-18.jpg')"></div>
+      <div class="suya-kare" data-src="suya-18.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(17)">
+        <div class="suya-kare-fill" style="background-image:url('suya-18.jpg')"></div>
       </div>
     </div>
     <div class="suya-row-pano">
@@ -587,9 +582,9 @@
         <div class="suya-pano-fill" style="background-image:url('suya-23.jpg')"></div>
       </div>
     </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-24.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(23)">
-        <div class="suya-tek-fill" style="background-image:url('suya-24.jpg')"></div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-24.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(23)">
+        <div class="suya-pano-fill" style="background-image:url('suya-24.jpg')"></div>
       </div>
     </div>
     <div class="suya-row-xpan">
@@ -597,14 +592,12 @@
         <div class="suya-xpan-fill" style="background-image:url('suya-25.jpg')"></div>
       </div>
     </div>
-    <div class="suya-row-tek">
-      <div class="suya-tek" data-src="suya-26.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(25)">
-        <div class="suya-tek-fill" style="background-image:url('suya-26.jpg')"></div>
+    <div class="suya-row-son">
+      <div class="suya-tek-genis" data-src="suya-26.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(25)">
+        <div class="suya-tek-genis-fill" style="background-image:url('suya-26.jpg')"></div>
       </div>
-    </div>
-    <div class="suya-row-dikey">
-      <div class="suya-dikey" data-src="suya-27.jpg" data-film="Linhof 6×12 · Dikey Panoramik" onclick="openSuya(26)">
-        <div class="suya-dikey-fill" style="background-image:url('suya-27.jpg')"></div>
+      <div class="suya-dikey-genis" data-src="suya-27.jpg" data-film="Linhof 6×12 · Dikey Panoramik" onclick="openSuya(26)">
+        <div class="suya-dikey-genis-fill" style="background-image:url('suya-27.jpg')"></div>
       </div>
     </div>
   </div>
