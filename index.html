@@ -157,6 +157,46 @@
     .af-k{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;}
     .af-v{font-size:12px;color:#555;letter-spacing:.04em;}
 
+
+    /* SUYA YAZILAN HAYATLAR */
+    .suya-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
+    .suya-intro-text{max-width:800px;margin:0 auto;}
+    .suya-intro h2{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:300;color:#1c1c1a;margin-bottom:.6rem;}
+    .suya-subtitle{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:#bbb;margin-bottom:2.5rem;display:block;}
+    .suya-body p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:17px;line-height:2.1;color:#4a4844;margin-bottom:1.4rem;}
+    .suya-gear{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:2.5rem;padding-top:2rem;border-top:0.5px solid #e0ddd6;}
+    .suya-gear-title{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#bbb;margin-bottom:1rem;}
+    .suya-gear-item{font-size:12px;color:#888;line-height:2;}
+
+    .suya-gallery{padding:3rem;}
+    .suya-row-pano{margin-bottom:4px;}
+    .suya-pano{cursor:pointer;overflow:hidden;width:100%;}
+    .suya-pano-fill{aspect-ratio:2/1;background-size:cover;background-position:center;transition:transform .6s ease;width:100%;}
+    .suya-pano:hover .suya-pano-fill{transform:scale(1.02);}
+
+    .suya-row-kare{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
+    .suya-kare{cursor:pointer;overflow:hidden;}
+    .suya-kare-fill{aspect-ratio:1/1;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-kare:hover .suya-kare-fill{transform:scale(1.02);}
+
+    .suya-row-tek{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
+    .suya-tek{cursor:pointer;overflow:hidden;grid-column:1;}
+    .suya-tek-fill{aspect-ratio:1/1;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-tek:hover .suya-tek-fill{transform:scale(1.02);}
+
+    .suya-row-xpan{margin-bottom:4px;}
+    .suya-xpan{cursor:pointer;overflow:hidden;width:100%;}
+    .suya-xpan-fill{aspect-ratio:65/24;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-xpan:hover .suya-xpan-fill{transform:scale(1.02);}
+
+    .suya-row-dikey{display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:4px;}
+    .suya-dikey{cursor:pointer;overflow:hidden;grid-column:2;}
+    .suya-dikey-fill{aspect-ratio:1/2;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .suya-dikey:hover .suya-dikey-fill{transform:scale(1.02);}
+
+    .suya-back{display:block;text-align:center;padding:2.5rem;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:#aaa;cursor:pointer;border-top:0.5px solid #e0ddd6;}
+    .suya-back:hover{color:#1c1c1a;}
+
     /* YURT SAYFASI */
     .yurt-intro{padding:4rem 3rem 3rem;max-width:720px;margin:0 auto;}
     .yurt-intro h2{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:300;margin-bottom:2.5rem;text-align:center;}
@@ -236,7 +276,9 @@
       <div class="slide s1" style="background-image:url('yurt-1.jpg');cursor:pointer;" onclick="goPage('yurt')">
         <span class="slide-cap">Yurt — 2017–2018</span>
       </div>
-      <div class="slide s2"><span class="slide-cap">Seri Adı — 2023</span></div>
+      <div class="slide s2" style="background-image:url('suya-2.jpg');cursor:pointer;" onclick="goPage('suya')">
+        <span class="slide-cap">Suya Yazılan Hayatlar — 2023–2026</span>
+      </div>
       <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
@@ -317,6 +359,16 @@
         <span class="proj-tag">Digital</span>
       </div>
     </div>
+    <div class="proj-item" data-cat="120mm" onclick="goPage('suya')">
+      <div class="proj-thumb"><div class="pt-fill" style="background-image:url('suya-2.jpg')"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">001</div>
+        <div class="proj-title">Suya Yazılan Hayatlar</div>
+        <div class="proj-desc">Yusufeli Barajı nedeniyle yerinden edilen toplulukların belgesel serisi.</div>
+        <div class="proj-meta">2023–2026 · 27 kare · Linhof 6×12 · Hasselblad 500CM</div>
+        <span class="proj-tag">120mm</span>
+      </div>
+    </div>
     <div class="proj-item" data-cat="35mm">
       <div class="proj-thumb"><div class="pt-fill pt2"></div></div>
       <div class="proj-info"><div class="proj-num">001</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2023 · 12 kare · Delta 400</div><span class="proj-tag">35mm</span></div>
@@ -392,6 +444,178 @@
   </div>
   <span class="yurt-back" onclick="goPage('projects')">← Projects'e dön</span>
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+</div>
+
+<!-- ===================== SUYA ===================== -->
+<div class="page page-offset" id="page-suya">
+  <div class="suya-intro">
+    <div class="suya-intro-text">
+      <h2>Suya Yazılan Hayatlar</h2>
+      <span class="suya-subtitle">Yusufeli · 2023–2026 · Analog</span>
+      <div class="suya-body">
+        <p>Barajlar, modernleşme söyleminin en görünür simgelerinden biridir. Enerji üretir, taşkınları kontrol eder, kentlere ve sanayiye su sağlar. Ancak her büyük mühendislik yapısı aynı zamanda görünmeyen başka bir coğrafya da üretir; haritalardan silinen yerleşimler, parçalanan toplumsal ilişkiler ve yeniden kurulmak zorunda kalan yaşamlar.</p>
+        <p>Artvin'in Çoruh Havzası üzerinde inşa edilen Yusufeli Barajı, 275 metrelik gövde yüksekliğiyle Türkiye'nin en yüksek, dünyanın ise en yüksek kemer barajlarından biri olarak tanımlanmaktadır. Tam kapasiteye ulaştığında yaklaşık 2,5 milyon kişinin elektrik ihtiyacını karşılayacak ve ülke ekonomisine yıllık milyarlarca liralık enerji katkısı sağlayacaktır.</p>
+        <p>Bu ekonomik ve teknik başarı anlatısının yanında daha az görünür bir başka hikâye vardır.</p>
+        <p>Suya Yazılan Hayatlar, bu zorunlu dönüşümün teknik boyutundan çok, insanların gündelik yaşamlarında bıraktığı izleri anlamaya çalışan uzun soluklu bir belgesel fotoğraf projesidir.</p>
+        <p>Yıllar boyunca tarım ve hayvancılık üzerine kurulan üretim biçimleri, yalnızca ekonomik faaliyetler değil; aynı zamanda komşuluk ilişkilerinin, aile hafızasının ve kuşaklar boyunca aktarılan kültürel bilginin taşıyıcısıydı. Yeni yerleşim alanlarında ise aynı insanlar, aynı dağlara bakmalarına rağmen artık farklı bir mekânsal düzen içerisinde yaşamlarını yeniden kurmaktadır.</p>
+        <p>Yusufeli, tarih boyunca Türk, Gürcü, Hemşinli ve diğer yerel toplulukların bir arada yaşadığı çok katmanlı bir kültürel coğrafya olmuştur. Yer değiştirme, bu ortak hafızayı fiziksel olarak ortadan kaldırmasa da onun mekânla kurduğu ilişkiyi geri dönülmez biçimde değiştirir.</p>
+        <p>Bu çalışma, ne nostaljiyi romantize etmeyi ne de kalkınma söylemini reddetmeyi amaçlar. Belgesel fotoğrafın eleştirel geleneği içinde durarak, aynı coğrafyanın iki farklı yüzünü birlikte görünür kılmaya çalışır.</p>
+        <p>Su altında kalan yalnızca yapılar değildir. Bir kentin belleği, çocukluk yolları, üretim biçimleri ve kuşaklar boyunca aktarılan gündelik hayat pratikleri de suyun yükselişiyle birlikte başka bir zamana taşınır.</p>
+        <p>Bu çalışma, tam da o geçiş anının görsel hafızasını oluşturmaya çalışmaktadır.</p>
+      </div>
+      <div class="suya-gear">
+        <div class="suya-gear-col">
+          <div class="suya-gear-title">Ekipman</div>
+          <div class="suya-gear-item">Linhof 6×12 Panoramik Kamera</div>
+          <div class="suya-gear-item">Hasselblad 500 CM · 6×6</div>
+          <div class="suya-gear-item">Xpan Panoramik</div>
+        </div>
+        <div class="suya-gear-col">
+          <div class="suya-gear-title">Yıl</div>
+          <div class="suya-gear-item">2023 – 2026</div>
+          <div class="suya-gear-item">Analog Film · Karanlık Oda</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="suya-gallery">
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-1.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(0)">
+        <div class="suya-pano-fill" style="background-image:url('suya-1.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-2.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(1)">
+        <div class="suya-pano-fill" style="background-image:url('suya-2.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-3.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(2)">
+        <div class="suya-pano-fill" style="background-image:url('suya-3.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-4.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(3)">
+        <div class="suya-kare-fill" style="background-image:url('suya-4.jpg')"></div>
+      </div>
+      <div class="suya-kare" data-src="suya-5.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(4)">
+        <div class="suya-kare-fill" style="background-image:url('suya-5.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-6.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(5)">
+        <div class="suya-pano-fill" style="background-image:url('suya-6.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-7.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(6)">
+        <div class="suya-kare-fill" style="background-image:url('suya-7.jpg')"></div>
+      </div>
+      <div class="suya-kare" data-src="suya-8.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(7)">
+        <div class="suya-kare-fill" style="background-image:url('suya-8.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-9.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(8)">
+        <div class="suya-pano-fill" style="background-image:url('suya-9.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-10.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(9)">
+        <div class="suya-kare-fill" style="background-image:url('suya-10.jpg')"></div>
+      </div>
+      <div class="suya-kare" data-src="suya-11.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(10)">
+        <div class="suya-kare-fill" style="background-image:url('suya-11.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-12.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(11)">
+        <div class="suya-tek-fill" style="background-image:url('suya-12.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-13.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(12)">
+        <div class="suya-tek-fill" style="background-image:url('suya-13.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-14.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(13)">
+        <div class="suya-pano-fill" style="background-image:url('suya-14.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-kare">
+      <div class="suya-kare" data-src="suya-15.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(14)">
+        <div class="suya-kare-fill" style="background-image:url('suya-15.jpg')"></div>
+      </div>
+      <div class="suya-kare" data-src="suya-16.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(15)">
+        <div class="suya-kare-fill" style="background-image:url('suya-16.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-17.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(16)">
+        <div class="suya-tek-fill" style="background-image:url('suya-17.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-18.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(17)">
+        <div class="suya-tek-fill" style="background-image:url('suya-18.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-19.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(18)">
+        <div class="suya-pano-fill" style="background-image:url('suya-19.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-20.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(19)">
+        <div class="suya-pano-fill" style="background-image:url('suya-20.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-21.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(20)">
+        <div class="suya-pano-fill" style="background-image:url('suya-21.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-22.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(21)">
+        <div class="suya-pano-fill" style="background-image:url('suya-22.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-pano">
+      <div class="suya-pano" data-src="suya-23.jpg" data-film="Linhof 6×12 · Panoramik" onclick="openSuya(22)">
+        <div class="suya-pano-fill" style="background-image:url('suya-23.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-24.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(23)">
+        <div class="suya-tek-fill" style="background-image:url('suya-24.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-xpan">
+      <div class="suya-xpan" data-src="suya-25.jpg" data-film="Xpan · Panoramik" onclick="openSuya(24)">
+        <div class="suya-xpan-fill" style="background-image:url('suya-25.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-tek">
+      <div class="suya-tek" data-src="suya-26.jpg" data-film="Hasselblad 500CM · 6×6" onclick="openSuya(25)">
+        <div class="suya-tek-fill" style="background-image:url('suya-26.jpg')"></div>
+      </div>
+    </div>
+    <div class="suya-row-dikey">
+      <div class="suya-dikey" data-src="suya-27.jpg" data-film="Linhof 6×12 · Dikey Panoramik" onclick="openSuya(26)">
+        <div class="suya-dikey-fill" style="background-image:url('suya-27.jpg')"></div>
+      </div>
+    </div>
+  </div>
+
+  <span class="suya-back" onclick="goPage('projects')">← Projects'e dön</span>
+
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
 </div>
 
 <!-- DARKROOM -->
@@ -605,6 +829,22 @@
 </div>
 
 <script>
+
+  // SUYA LİGHTBOX
+  var suyaItems = [];
+  var suyaCurrent = 0;
+
+  function openSuya(idx) {
+    suyaItems = Array.from(document.querySelectorAll('#page-suya [data-src]'));
+    suyaCurrent = idx;
+    lbMode = 'suya';
+    lbItems = suyaItems;
+    lbCurrent = idx;
+    showLightboxPhoto();
+    document.getElementById('lbOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
   // SLIDER
   var cur = 0;
   var slidesEl = document.getElementById('slides');
