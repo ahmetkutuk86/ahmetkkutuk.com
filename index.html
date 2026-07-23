@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" id="html-root">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -158,6 +158,28 @@
     .af-v{font-size:12px;color:#555;letter-spacing:.04em;}
 
 
+
+    .home-grid-two{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:#e0ddd6;}
+    .gi-two{overflow:hidden;cursor:pointer;position:relative;height:440px;}
+    .gi-two-fill{width:100%;height:100%;background-size:cover;background-position:center;transition:transform .7s ease;}
+    .gi-two:hover .gi-two-fill{transform:scale(1.04);}
+    .gi-two:hover .gi-overlay{opacity:1;}
+    .j-grid-one{grid-template-columns:1fr !important;max-width:500px;}
+
+
+    /* DİL SİSTEMİ */
+    .lang-toggle{display:flex;align-items:center;gap:.4rem;padding-left:1.2rem;border-left:1px solid #e8e5e0;margin-left:.5rem;height:58px;}
+    .lang-btn{font-size:10px;letter-spacing:.18em;color:#bbb;cursor:pointer;transition:color .2s;}
+    .lang-btn.active{color:#1c1c1a;}
+    .lang-sep{font-size:10px;color:#ddd;}
+    html[lang="tr"] .en{display:none;}
+    html[lang="en"] .tr{display:none;}
+    .tr,.en{display:inline;}
+    h1 .tr, h1 .en, h2 .tr, h2 .en,
+    .yurt-text .tr, .yurt-text .en,
+    .suya-body .tr, .suya-body .en,
+    .bozkir-body .tr, .bozkir-body .en{display:block;}
+
     /* SUYA YAZILAN HAYATLAR */
     .suya-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
     .suya-intro-text{max-width:800px;margin:0 auto;}
@@ -256,14 +278,18 @@
   <a class="logo" onclick="goPage('home')">Ahmet Kütük</a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a onclick="goPage('home')" id="nav-home" class="active">Home</a></li>
-      <li><a onclick="goPage('projects')" id="nav-projects">Projects</a></li>
-      <li><a onclick="goPage('darkroom')" id="nav-darkroom">Darkroom</a></li>
-      <li><a onclick="goPage('largeformat')" id="nav-largeformat">Large Format</a></li>
-      <li><a onclick="goPage('journal')" id="nav-journal">Journal</a></li>
-      <li><a onclick="goPage('about')" id="nav-about">About</a></li>
+      <li><a onclick="goPage('home')" id="nav-home" class="active"><span class="tr">Ana Sayfa</span><span class="en">Home</span></a></li>
+      <li><a onclick="goPage('projects')" id="nav-projects"><span class="tr">Projeler</span><span class="en">Projects</span></a></li>
+      <li><a onclick="goPage('darkroom')" id="nav-darkroom"><span class="tr">Karanlık Oda</span><span class="en">Darkroom</span></a></li>
+      <li><a onclick="goPage('largeformat')" id="nav-largeformat"><span class="tr">Büyük Format</span><span class="en">Large Format</span></a></li>
+      <li><a onclick="goPage('journal')" id="nav-journal"><span class="tr">Saha Notları</span><span class="en">Field Notes</span></a></li>
+      <li><a onclick="goPage('about')" id="nav-about"><span class="tr">Hakkımda</span><span class="en">About</span></a></li>
     </ul>
-    <span class="nav-lang">TR / EN</span>
+    <div class="lang-toggle">
+      <span class="lang-btn active" id="btn-tr" onclick="setLang('tr')">TR</span>
+      <span class="lang-sep">/</span>
+      <span class="lang-btn" id="btn-en" onclick="setLang('en')">EN</span>
+    </div>
   </div>
 </nav>
 
@@ -277,72 +303,61 @@
       <div class="slide s2" style="background-image:url('suya-2.jpg');cursor:pointer;" onclick="goPage('suya')">
         <span class="slide-cap">2023–2026</span>
       </div>
-      <div class="slide s3"><span class="slide-cap">Seri Adı — 2023</span></div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
     <button class="harrow" style="right:1.5rem" onclick="go(cur+1)">&#8594;</button>
     <div class="hero-dots">
       <div class="dot active" onclick="go(0)"></div>
       <div class="dot" onclick="go(1)"></div>
-      <div class="dot" onclick="go(2)"></div>
     </div>
   </section>
   <div class="home-intro">
-    <h1>Belgesel fotografinin<br><em>ham dili.</em></h1>
-    <div class="home-meta">İstanbul merkezli<br>Film · Analog · Darkroom<br>Large Format · Fine Art</div>
+    <h1>
+      <span class="tr">Belgesel fotografinin<br><em>ham dili.</em></span>
+      <span class="en">The <em>raw language</em><br>of documentary.</span>
+    </h1>
+    <div class="home-meta">
+      <span class="tr">İstanbul merkezli<br>Film · Analog · Karanlık Oda<br>Büyük Format · Fine Art</span>
+      <span class="en">Istanbul based<br>Film · Analog · Darkroom<br>Large Format · Fine Art</span>
+    </div>
   </div>
   <div class="section-wrap">
     <div class="sec-row">
-      <span class="sec-label">Seçili Seriler</span>
-      <span class="sec-more" onclick="goPage('projects')">Tümünü gör →</span>
+      <span class="sec-label"><span class="tr">Seçili Seriler</span><span class="en">Selected Works</span></span>
+      <span class="sec-more" onclick="goPage('projects')"><span class="tr">Tümünü gör →</span><span class="en">View all →</span></span>
     </div>
     <div class="home-grid">
-      <div class="gi" onclick="goPage('yurt')"><div class="gi-fill" style="background-image:url('yurt-1.jpg')"></div><div class="gi-overlay"><div class="gi-title">Yurt</div><div class="gi-sub">2017–2018 · Dijital</div></div></div>
-      <div class="gi" onclick="goPage('suya')"><div class="gi-fill" style="background-image:url('suya-2.jpg')"></div><div class="gi-overlay"><div class="gi-title">Suya Yazılan Hayatlar</div><div class="gi-sub">2023–2026 · Analog</div></div></div>
+      <div class="gi" onclick="goPage('yurt')"><div class="gi-fill" style="background-image:url('yurt-1.jpg')"></div><div class="gi-overlay"><div class="gi-title">Yurt</div><div class="gi-sub"><span class="tr">2017–2018 · Dijital</span><span class="en">2017–2018 · Digital</span></div></div></div>
       <div class="gi"><div class="gi-fill f2"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 24 kare</div></div></div>
       <div class="gi"><div class="gi-fill f3"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2023 · 31 kare</div></div></div>
       <div class="gi"><div class="gi-fill f4"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 14 kare · 120</div></div></div>
       <div class="gi"><div class="gi-fill f5"></div><div class="gi-overlay"><div class="gi-title">Seri Adı</div><div class="gi-sub">2022 · 20 kare</div></div></div>
     </div>
   </div>
-  <div class="home-dr">
-    <div class="dr-left">
-      <div>
-        <div class="dr-lbl">Darkroom</div>
-        <h2 class="dr-h">Kimyasal sürecin<br><em>sessiz ritmi</em></h2>
-        <p class="dr-p">Film bazlı çalışmalar, elle baskı süreçleri. Her baskı tektir.</p>
-        <span class="dr-cta" onclick="goPage('darkroom')">Süreci keşfet →</span>
-      </div>
-      <div class="dr-films">HP5 · Tri-X · Delta 400<br>Ilford Multigrade · Fomabrom</div>
-    </div>
-    <div class="dr-right">
-      <div class="di di1"></div><div class="di di2"></div><div class="di di3"></div><div class="di di4"></div>
-    </div>
-  </div>
   <div class="home-journal">
     <div class="sec-row">
-      <span class="sec-label">Journal</span>
-      <span class="sec-more" onclick="goPage('journal')">Tümünü gör →</span>
+      <span class="sec-label"><span class="tr">Saha Notları</span><span class="en">Field Notes</span></span>
+      <span class="sec-more" onclick="goPage('journal')"><span class="tr">Tümünü gör →</span><span class="en">View all →</span></span>
     </div>
     <div class="blog-grid">
       <div class="bc" onclick="goPage('bozkir')">
         <div class="bc-img"><div class="bc-fill" style="background-image:url('yurt-p67-portra400-1.jpg')"></div></div>
         <div class="bc-date">2017 – 2018</div>
-        <div class="bc-title">Bozkırın Gümüş İzi — Kırgızistan Analog Notları</div>
-        <div class="bc-ex">Pentax 67 ve 35mm ile çekilen analog notlar. 79 kare, altı farklı film.</div>
+        <div class="bc-title"><span class="tr">Bozkırın Gümüş İzi — Kırgızistan Analog Notları</span><span class="en">The Silver Trace of the Steppe — Kyrgyzstan Analog Notes</span></div>
+        <div class="bc-ex"><span class="tr">Pentax 67 ve 35mm ile çekilen analog notlar. 79 kare, altı farklı film.</span><span class="en">Analog notes shot with Pentax 67 and 35mm. 79 frames, six different films.</span></div>
       </div>
       <div class="bc"><div class="bc-img"><div class="bc-fill bi2"></div></div><div class="bc-date">Şubat 2025</div><div class="bc-title">Üretan geliştirici denemeleri</div><div class="bc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div></div>
       <div class="bc"><div class="bc-img"><div class="bc-fill bi3"></div></div><div class="bc-date">Kasım 2024</div><div class="bc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="bc-ex">Kavramsal bir çerçeve üzerine notlar.</div></div>
     </div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- PROJECTS -->
 <div class="page page-offset" id="page-projects">
-  <div class="page-hero"><h2>Projects</h2></div>
+  <div class="page-hero"><h2><span class="tr">Projeler</span><span class="en">Projects</span></h2></div>
   <div class="filter-bar">
-    <button class="fbtn active" onclick="filter(this,'all')">All</button>
+    <button class="fbtn active" onclick="filter(this,'all')"><span class="tr">Tümü</span><span class="en">All</span></button>
     <button class="fbtn" onclick="filter(this,'35mm')">35mm</button>
     <button class="fbtn" onclick="filter(this,'120mm')">120mm</button>
     <button class="fbtn" onclick="filter(this,'digital')">Digital</button>
@@ -353,8 +368,8 @@
       <div class="proj-info">
         <div class="proj-num">000</div>
         <div class="proj-title">Yurt</div>
-        <div class="proj-desc">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</div>
-        <div class="proj-meta">2017–2018 · 40 kare · Dijital</div>
+        <div class="proj-desc"><span class="tr">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</span><span class="en">Traces of three journeys to Kyrgyzstan. A documentary series on the steppe, nomadic memory and continuity.</span></div>
+        <div class="proj-meta"><span class="tr">2017–2018 · 40 kare · Dijital</span><span class="en">2017–2018 · 40 frames · Digital</span></div>
         <span class="proj-tag">Digital</span>
       </div>
     </div>
@@ -362,9 +377,9 @@
       <div class="proj-thumb"><div class="pt-fill" style="background-image:url('suya-2.jpg')"></div></div>
       <div class="proj-info">
         <div class="proj-num">001</div>
-        <div class="proj-title">Suya Yazılan Hayatlar</div>
-        <div class="proj-desc">Yusufeli Barajı nedeniyle yerinden edilen toplulukların belgesel serisi.</div>
-        <div class="proj-meta">2023–2026 · 27 kare · Linhof 6×12 · Hasselblad 500CM</div>
+        <div class="proj-title"><span class="tr">Suya Yazılan Hayatlar</span><span class="en">Lives Written in Water</span></div>
+        <div class="proj-desc"><span class="tr">Yusufeli Barajı nedeniyle yerinden edilen toplulukların belgesel serisi.</span><span class="en">A documentary series on communities displaced by the Yusufeli Dam.</span></div>
+        <div class="proj-meta">2023–2026 · 25 <span class="tr">kare</span><span class="en">frames</span> · Linhof 6×12 · Hasselblad 500CM</div>
         <span class="proj-tag">120mm</span>
       </div>
     </div>
@@ -381,7 +396,7 @@
       <div class="proj-info"><div class="proj-num">003</div><div class="proj-title">Seri Adı</div><div class="proj-desc">Seri açıklaması buraya gelecek.</div><div class="proj-meta">2022 · 14 kare · HP5</div><span class="proj-tag">35mm</span></div>
     </div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- YURT -->
@@ -389,15 +404,29 @@
   <div class="yurt-intro">
     <h2>Yurt</h2>
     <div class="yurt-text">
-      <p>Bazı coğrafyalar insanı misafir olarak kabul etmez; yalnızca bir süreliğine kendilerine tanıklık etmesine izin verir.</p>
-      <p>Kırgızistan'a yaptığım üç yolculuk boyunca, kırk beş gün boyunca süren uzun yolların sonunda anladığım şey, bu ülkenin haritalarda görünen sınırlarından daha büyük olduğuydu. Tanrı Dağları'nın gölgesinde, Issık Göl kıyılarında, Tacikistan'a açılan vadilerde, Özbekistan ve Kazakistan sınırlarında aynı hissin farklı biçimlerine rastladım. Birbirinden uzak görünen bu yerleri görünmez bir bağ bir arada tutuyordu.</p>
-      <p>Bozkır.</p>
-      <p>Belki de Türk halklarının gerçek hafızası şehirlerde, saraylarda ya da yazılı tarihte değil; rüzgârın yönünde, atların adımlarında ve mevsimlerin dönüşünde saklıdır.</p>
-      <p>Eski Türk anlatılarında gök yalnızca yukarıda duran bir boşluk değildir. Tengri, insanla yeryüzü arasında sessiz bir düzen kurar. Dağlar, göller ve geniş otlaklar, yaşayan varlıklar kadar hafızaya da ev sahipliği yapar. Bu nedenle göç, bir yerden ayrılmak değil; dünyanın ritmine yeniden katılmaktır.</p>
-      <p>Bu fotoğraflar bir ülkenin portresi olmaktan çok, bir hafızanın peşinde geçirilen günlerin izleridir.</p>
-      <p>Üç yolculuk.<br>Kırk beş gün.<br>Binlerce kilometre.<br>Ve her seferinde aynı his:<br>İnsan, bazı topraklara ulaşmaz.<br>Bazı topraklar, insanın içinde uzun zamandır unuttuğu bir yere ulaşır.</p>
+      <div class="tr">
+        <p>Bazı coğrafyalar insanı misafir olarak kabul etmez; yalnızca bir süreliğine kendilerine tanıklık etmesine izin verir.</p>
+        <p>Kırgızistan'a yaptığım üç yolculuk boyunca, kırk beş gün boyunca süren uzun yolların sonunda anladığım şey, bu ülkenin haritalarda görünen sınırlarından daha büyük olduğuydu. Tanrı Dağları'nın gölgesinde, Issık Göl kıyılarında, Tacikistan'a açılan vadilerde, Özbekistan ve Kazakistan sınırlarında aynı hissin farklı biçimlerine rastladım. Birbirinden uzak görünen bu yerleri görünmez bir bağ bir arada tutuyordu.</p>
+        <p>Bozkır.</p>
+        <p>Belki de Türk halklarının gerçek hafızası şehirlerde, saraylarda ya da yazılı tarihte değil; rüzgârın yönünde, atların adımlarında ve mevsimlerin dönüşünde saklıdır.</p>
+        <p>Eski Türk anlatılarında gök yalnızca yukarıda duran bir boşluk değildir. Tengri, insanla yeryüzü arasında sessiz bir düzen kurar. Dağlar, göller ve geniş otlaklar, yaşayan varlıklar kadar hafızaya da ev sahipliği yapar. Bu nedenle göç, bir yerden ayrılmak değil; dünyanın ritmine yeniden katılmaktır.</p>
+        <p>Bu fotoğraflar bir ülkenin portresi olmaktan çok, bir hafızanın peşinde geçirilen günlerin izleridir.</p>
+        <p>Üç yolculuk.<br>Kırk beş gün.<br>Binlerce kilometre.<br>Ve her seferinde aynı his:<br>İnsan, bazı topraklara ulaşmaz.<br>Bazı topraklar, insanın içinde uzun zamandır unuttuğu bir yere ulaşır.</p>
+      </div>
+      <div class="en">
+        <p>Some geographies do not receive a person as a guest; they only allow them to bear witness, for a while.</p>
+        <p>Across three journeys to Kyrgyzstan, over forty-five days of long roads, what I came to understand was that this country was larger than the borders shown on any map. In the shadow of the Tian Shan, along the shores of Lake Issyk-Kul, in the valleys opening toward Tajikistan, at the borders of Uzbekistan and Kazakhstan — I encountered different forms of the same feeling. An invisible thread held together these places that seemed so distant from one another.</p>
+        <p>The steppe.</p>
+        <p>Perhaps the true memory of the Turkic peoples does not live in cities, palaces, or written history — but in the direction of the wind, in the steps of horses, in the turning of the seasons.</p>
+        <p>In old Turkic narratives, the sky is not merely an emptiness above. Tengri establishes a silent order between man and earth. Mountains, lakes, and wide pastures are home to memory as much as to living beings. Migration, then, is not a departure from a place — it is a return to the rhythm of the world.</p>
+        <p>These photographs are less a portrait of a country than traces of days spent in pursuit of a memory.</p>
+        <p>Three journeys.<br>Forty-five days.<br>Thousands of kilometers.<br>And each time, the same feeling:<br>A person does not always arrive at certain lands.<br>Sometimes, certain lands arrive at a place within the person — long forgotten.</p>
+      </div>
     </div>
-    <div class="yurt-meta-line">Kırgızistan · 2017 – 2018<br>Üç Yolculuk · 45 Gün · Dijital</div>
+    <div class="yurt-meta-line">
+      <span class="tr">Kırgızistan · 2017 – 2018<br>Üç Yolculuk · 45 Gün · Dijital</span>
+      <span class="en">Kyrgyzstan · 2017 – 2018<br>Three Journeys · 45 Days · Digital</span>
+    </div>
   </div>
   <div class="yurt-gallery" id="yurtGallery">
     <div class="yurt-photo" data-src="yurt-1.jpg" data-film="Dijital" style="background-image:url('yurt-1.jpg')" onclick="openLightbox('yurt',0)"></div>
@@ -441,15 +470,15 @@
     <div class="yurt-photo" data-src="yurt-39.jpg" data-film="Dijital" style="background-image:url('yurt-39.jpg')" onclick="openLightbox('yurt',38)"></div>
     <div class="yurt-photo" data-src="yurt-40.jpg" data-film="Dijital" style="background-image:url('yurt-40.jpg')" onclick="openLightbox('yurt',39)"></div>
   </div>
-  <span class="yurt-back" onclick="goPage('projects')">← Projects'e dön</span>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <span class="yurt-back" onclick="goPage('projects')"><span class="tr">← Projelere dön</span><span class="en">← Back to Projects</span></span>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- ===================== SUYA ===================== -->
 <div class="page page-offset" id="page-suya">
   <div class="suya-intro">
     <div class="suya-intro-text">
-      <h2>Suya Yazılan Hayatlar</h2>
+      <h2><span class="tr">Suya Yazılan Hayatlar</span><span class="en">Lives Written in Water</span></h2>
       <span class="suya-subtitle">Yusufeli · 2023–2026 · Analog</span>
       <div class="suya-body">
         <p>Barajlar, modernleşme söyleminin en görünür simgelerinden biridir. Enerji üretir, taşkınları kontrol eder, kentlere ve sanayiye su sağlar. Ancak her büyük mühendislik yapısı aynı zamanda görünmeyen başka bir coğrafya da üretir; haritalardan silinen yerleşimler, parçalanan toplumsal ilişkiler ve yeniden kurulmak zorunda kalan yaşamlar.</p>
@@ -464,16 +493,16 @@
       </div>
       <div class="suya-gear">
         <div class="suya-gear-col">
-          <div class="suya-gear-title">Ekipman</div>
+          <div class="suya-gear-title"><span class="tr">Ekipman</span><span class="en">Equipment</span></div>
           <div class="suya-gear-item">Linhof 6×12 Panoramik Kamera</div>
           <div class="suya-gear-item">Hasselblad 500 CM · 6×6</div>
           <div class="suya-gear-item">Xpan Panoramik</div>
         </div>
         <div class="suya-gear-col">
-          <div class="suya-gear-title">Proje</div>
+          <div class="suya-gear-title"><span class="tr">Proje</span><span class="en">Project</span></div>
           <div class="suya-gear-item">2023 – 2026</div>
-          <div class="suya-gear-item">Analog Film · Karanlık Oda</div>
-          <div class="suya-gear-item">Güzel Sanatlar Bitirme Projesi</div>
+          <div class="suya-gear-item"><span class="tr">Analog Film · Karanlık Oda</span><span class="en">Analog Film · Darkroom</span></div>
+          <div class="suya-gear-item"><span class="tr">Güzel Sanatlar Bitirme Projesi</span><span class="en">Fine Arts Graduation Project</span></div>
         </div>
       </div>
     </div>
@@ -599,11 +628,11 @@
     </div>
   </div>
 
-  <span class="suya-back" onclick="goPage('projects')">← Projects'e dön</span>
+  <span class="suya-back" onclick="goPage('projects')"><span class="tr">← Projelere dön</span><span class="en">← Back to Projects</span></span>
 
   <footer>
     <span class="fl">Ahmet Kütük</span>
-    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul>
     <span class="fc">© 2025 Ahmet Kütük</span>
   </footer>
 </div>
@@ -622,7 +651,7 @@
     <div class="dg-item"><div class="dg-fill dg5"></div></div><div class="dg-item"><div class="dg-fill dg6"></div></div>
     <div class="dg-item"><div class="dg-fill dg7"></div></div><div class="dg-item"><div class="dg-fill dg8"></div></div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- LARGE FORMAT -->
@@ -638,34 +667,30 @@
     <div class="lf-item"><div class="lf-fill lf3"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
     <div class="lf-item"><div class="lf-fill lf4"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- JOURNAL -->
 <div class="page page-offset" id="page-journal">
-  <div class="j-intro"><h2>Journal</h2></div>
-  <div class="j-grid">
-    <div class="jc" onclick="goPage('bozkir')">
-      <div class="jc-img"><div class="jc-fill" style="background-image:url('yurt-p67-portra400-1.jpg');background-size:cover;background-position:center;"></div></div>
-      <div class="jc-date">2017 – 2018</div>
-      <div class="jc-title">Bozkırın Gümüş İzi</div>
-      <div class="jc-ex">Kırgızistan'a üç yolculuk. Pentax 67 ve 35mm ile analog notlar. 79 kare.</div>
-      <span class="jc-tag">Analog</span>
+  <div class="j-intro"><h2><span class="tr">Saha Notları</span><span class="en">Field Notes</span></h2></div>
+  <div class="j-grid j-grid-one">
+      <div class="jc" onclick="goPage('bozkir')">
+        <div class="jc-img"><div class="jc-fill" style="background-image:url('yurt-p67-portra400-1.jpg');background-size:cover;background-position:center;"></div></div>
+        <div class="jc-date">2017 – 2018</div>
+        <div class="jc-title"><span class="tr">Bozkırın Gümüş İzi</span><span class="en">The Silver Trace of the Steppe</span></div>
+        <div class="jc-ex"><span class="tr">Kırgızistan'a üç yolculuk. Pentax 67 ve 35mm ile analog notlar. 79 kare.</span><span class="en">Three journeys to Kyrgyzstan. Analog notes with Pentax 67 and 35mm. 79 frames.</span></div>
+        <span class="jc-tag">Analog</span>
+      </div>
     </div>
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc2"></div></div><div class="jc-date">Şubat 2025</div><div class="jc-title">Üretan geliştirici denemeleri</div><div class="jc-ex">Kimyasal süreçler ve zaman-sıcaklık ilişkisi.</div><span class="jc-tag">Darkroom</span></div>
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc3"></div></div><div class="jc-date">Kasım 2024</div><div class="jc-title">Belgesel ve fine art nasıl bir arada var olur?</div><div class="jc-ex">Kavramsal bir çerçeve üzerine notlar.</div><span class="jc-tag">Düşünceler</span></div>
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc4"></div></div><div class="jc-date">Eylül 2024</div><div class="jc-title">4×5 ile ilk çekim: yavaşlamanın değeri</div><div class="jc-ex">Large format'a geçiş süreci.</div><span class="jc-tag">Large Format</span></div>
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc5"></div></div><div class="jc-date">Haziran 2024</div><div class="jc-title">Selenium toning: arşiv mi estetik mi?</div><div class="jc-ex">Kimyasal toning ve arşiv kalitesi.</div><span class="jc-tag">Darkroom</span></div>
-    <div class="jc"><div class="jc-img"><div class="jc-fill jc6"></div></div><div class="jc-date">Mart 2024</div><div class="jc-title">Taşra serisinin arka planı</div><div class="jc-ex">Anadolu kasabalarına üç yolculuk.</div><span class="jc-tag">Projeler</span></div>
-  </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+    </div>
+    <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- BOZKIRIN GÜMÜŞ İZİ -->
 <div class="page page-offset" id="page-bozkir">
   <div class="bozkir-intro">
     <div class="bozkir-intro-text">
-      <h2>Bozkırın Gümüş İzi</h2>
+      <h2><span class="tr">Bozkırın Gümüş İzi</span><span class="en">The Silver Trace of the Steppe</span></h2>
       <span class="bozkir-subtitle">Kırgızistan · 2017–2018 · Analog Notlar</span>
       <div class="bozkir-body">
         <p>Bazı insanlar için fotoğraf bir tercih meselesidir. Benim için analog, bir tercihten çok bir duyu organı — altıncı his, gözle görülemeyen ama her karede hissedilen bir şey.</p>
@@ -677,14 +702,14 @@
       </div>
       <div class="bozkir-gear">
         <div class="bozkir-gear-col">
-          <div class="bozkir-gear-title">Ekipman</div>
+          <div class="bozkir-gear-title"><span class="tr">Ekipman</span><span class="en">Equipment</span></div>
           <div class="bozkir-gear-item">Pentax 67 · 105mm f/2.4 · 55mm f/3.5</div>
           <div class="bozkir-gear-item">Nikon F5 / F6 · 70-200mm f/2.8 · 14-24mm f/2.8</div>
           <div class="bozkir-gear-item">Leica M6 · 50mm Elmarit</div>
           <div class="bozkir-gear-item">Sigma Art 35mm</div>
         </div>
         <div class="bozkir-gear-col">
-          <div class="bozkir-gear-title">Filmler</div>
+          <div class="bozkir-gear-title"><span class="tr">Filmler</span><span class="en">Films</span></div>
           <div class="bozkir-gear-item">Fujifilm Pro 160NS · Fujifilm Pro 400H</div>
           <div class="bozkir-gear-item">Kodak Portra 160 · Kodak Portra 400</div>
           <div class="bozkir-gear-item">Ilford Delta 100 · Ilford Delta 400</div>
@@ -779,31 +804,31 @@
     <div class="bg-item" data-cat="35mm" data-film="35mm · Fujifilm Xtra 400" data-src="yurt-35mm-xtra400-2.jpg" onclick="openLightbox('bozkir',77)"><div class="bg-fill" style="background-image:url('yurt-35mm-xtra400-2.jpg')"></div></div>
     <div class="bg-item" data-cat="35mm" data-film="35mm · Fujifilm Xtra 400" data-src="yurt-35mm-xtra400-3.jpg" onclick="openLightbox('bozkir',78)"><div class="bg-fill" style="background-image:url('yurt-35mm-xtra400-3.jpg')"></div></div>
   </div>
-  <span class="bozkir-back" onclick="goPage('journal')">← Journal'a dön</span>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <span class="bozkir-back" onclick="goPage('journal')"><span class="tr">← Saha Notları'na dön</span><span class="en">← Back to Field Notes</span></span>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- ABOUT -->
 <div class="page page-offset" id="page-about">
   <div class="about-wrap">
     <div class="about-text">
-      <h2>About</h2>
+      <h2><span class="tr">Hakkımda</span><span class="en">About</span></h2>
       <p>Fotoğraf benim için bir görüntü üretme aracı olmaktan çok, zamanla kurulan bir ilişki biçimi.</p>
       <p>Çalışmalarımın merkezinde insan, coğrafya ve belleğin birbirine bıraktığı izler yer alıyor. Hızla tüketilen görüntüler yerine, uzun süre bakmayı gerektiren hikâyelerin peşinden gidiyorum. Her proje, yalnızca belgelediği anı değil; o anın öncesini ve sonrasını da düşündüren bir araştırma sürecinin parçası.</p>
       <p>Üretimlerimin büyük bölümünü analog yöntemlerle gerçekleştiriyorum. Özellikle 4×5 büyük format ve medium format kameralarla çalışıyor, negatiften baskıya kadar uzanan süreci karanlık odada tamamlamayı önemsiyorum. Kimyasal süreçlerin, ışığın ve zamanın bıraktığı izler, fotoğrafın ayrılmaz bir parçası olarak çalışmalarımın içinde yer alıyor.</p>
       <p>Belgesel fotoğraf ile kişisel anlatı arasında kurduğum denge, beni farklı coğrafyalara ve kültürlere taşıyor. Göçebe yaşamlar, gelenekler, kolektif hafıza ve insanın yaşadığı toprakla kurduğu ilişki, uzun soluklu projelerimin ortak eksenini oluşturuyor.</p>
       <p>Bu web sitesi, devam eden projelerimi, büyük format çalışmalarımı, karanlık oda üretimlerimi ve zaman içinde oluşan görsel arşivimi bir araya getiren yaşayan bir kayıt niteliği taşıyor.</p>
       <div class="about-facts">
-        <div class="af-row"><span class="af-k">Konum</span><span class="af-v">İstanbul, Türkiye</span></div>
-        <div class="af-row"><span class="af-k">Formatlar</span><span class="af-v">35mm · 120 · 4×5 · Medium Format</span></div>
-        <div class="af-row"><span class="af-k">Filmler</span><span class="af-v">HP5 · Tri-X · Delta 400</span></div>
-        <div class="af-row"><span class="af-k">Geliştirici</span><span class="af-v">D-76 · Rodinal · HC-110</span></div>
-        <div class="af-row"><span class="af-k">İletişim</span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
+        <div class="af-row"><span class="af-k"><span class="tr">Konum</span><span class="en">Location</span></span><span class="af-v">İstanbul, Türkiye</span></div>
+        <div class="af-row"><span class="af-k"><span class="tr">Formatlar</span><span class="en">Formats</span></span><span class="af-v">35mm · 120 · 4×5 · Medium Format</span></div>
+        <div class="af-row"><span class="af-k"><span class="tr">Filmler</span><span class="en">Films</span></span><span class="af-v">HP5 · Tri-X · Delta 400</span></div>
+        <div class="af-row"><span class="af-k"><span class="tr">Geliştirici</span><span class="en">Developer</span></span><span class="af-v">D-76 · Rodinal · HC-110</span></div>
+        <div class="af-row"><span class="af-k"><span class="tr">İletişim</span><span class="en">Contact</span></span><span class="af-v">ahmet@ahmetkutuk.com</span></div>
       </div>
     </div>
     <div class="about-photo"></div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com">E-posta</a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
 <!-- LIGHTBOX -->
@@ -819,6 +844,18 @@
 </div>
 
 <script>
+
+
+  // DİL GEÇİŞİ
+  function setLang(lang) {
+    document.getElementById('html-root').setAttribute('lang', lang);
+    document.getElementById('btn-tr').classList.toggle('active', lang === 'tr');
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    localStorage.setItem('lang', lang);
+  }
+  // Kayıtlı dili yükle
+  var savedLang = localStorage.getItem('lang');
+  if (savedLang) setLang(savedLang);
 
   // SUYA LİGHTBOX
   var suyaItems = [];
@@ -840,7 +877,7 @@
   var slidesEl = document.getElementById('slides');
   var dotEls = document.querySelectorAll('.dot');
   function go(n) {
-    cur = (n + 3) % 3;
+    cur = (n + 2) % 2;
     slidesEl.style.transform = 'translateX(-' + (cur * 100) + '%)';
     dotEls.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
   }
