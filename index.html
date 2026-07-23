@@ -302,7 +302,13 @@
         <span class="slide-cap">Yurt — 2017–2018</span>
       </div>
       <div class="slide s2" style="background-image:url('suya-2.jpg');cursor:pointer;" onclick="goPage('suya')">
-        <span class="slide-cap">2023–2026</span>
+        <span class="slide-cap">Suya Yazılan Hayatlar — 2023–2026</span>
+      </div>
+      <div class="slide s1" style="background-image:url('yurt-9.jpg');cursor:pointer;" onclick="goPage('yurt')">
+        <span class="slide-cap">Yurt — 2017–2018</span>
+      </div>
+      <div class="slide s2" style="background-image:url('suya-1.jpg');cursor:pointer;" onclick="goPage('suya')">
+        <span class="slide-cap">Suya Yazılan Hayatlar — 2023–2026</span>
       </div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
@@ -310,6 +316,8 @@
     <div class="hero-dots">
       <div class="dot active" onclick="go(0)"></div>
       <div class="dot" onclick="go(1)"></div>
+      <div class="dot" onclick="go(2)"></div>
+      <div class="dot" onclick="go(3)"></div>
     </div>
   </section>
   <div class="home-intro">
@@ -896,11 +904,11 @@
   var slidesEl = document.getElementById('slides');
   var dotEls = document.querySelectorAll('.dot');
   function go(n) {
-    cur = (n + 2) % 2;
+    cur = (n + 4) % 4;
     slidesEl.style.transform = 'translateX(-' + (cur * 100) + '%)';
     dotEls.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
   }
-  setInterval(function() { go(cur + 1); }, 5000);
+  setInterval(function() { go(cur + 1); }, 7000);
 
   // NAVİGASYON
   function goPage(id) {
