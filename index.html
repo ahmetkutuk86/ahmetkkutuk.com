@@ -181,6 +181,27 @@
     .bozkir-body .tr, .bozkir-body .en,
     .about-text .tr, .about-text .en{display:block;}
 
+
+    /* 4X5 PORTRAITS */
+    .portrait-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e0ddd6;padding:3rem;margin:0;}
+    .portrait-card{cursor:pointer;position:relative;overflow:hidden;background:#f8f7f5;}
+    .portrait-fill{aspect-ratio:4/5;background-size:cover;background-position:center top;transition:transform .6s ease;}
+    .portrait-card:hover .portrait-fill{transform:scale(1.04);}
+    .portrait-info{padding:.8rem .8rem .6rem;background:#f8f7f5;}
+    .portrait-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:#1c1c1a;letter-spacing:.06em;}
+    .portrait-count{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;margin-top:2px;}
+    .plb-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(6,4,2,.97);z-index:1000;flex-direction:column;align-items:center;justify-content:center;}
+    .plb-overlay.open{display:flex;}
+    .plb-img{max-width:55vw;max-height:82vh;object-fit:contain;}
+    .plb-name{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(220,216,208,.65);letter-spacing:.14em;text-transform:uppercase;}
+    .plb-counter{margin-top:.4rem;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.22);}
+    .plb-close{position:fixed;top:2rem;right:2rem;color:rgba(255,255,255,.4);font-size:22px;cursor:pointer;background:none;border:none;transition:color .2s;}
+    .plb-close:hover{color:#fff;}
+    .plb-prev,.plb-next{position:fixed;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.3);font-size:22px;cursor:pointer;background:none;border:none;padding:1.5rem;transition:color .2s;}
+    .plb-prev:hover,.plb-next:hover{color:#fff;}
+    .plb-prev{left:1rem;}
+    .plb-next{right:1rem;}
+
     /* SUYA YAZILAN HAYATLAR */
     .suya-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
     .suya-intro-text{max-width:800px;margin:0 auto;}
@@ -663,20 +684,118 @@
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- LARGE FORMAT -->
+<!-- ===================== LARGEFORMAT ===================== -->
 <div class="page page-offset" id="page-largeformat">
   <div class="lf-intro">
-    <h2>Large Format</h2>
-    <div class="lf-sub">4×5 · Medium Format</div>
-    <p>View camera ile alan çalışmaları. Yavaş süreç, tek negatif, geri dönüşü olmayan anlar.</p>
+    <h2><span class="tr">Büyük Format</span><span class="en">Large Format</span></h2>
+    <div class="lf-sub">4×5 · Analog</div>
+    <p><span class="tr">Portre çalışmaları. Her kare bir alan derinliği, bir kimya, bir bekleme anının ürünü.</span><span class="en">Portrait work. Each frame is the product of depth of field, chemistry, and a moment of waiting.</span></p>
   </div>
-  <div class="lf-grid">
-    <div class="lf-item"><div class="lf-fill lf1"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 1</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
-    <div class="lf-item"><div class="lf-fill lf2"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 2</div><div class="lf-cap-s">4×5 · 2024</div></div></div>
-    <div class="lf-item"><div class="lf-fill lf3"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 3</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
-    <div class="lf-item"><div class="lf-fill lf4"></div><div class="lf-cap"><div class="lf-cap-t">İsimsiz No. 4</div><div class="lf-cap-s">Medium Format · 2023</div></div></div>
+
+  <div class="portrait-grid">
+    <div class="portrait-card" onclick="openPortrait('aleyna')">
+      <div class="portrait-fill" style="background-image:url('4x5-aleyna-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">ALEYNA</div>
+        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('aras')">
+      <div class="portrait-fill" style="background-image:url('4x5-aras-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">ARAS</div>
+        <div class="portrait-count"><span class="tr">3 kare</span><span class="en">3 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('burak')">
+      <div class="portrait-fill" style="background-image:url('4x5-burak-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">BURAK</div>
+        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('deniz')">
+      <div class="portrait-fill" style="background-image:url('4x5-deniz-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">DENİZ</div>
+        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('fatma')">
+      <div class="portrait-fill" style="background-image:url('4x5-fatma-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">FATMA</div>
+        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('gabi')">
+      <div class="portrait-fill" style="background-image:url('4x5-gabi-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">GABİ</div>
+        <div class="portrait-count"><span class="tr">2 kare</span><span class="en">2 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('ilayda')">
+      <div class="portrait-fill" style="background-image:url('4x5-ilayda-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">İLAYDA</div>
+        <div class="portrait-count"><span class="tr">3 kare</span><span class="en">3 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('melo')">
+      <div class="portrait-fill" style="background-image:url('4x5-melo-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">MELO</div>
+        <div class="portrait-count"><span class="tr">4 kare</span><span class="en">4 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('salih')">
+      <div class="portrait-fill" style="background-image:url('4x5-salih-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">SALİH</div>
+        <div class="portrait-count"><span class="tr">2 kare</span><span class="en">2 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('sema')">
+      <div class="portrait-fill" style="background-image:url('4x5-sema-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">SEMA</div>
+        <div class="portrait-count"><span class="tr">6 kare</span><span class="en">6 frames</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('sude')">
+      <div class="portrait-fill" style="background-image:url('4x5-sude-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">SUDE</div>
+        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+      </div>
+    </div>
+    <div class="portrait-card" onclick="openPortrait('zuzia')">
+      <div class="portrait-fill" style="background-image:url('4x5-zuzia-1.jpg')"></div>
+      <div class="portrait-info">
+        <div class="portrait-name">ZUZİA</div>
+        <div class="portrait-count"><span class="tr">5 kare</span><span class="en">5 frames</span></div>
+      </div>
+    </div>
   </div>
-  <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
+
+  <!-- Portrait Lightbox -->
+  <div class="plb-overlay" id="plbOverlay" onclick="closePlb()">
+    <button class="plb-close" onclick="closePlb()">✕</button>
+    <button class="plb-prev" onclick="event.stopPropagation();plbPrev()">&#8592;</button>
+    <button class="plb-next" onclick="event.stopPropagation();plbNext()">&#8594;</button>
+    <div onclick="event.stopPropagation()">
+      <img class="plb-img" id="plbImg" src="" alt="">
+      <div class="plb-name" id="plbName"></div>
+      <div class="plb-counter" id="plbCounter"></div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
 </div>
 
 <!-- JOURNAL -->
@@ -997,6 +1116,70 @@
     document.getElementById('lbOverlay').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+
+  // PORTRAIT LİGHTBOX
+  var portraitData = {
+    'aleyna': { name: 'ALEYNA', photos: ['4x5-aleyna-1.jpg'] },
+    'aras': { name: 'ARAS', photos: ['4x5-aras-1.jpg', '4x5-aras-2.jpg', '4x5-aras-3.jpg'] },
+    'burak': { name: 'BURAK', photos: ['4x5-burak-1.jpg'] },
+    'deniz': { name: 'DENİZ', photos: ['4x5-deniz-1.jpg'] },
+    'fatma': { name: 'FATMA', photos: ['4x5-fatma-1.jpg'] },
+    'gabi': { name: 'GABİ', photos: ['4x5-gabi-1.jpg', '4x5-gabi-2.jpg'] },
+    'ilayda': { name: 'İLAYDA', photos: ['4x5-ilayda-1.jpg', '4x5-ilayda-2.jpg', '4x5-ilayda-3.jpg'] },
+    'melo': { name: 'MELO', photos: ['4x5-melo-1.jpg', '4x5-melo-2.jpg', '4x5-melo-3.jpg', '4x5-melo-4.jpg'] },
+    'salih': { name: 'SALİH', photos: ['4x5-salih-1.jpg', '4x5-salih-2.jpg'] },
+    'sema': { name: 'SEMA', photos: ['4x5-sema-1.jpg', '4x5-sema-2.jpg', '4x5-sema-3.jpg', '4x5-sema-4.jpg', '4x5-sema-5.jpg', '4x5-sema-6.jpg'] },
+    'sude': { name: 'SUDE', photos: ['4x5-sude-1.jpg'] },
+    'zuzia': { name: 'ZUZİA', photos: ['4x5-zuzia-1.jpg', '4x5-zuzia-2.jpg', '4x5-zuzia-3.jpg', '4x5-zuzia-4.jpg', '4x5-zuzia-5.jpg'] },
+  };
+
+  var plbCurrent = 0;
+  var plbPhotos = [];
+  var plbName = '';
+
+  function openPortrait(key) {
+    var data = portraitData[key];
+    plbPhotos = data.photos;
+    plbName = data.name;
+    plbCurrent = 0;
+    showPlb();
+    document.getElementById('plbOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showPlb() {
+    document.getElementById('plbImg').src = plbPhotos[plbCurrent];
+    document.getElementById('plbName').textContent = plbName;
+    if (plbPhotos.length > 1) {
+      document.getElementById('plbCounter').textContent = (plbCurrent + 1) + ' / ' + plbPhotos.length;
+    } else {
+      document.getElementById('plbCounter').textContent = '';
+    }
+  }
+
+  function plbPrev() {
+    plbCurrent = (plbCurrent - 1 + plbPhotos.length) % plbPhotos.length;
+    showPlb();
+  }
+
+  function plbNext() {
+    plbCurrent = (plbCurrent + 1) % plbPhotos.length;
+    showPlb();
+  }
+
+  function closePlb() {
+    document.getElementById('plbOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var plb = document.getElementById('plbOverlay');
+    if (!plb || !plb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') plbPrev();
+    if (e.key === 'ArrowRight') plbNext();
+    if (e.key === 'Escape') closePlb();
+  });
 
   document.addEventListener('keydown', function(e) {
     var lb = document.getElementById('lbOverlay');
