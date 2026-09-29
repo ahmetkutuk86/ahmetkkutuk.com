@@ -185,15 +185,20 @@
     /* 4X5 PORTRAITS */
     .portrait-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:#e0ddd6;padding:3rem;margin:0;}
     .portrait-card{cursor:pointer;position:relative;overflow:hidden;background:#f8f7f5;}
-    .portrait-fill{aspect-ratio:4/5;background-size:cover;background-position:center top;transition:transform .6s ease;}
+    .portrait-fill{aspect-ratio:4/5;background-size:cover;background-position:center top;transition:transform .6s ease, filter .4s ease;filter:grayscale(0%);}
+    .portrait-card.portrait-color .portrait-fill{filter:grayscale(100%);}
+    .portrait-card.portrait-color:hover .portrait-fill{filter:grayscale(0%);}
     .portrait-card:hover .portrait-fill{transform:scale(1.04);}
-    .portrait-info{padding:.8rem .8rem .6rem;background:#f8f7f5;}
-    .portrait-name{font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:#1c1c1a;letter-spacing:.06em;}
-    .portrait-count{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:#bbb;margin-top:2px;}
+    .portrait-info{padding:.7rem .8rem .6rem;background:#f8f7f5;}
+    .portrait-meta{display:flex;justify-content:space-between;align-items:center;}
+    .portrait-name{font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:300;color:#1c1c1a;letter-spacing:.08em;}
+    .portrait-icon{width:16px;height:20px;color:#ccc;flex-shrink:0;}
+
+    /* Portrait Lightbox */
     .plb-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(6,4,2,.97);z-index:1000;flex-direction:column;align-items:center;justify-content:center;}
     .plb-overlay.open{display:flex;}
     .plb-img{max-width:55vw;max-height:82vh;object-fit:contain;}
-    .plb-name{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:300;color:rgba(220,216,208,.65);letter-spacing:.14em;text-transform:uppercase;}
+    .plb-name{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:300;color:rgba(220,216,208,.65);letter-spacing:.16em;text-transform:uppercase;}
     .plb-counter{margin-top:.4rem;font-size:10px;letter-spacing:.2em;color:rgba(255,255,255,.22);}
     .plb-close{position:fixed;top:2rem;right:2rem;color:rgba(255,255,255,.4);font-size:22px;cursor:pointer;background:none;border:none;transition:color .2s;}
     .plb-close:hover{color:#fff;}
@@ -684,7 +689,7 @@
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
-<!-- ===================== LARGEFORMAT ===================== -->
+<!-- LARGE FORMAT -->
 <div class="page page-offset" id="page-largeformat">
   <div class="lf-intro">
     <h2><span class="tr">Büyük Format</span><span class="en">Large Format</span></h2>
@@ -693,101 +698,151 @@
   </div>
 
   <div class="portrait-grid">
-    <div class="portrait-card" onclick="openPortrait('aleyna')">
+    <div class="portrait-card" onclick="openPortrait('aleyna', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-aleyna-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">ALEYNA</div>
-        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">ALEYNA</span>
+          <svg class="portrait-icon" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('aras')">
+    <div class="portrait-card" onclick="openPortrait('aras', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-aras-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">ARAS</div>
-        <div class="portrait-count"><span class="tr">3 kare</span><span class="en">3 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">ARAS</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('burak')">
+    <div class="portrait-card" onclick="openPortrait('burak', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-burak-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">BURAK</div>
-        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">BURAK</span>
+          <svg class="portrait-icon" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('deniz')">
+    <div class="portrait-card portrait-color" onclick="openPortrait('deniz', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-deniz-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">DENİZ</div>
-        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">DENİZ</span>
+          <svg class="portrait-icon" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('fatma')">
+    <div class="portrait-card" onclick="openPortrait('fatma', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-fatma-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">FATMA</div>
-        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">FATMA</span>
+          <svg class="portrait-icon" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('gabi')">
+    <div class="portrait-card" onclick="openPortrait('gabi', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-gabi-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">GABİ</div>
-        <div class="portrait-count"><span class="tr">2 kare</span><span class="en">2 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">GABİ</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('ilayda')">
+    <div class="portrait-card" onclick="openPortrait('ilayda', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-ilayda-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">İLAYDA</div>
-        <div class="portrait-count"><span class="tr">3 kare</span><span class="en">3 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">İLAYDA</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('melo')">
+    <div class="portrait-card portrait-color" onclick="openPortrait('melo', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-melo-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">MELO</div>
-        <div class="portrait-count"><span class="tr">4 kare</span><span class="en">4 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">MELO</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('salih')">
+    <div class="portrait-card" onclick="openPortrait('salih', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-salih-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">SALİH</div>
-        <div class="portrait-count"><span class="tr">2 kare</span><span class="en">2 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">SALİH</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('sema')">
+    <div class="portrait-card" onclick="openPortrait('sema', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-sema-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">SEMA</div>
-        <div class="portrait-count"><span class="tr">6 kare</span><span class="en">6 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">SEMA</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('sude')">
+    <div class="portrait-card" onclick="openPortrait('sude', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-sude-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">SUDE</div>
-        <div class="portrait-count"><span class="tr">1 kare</span><span class="en">1 frame</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">SUDE</span>
+          <svg class="portrait-icon" viewBox="0 0 20 24" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
     </div>
-    <div class="portrait-card" onclick="openPortrait('zuzia')">
+    <div class="portrait-card" onclick="openPortrait('zuzia', 0)">
       <div class="portrait-fill" style="background-image:url('4x5-zuzia-1.jpg')"></div>
       <div class="portrait-info">
-        <div class="portrait-name">ZUZİA</div>
-        <div class="portrait-count"><span class="tr">5 kare</span><span class="en">5 frames</span></div>
+        <div class="portrait-meta">
+          <span class="portrait-name">ZUZİA</span>
+          <svg class="portrait-icon" viewBox="0 0 24 26" xmlns="http://www.w3.org/2000/svg">
+          <rect x="5" y="0" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4"/>
+          <rect x="2" y="3" width="16" height="20" rx="1" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7"/>
+          <rect x="0" y="6" width="16" height="20" rx="1" fill="#f8f7f5" stroke="currentColor" stroke-width="1.2"/>
+        </svg>
+        </div>
       </div>
-    </div>
-  </div>
-
-  <!-- Portrait Lightbox -->
-  <div class="plb-overlay" id="plbOverlay" onclick="closePlb()">
-    <button class="plb-close" onclick="closePlb()">✕</button>
-    <button class="plb-prev" onclick="event.stopPropagation();plbPrev()">&#8592;</button>
-    <button class="plb-next" onclick="event.stopPropagation();plbNext()">&#8594;</button>
-    <div onclick="event.stopPropagation()">
-      <img class="plb-img" id="plbImg" src="" alt="">
-      <div class="plb-name" id="plbName"></div>
-      <div class="plb-counter" id="plbCounter"></div>
     </div>
   </div>
 
@@ -977,6 +1032,19 @@
   <footer><span class="fl">Ahmet Kütük</span><ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul><span class="fc">© 2025 Ahmet Kütük</span></footer>
 </div>
 
+
+  <!-- Portrait Lightbox -->
+  <div class="plb-overlay" id="plbOverlay" onclick="closePlb()">
+    <button class="plb-close" onclick="closePlb()">✕</button>
+    <button class="plb-prev" onclick="event.stopPropagation();plbPrev()">&#8592;</button>
+    <button class="plb-next" onclick="event.stopPropagation();plbNext()">&#8594;</button>
+    <div onclick="event.stopPropagation()">
+      <img class="plb-img" id="plbImg" src="" alt="">
+      <div class="plb-name" id="plbName"></div>
+      <div class="plb-counter" id="plbCounter"></div>
+    </div>
+  </div>
+
 <!-- LIGHTBOX -->
 <div class="lb-overlay" id="lbOverlay" onclick="closeLightbox()">
   <button class="lb-close" onclick="closeLightbox()">✕</button>
@@ -991,6 +1059,86 @@
 
 <script>
 
+
+
+  // PORTRAIT LİGHTBOX
+  var portraitData = [
+    { key: 'aleyna', name: 'ALEYNA', photos: ['4x5-aleyna-1.jpg'] },
+    { key: 'aras', name: 'ARAS', photos: ['4x5-aras-1.jpg', '4x5-aras-2.jpg', '4x5-aras-3.jpg'] },
+    { key: 'burak', name: 'BURAK', photos: ['4x5-burak-1.jpg'] },
+    { key: 'deniz', name: 'DENİZ', photos: ['4x5-deniz-1.jpg'] },
+    { key: 'fatma', name: 'FATMA', photos: ['4x5-fatma-1.jpg'] },
+    { key: 'gabi', name: 'GABİ', photos: ['4x5-gabi-1.jpg', '4x5-gabi-2.jpg'] },
+    { key: 'ilayda', name: 'İLAYDA', photos: ['4x5-ilayda-1.jpg', '4x5-ilayda-2.jpg', '4x5-ilayda-3.jpg'] },
+    { key: 'melo', name: 'MELO', photos: ['4x5-melo-1.jpg', '4x5-melo-2.jpg', '4x5-melo-3.jpg', '4x5-melo-4.jpg'] },
+    { key: 'salih', name: 'SALİH', photos: ['4x5-salih-1.jpg', '4x5-salih-2.jpg'] },
+    { key: 'sema', name: 'SEMA', photos: ['4x5-sema-1.jpg', '4x5-sema-2.jpg', '4x5-sema-3.jpg', '4x5-sema-4.jpg', '4x5-sema-5.jpg', '4x5-sema-6.jpg'] },
+    { key: 'sude', name: 'SUDE', photos: ['4x5-sude-1.jpg'] },
+    { key: 'zuzia', name: 'ZUZİA', photos: ['4x5-zuzia-1.jpg', '4x5-zuzia-2.jpg', '4x5-zuzia-3.jpg', '4x5-zuzia-4.jpg', '4x5-zuzia-5.jpg'] },
+  ];
+
+  var plbPersonIdx = 0;  // hangi kişi
+  var plbPhotoIdx = 0;   // o kişinin hangi fotoğrafı
+
+  function openPortrait(key, photoIdx) {
+    for (var i = 0; i < portraitData.length; i++) {
+      if (portraitData[i].key === key) { plbPersonIdx = i; break; }
+    }
+    plbPhotoIdx = photoIdx || 0;
+    showPlb();
+    document.getElementById('plbOverlay').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showPlb() {
+    var person = portraitData[plbPersonIdx];
+    document.getElementById('plbImg').src = person.photos[plbPhotoIdx];
+    document.getElementById('plbName').textContent = person.name;
+    var totalPhotos = person.photos.length;
+    if (totalPhotos > 1) {
+      document.getElementById('plbCounter').textContent = (plbPhotoIdx + 1) + ' / ' + totalPhotos;
+    } else {
+      document.getElementById('plbCounter').textContent = '';
+    }
+  }
+
+  function plbNext() {
+    var person = portraitData[plbPersonIdx];
+    if (plbPhotoIdx < person.photos.length - 1) {
+      // Aynı kişinin sonraki fotoğrafı
+      plbPhotoIdx++;
+    } else {
+      // Sonraki kişiye geç
+      plbPersonIdx = (plbPersonIdx + 1) % portraitData.length;
+      plbPhotoIdx = 0;
+    }
+    showPlb();
+  }
+
+  function plbPrev() {
+    if (plbPhotoIdx > 0) {
+      // Aynı kişinin önceki fotoğrafı
+      plbPhotoIdx--;
+    } else {
+      // Önceki kişiye geç, o kişinin son fotoğrafında başla
+      plbPersonIdx = (plbPersonIdx - 1 + portraitData.length) % portraitData.length;
+      plbPhotoIdx = portraitData[plbPersonIdx].photos.length - 1;
+    }
+    showPlb();
+  }
+
+  function closePlb() {
+    document.getElementById('plbOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.addEventListener('keydown', function(e) {
+    var plb = document.getElementById('plbOverlay');
+    if (!plb || !plb.classList.contains('open')) return;
+    if (e.key === 'ArrowLeft') plbPrev();
+    if (e.key === 'ArrowRight') plbNext();
+    if (e.key === 'Escape') closePlb();
+  });
 
   // DİL GEÇİŞİ
   function setLang(lang) {
@@ -1118,70 +1266,7 @@
   }
 
 
-  // PORTRAIT LİGHTBOX
-  var portraitData = {
-    'aleyna': { name: 'ALEYNA', photos: ['4x5-aleyna-1.jpg'] },
-    'aras': { name: 'ARAS', photos: ['4x5-aras-1.jpg', '4x5-aras-2.jpg', '4x5-aras-3.jpg'] },
-    'burak': { name: 'BURAK', photos: ['4x5-burak-1.jpg'] },
-    'deniz': { name: 'DENİZ', photos: ['4x5-deniz-1.jpg'] },
-    'fatma': { name: 'FATMA', photos: ['4x5-fatma-1.jpg'] },
-    'gabi': { name: 'GABİ', photos: ['4x5-gabi-1.jpg', '4x5-gabi-2.jpg'] },
-    'ilayda': { name: 'İLAYDA', photos: ['4x5-ilayda-1.jpg', '4x5-ilayda-2.jpg', '4x5-ilayda-3.jpg'] },
-    'melo': { name: 'MELO', photos: ['4x5-melo-1.jpg', '4x5-melo-2.jpg', '4x5-melo-3.jpg', '4x5-melo-4.jpg'] },
-    'salih': { name: 'SALİH', photos: ['4x5-salih-1.jpg', '4x5-salih-2.jpg'] },
-    'sema': { name: 'SEMA', photos: ['4x5-sema-1.jpg', '4x5-sema-2.jpg', '4x5-sema-3.jpg', '4x5-sema-4.jpg', '4x5-sema-5.jpg', '4x5-sema-6.jpg'] },
-    'sude': { name: 'SUDE', photos: ['4x5-sude-1.jpg'] },
-    'zuzia': { name: 'ZUZİA', photos: ['4x5-zuzia-1.jpg', '4x5-zuzia-2.jpg', '4x5-zuzia-3.jpg', '4x5-zuzia-4.jpg', '4x5-zuzia-5.jpg'] },
-  };
-
-  var plbCurrent = 0;
-  var plbPhotos = [];
-  var plbName = '';
-
-  function openPortrait(key) {
-    var data = portraitData[key];
-    plbPhotos = data.photos;
-    plbName = data.name;
-    plbCurrent = 0;
-    showPlb();
-    document.getElementById('plbOverlay').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function showPlb() {
-    document.getElementById('plbImg').src = plbPhotos[plbCurrent];
-    document.getElementById('plbName').textContent = plbName;
-    if (plbPhotos.length > 1) {
-      document.getElementById('plbCounter').textContent = (plbCurrent + 1) + ' / ' + plbPhotos.length;
-    } else {
-      document.getElementById('plbCounter').textContent = '';
-    }
-  }
-
-  function plbPrev() {
-    plbCurrent = (plbCurrent - 1 + plbPhotos.length) % plbPhotos.length;
-    showPlb();
-  }
-
-  function plbNext() {
-    plbCurrent = (plbCurrent + 1) % plbPhotos.length;
-    showPlb();
-  }
-
-  function closePlb() {
-    document.getElementById('plbOverlay').classList.remove('open');
-    document.body.style.overflow = '';
-  }
-
-  document.addEventListener('keydown', function(e) {
-    var plb = document.getElementById('plbOverlay');
-    if (!plb || !plb.classList.contains('open')) return;
-    if (e.key === 'ArrowLeft') plbPrev();
-    if (e.key === 'ArrowRight') plbNext();
-    if (e.key === 'Escape') closePlb();
-  });
-
-  document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function(e) {
     var lb = document.getElementById('lbOverlay');
     if (!lb || !lb.classList.contains('open')) return;
     if (e.key === 'ArrowLeft') lbPrev();
