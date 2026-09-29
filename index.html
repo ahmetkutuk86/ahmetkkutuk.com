@@ -207,6 +207,13 @@
     .plb-prev{left:1rem;}
     .plb-next{right:1rem;}
 
+
+    .home-4x5{padding:3rem 3rem 0;}
+    .home-portrait-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e0ddd6;margin-top:1.8rem;}
+    .hp-item{cursor:pointer;overflow:hidden;}
+    .hp-fill{aspect-ratio:4/5;background-size:cover;background-position:center top;transition:transform .6s ease;filter:grayscale(0%);}
+    .hp-item:hover .hp-fill{transform:scale(1.04);}
+
     /* SUYA YAZILAN HAYATLAR */
     .suya-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
     .suya-intro-text{max-width:800px;margin:0 auto;}
@@ -372,7 +379,26 @@
       </div>
     </div>
     </div>
-    <div class="home-journal">
+    
+  <div class="home-4x5">
+    <div class="sec-row">
+      <span class="sec-label"><span class="tr">Büyük Format · Portreler</span><span class="en">Large Format · Portraits</span></span>
+      <span class="sec-more" onclick="goPage('largeformat')"><span class="tr">Tümünü gör →</span><span class="en">View all →</span></span>
+    </div>
+    <div class="home-portrait-strip">
+      <div class="hp-item" onclick="goPage('largeformat')">
+        <div class="hp-fill" style="background-image:url('4x5-salih-1.jpg')"></div>
+      </div>
+      <div class="hp-item" onclick="goPage('largeformat')">
+        <div class="hp-fill" style="background-image:url('4x5-zuzia-3.jpg')"></div>
+      </div>
+      <div class="hp-item" onclick="goPage('largeformat')">
+        <div class="hp-fill" style="background-image:url('4x5-gabi-1.jpg')"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="home-journal">
     <div class="sec-row">
       <span class="sec-label"><span class="tr">Saha Notları</span><span class="en">Field Notes</span></span>
       <span class="sec-more" onclick="goPage('journal')"><span class="tr">Tümünü gör →</span><span class="en">View all →</span></span>
@@ -694,7 +720,10 @@
   <div class="lf-intro">
     <h2><span class="tr">Büyük Format</span><span class="en">Large Format</span></h2>
     <div class="lf-sub">4×5 · Analog</div>
-    <p><span class="tr">Portre çalışmaları. Her kare bir alan derinliği, bir kimya, bir bekleme anının ürünü.</span><span class="en">Portrait work. Each frame is the product of depth of field, chemistry, and a moment of waiting.</span></p>
+    <p>
+      <span class="tr">Büyük format fotoğrafçılık, bakışı yavaşlatır. 4×5 inç negatif, yalnızca teknik bir tercih değil — karşıdaki insanla kurulan farklı bir zaman ilişkisidir. Tripod, örtü, pozlama ölçümü, odak ayarı. Her kare öncesinde geçen bu sessizlik, portreyi başka bir yere taşır. Hız değil, derinlik.</span>
+      <span class="en">Large format photography slows the gaze. The 4×5 inch negative is not merely a technical choice — it is a different relationship with time, built between the photographer and the person in front of the lens. Tripod, darkcloth, exposure reading, focus. The silence that precedes each frame carries the portrait somewhere else. Not speed, but depth.</span>
+    </p>
   </div>
 
   <div class="portrait-grid">
