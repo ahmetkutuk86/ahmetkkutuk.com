@@ -214,6 +214,13 @@
     .hp-fill{aspect-ratio:4/5;background-size:cover;background-position:center top;transition:transform .6s ease;filter:grayscale(0%);}
     .hp-item:hover .hp-fill{transform:scale(1.04);}
 
+
+    /* AMELE GALERİ */
+    .amele-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:#e0ddd6;padding:3rem;margin:0;}
+    .amele-item{cursor:pointer;overflow:hidden;}
+    .amele-fill{aspect-ratio:3/2;background-size:cover;background-position:center;transition:transform .6s ease;}
+    .amele-item:hover .amele-fill{transform:scale(1.04);}
+
     /* SUYA YAZILAN HAYATLAR */
     .suya-intro{padding:4rem 3rem 2rem;border-bottom:0.5px solid #e0ddd6;}
     .suya-intro-text{max-width:800px;margin:0 auto;}
@@ -343,6 +350,9 @@
       <div class="slide s2" style="background-image:url('suya-1.jpg');cursor:pointer;" onclick="goPage('suya')">
         <span class="slide-cap">Suya Yazılan Hayatlar — 2023–2026</span>
       </div>
+      <div class="slide s1" style="background-image:url('amele-4.jpg');cursor:pointer;" onclick="goPage('amele')">
+        <span class="slide-cap">Ağustos Misafirleri — 2010</span>
+      </div>
     </div>
     <button class="harrow" style="left:1.5rem" onclick="go(cur-1)">&#8592;</button>
     <button class="harrow" style="right:1.5rem" onclick="go(cur+1)">&#8594;</button>
@@ -351,6 +361,7 @@
       <div class="dot" onclick="go(1)"></div>
       <div class="dot" onclick="go(2)"></div>
       <div class="dot" onclick="go(3)"></div>
+      <div class="dot" onclick="go(4)"></div>
     </div>
   </section>
   <div class="home-intro">
@@ -434,6 +445,16 @@
         <div class="proj-title">Yurt</div>
         <div class="proj-desc"><span class="tr">Kırgızistan'a yapılan üç yolculuğun izleri. Bozkır, göçebe hafıza ve süreklilik üzerine bir belgesel seri.</span><span class="en">Traces of three journeys to Kyrgyzstan. A documentary series on the steppe, nomadic memory and continuity.</span></div>
         <div class="proj-meta"><span class="tr">2017–2018 · 40 kare · Dijital</span><span class="en">2017–2018 · 40 frames · Digital</span></div>
+        <span class="proj-tag">Digital</span>
+      </div>
+    </div>
+    <div class="proj-item" data-cat="digital" onclick="goPage('amele')">
+      <div class="proj-thumb"><div class="pt-fill" style="background-image:url('amele-4.jpg')"></div></div>
+      <div class="proj-info">
+        <div class="proj-num">002</div>
+        <div class="proj-title"><span class="tr">Ağustos Misafirleri</span><span class="en">August Guests</span></div>
+        <div class="proj-desc"><span class="tr">Karadeniz'de fındık hasadına gelen mevsimlik tarım işçileri üzerine bir belgesel çalışma.</span><span class="en">A documentary work on seasonal agricultural workers who come to the Black Sea for the hazelnut harvest.</span></div>
+        <div class="proj-meta">2010 · 14 <span class="tr">kare</span><span class="en">frames</span> · Dijital</div>
         <span class="proj-tag">Digital</span>
       </div>
     </div>
@@ -686,6 +707,95 @@
       <div class="suya-xpan" data-src="suya-25.jpg" data-film="Xpan · Panoramik" onclick="openSuya(24)">
         <div class="suya-xpan-fill" style="background-image:url('suya-25.jpg')"></div>
       </div>
+    </div>
+  </div>
+
+  <span class="suya-back" onclick="goPage('projects')"><span class="tr">← Projelere dön</span><span class="en">← Back to Projects</span></span>
+
+  <footer>
+    <span class="fl">Ahmet Kütük</span>
+    <ul class="flinks"><li><a href="https://instagram.com" target="_blank">Instagram</a></li><li><a href="mailto:ahmet@ahmetkutuk.com"><span class="tr">E-posta</span><span class="en">Email</span></a></li></ul>
+    <span class="fc">© 2025 Ahmet Kütük</span>
+  </footer>
+</div>
+
+<!-- AMELE -->
+<div class="page page-offset" id="page-amele">
+  <div class="bozkir-intro">
+    <div class="bozkir-intro-text">
+      <h2><span class="tr">Ağustos Misafirleri</span><span class="en">August Guests</span></h2>
+      <span class="bozkir-subtitle">Ordu · 2010 · <span class="tr">Mevsimlik Tarım İşçileri</span><span class="en">Seasonal Agricultural Workers</span></span>
+      <div class="bozkir-body">
+        <div class="tr">
+          <p>Her yıl Ağustos geldiğinde Karadeniz'in yeşili bir başka hareketlenir. Fındık dallarında olgunlaşırken, ülkenin öbür ucundan, Doğu ve Güneydoğu Anadolu'nun kavruk ovalarından yollara düşen aileler, kamyon kasalarında, eski arabaların bagajlarında, bohçalarıyla, kazanlarıyla, çocuklarıyla bu kente varır. Bir mevsimliğine gelirler; ama her yıl yeniden gelirler. Ordulu biri olarak onları çocukluğumdan beri tanırım: dere kenarlarında, boş arsalarda, şehrin kıyısında bir gecede kurulan çadır kentlerin sakinleri.</p>
+          <p>Bu fotoğraflar 2010 yazında, o çadır kentlerden birinde çekildi. Branda ile naylondan gerilmiş çadırlar, yıkık bir duvarın gölgesi, çakıllı bir arazide yere serilmiş halılar, tahta ayakların arasına asılmış bez beşikler... Temiz su, tuvalet, elektrik gibi en temel ihtiyaçların bile lüks sayıldığı bu yerlerde insanlar haftalarca yaşar. Ekmek açık ateşin üzerinde, sacda pişer; çamaşır derede yıkanır; çocuklar ırmakta yıkanır. Sağlıksız, güvencesiz ve geçici bir hayat; bir ülkenin sofrasına giren fındık, kimsenin görmek istemediği bu emekle, bu ellerle toplanır.</p>
+          <p>Ama objektifin karşısında yalnızca yoksulluk durmadı. Kazanın başında gülen kadınlar, bebeğini havaya kaldıran bir baba, ırmakta birbirine su sıçratan, kameraya zafer işareti yapan çocuklar, bir taşın üstünde oğlunun saçını kesen bir adam, kara bulutların altında halısını serip çayını demleyen bir aile... Bu insanlar her şeye rağmen yaşamayı, birbirine tutunmayı ve gülmeyi sürdürüyordu. Yoksunluğun içinde büyüyen bu sevinç, belki de bu çalışmanın asıl öznesi oldu.</p>
+          <p>Mevsimlik işçilerin hikâyesi yeni değil. Dorothea Lange 1930'larda Kaliforniya'nın tarlalarında göçmen tarım işçilerini fotoğraflarken, John Steinbeck aynı yolların hikâyesini Gazap Üzümleri'nde anlatıyordu. Sebastião Salgado dünyanın dört bir yanındaki işçileri ve göç edenleri, emeğin onurunu gizlemeden kaydetti. Bu seçki de o geleneğin küçük, yerel bir parçası olmak istiyor: acıma ile değil, eşit bir göz hizasından bakmayı deniyor.</p>
+          <p>Ağustos biter, fındık toplanır, çadırlar söküldüğü gibi kaybolur. Geride çakıllı bir arazi, sönmüş bir ocak ve birkaç fotoğraf kalır. Bu fotoğraflar, her yıl gelip giden ama hiç tam olarak görülmeyen bu misafirlerin, en azından bir kez olsun, olduğu gibi görülebilmesi için.</p>
+        </div>
+        <div class="en">
+          <p>Every August, the green of the Black Sea stirs differently. As hazelnuts ripen on their branches, families set out from the scorched plains of Eastern and Southeastern Anatolia — arriving in this city in truck beds, in the trunks of old cars, with their bundles, their cooking pots, their children. They come for a season; but they come back every year. As someone from Ordu, I have known them since childhood: the inhabitants of tent cities that spring up overnight along riverbeds, on empty lots, at the edges of town.</p>
+          <p>These photographs were taken in the summer of 2010, in one of those tent cities. Tarpaulin and plastic sheeting stretched into shelters, the shadow of a crumbling wall, carpets spread on gravel, cloth cradles hung between wooden posts. People live here for weeks in places where even the most basic needs — clean water, toilets, electricity — count as luxury. Bread bakes on an open fire, on a griddle; laundry is washed in the stream; children bathe in the river. An unhealthy, precarious, temporary life; the hazelnuts that reach a country's table are harvested by this labor, these hands, that no one wants to see.</p>
+          <p>But it was not only poverty that stood before the lens. Women laughing by the cooking pot, a father lifting his baby into the air, children splashing each other in the river and making victory signs at the camera, a man cutting his son's hair on a stone, a family spreading their carpet and brewing their tea beneath dark clouds. These people kept on living, holding on to each other, and laughing — despite everything. The joy that grew inside deprivation became, perhaps, the true subject of this work.</p>
+          <p>The story of seasonal workers is not new. When Dorothea Lange photographed migrant farmworkers in California's fields in the 1930s, John Steinbeck was telling the story of the same roads in The Grapes of Wrath. Sebastião Salgado recorded workers and migrants across the world without concealing the dignity of labor. This selection also wishes to be a small, local part of that tradition: not trying to look down with pity, but attempting to look from an equal eye level.</p>
+          <p>August ends, the hazelnuts are harvested, the tents disappear as suddenly as they appeared. What remains is a gravel lot, an extinguished hearth, and a few photographs. These photographs exist so that these guests — who come every year and yet are never quite seen — might, at least once, be seen as they are.</p>
+        </div>
+      </div>
+      <div class="bozkir-gear">
+        <div class="bozkir-gear-col">
+          <div class="bozkir-gear-title"><span class="tr">Ekipman</span><span class="en">Equipment</span></div>
+          <div class="bozkir-gear-item">Dijital / Digital</div>
+        </div>
+        <div class="bozkir-gear-col">
+          <div class="bozkir-gear-title"><span class="tr">Yer & Yıl</span><span class="en">Location & Year</span></div>
+          <div class="bozkir-gear-item">Ordu · 2010</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="amele-gallery">
+    <div class="amele-item" data-src="amele-1.jpg" onclick="openAmeleLb(0)">
+      <div class="amele-fill" style="background-image:url('amele-1.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-2.jpg" onclick="openAmeleLb(1)">
+      <div class="amele-fill" style="background-image:url('amele-2.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-3.jpg" onclick="openAmeleLb(2)">
+      <div class="amele-fill" style="background-image:url('amele-3.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-4.jpg" onclick="openAmeleLb(3)">
+      <div class="amele-fill" style="background-image:url('amele-4.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-5.jpg" onclick="openAmeleLb(4)">
+      <div class="amele-fill" style="background-image:url('amele-5.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-6.jpg" onclick="openAmeleLb(5)">
+      <div class="amele-fill" style="background-image:url('amele-6.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-7.jpg" onclick="openAmeleLb(6)">
+      <div class="amele-fill" style="background-image:url('amele-7.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-8.jpg" onclick="openAmeleLb(7)">
+      <div class="amele-fill" style="background-image:url('amele-8.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-9.jpg" onclick="openAmeleLb(8)">
+      <div class="amele-fill" style="background-image:url('amele-9.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-10.jpg" onclick="openAmeleLb(9)">
+      <div class="amele-fill" style="background-image:url('amele-10.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-11.jpg" onclick="openAmeleLb(10)">
+      <div class="amele-fill" style="background-image:url('amele-11.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-12.jpg" onclick="openAmeleLb(11)">
+      <div class="amele-fill" style="background-image:url('amele-12.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-13.jpg" onclick="openAmeleLb(12)">
+      <div class="amele-fill" style="background-image:url('amele-13.jpg')"></div>
+    </div>
+    <div class="amele-item" data-src="amele-14.jpg" onclick="openAmeleLb(13)">
+      <div class="amele-fill" style="background-image:url('amele-14.jpg')"></div>
     </div>
   </div>
 
@@ -1169,6 +1279,31 @@
     if (e.key === 'Escape') closePlb();
   });
 
+
+  // AMELE LİGHTBOX
+  var amelePhotos = [];
+  for (var i = 1; i <= 14; i++) { amelePhotos.push('amele-' + i + '.jpg'); }
+  var ameleCurrent = 0;
+
+  function openAmeleLb(idx) {
+    ameleCurrent = idx;
+    showAmeleLb();
+    document.getElementById('lbOverlay').classList.add('open');
+    lbMode = 'amele';
+    lbItems = amelePhotos.map(function(src) {
+      return { dataset: { src: src, film: 'Dijital · 2010' } };
+    });
+    lbCurrent = idx;
+    showLightboxPhoto();
+    document.body.style.overflow = 'hidden';
+  }
+
+  function showAmeleLb() {
+    document.getElementById('lbImg').src = amelePhotos[ameleCurrent];
+    document.getElementById('lbInfo').textContent = 'Ordu · 2010';
+    document.getElementById('lbCounter').textContent = (ameleCurrent + 1) + ' / ' + amelePhotos.length;
+  }
+
   // DİL GEÇİŞİ
   function setLang(lang) {
     document.getElementById('html-root').setAttribute('lang', lang);
@@ -1200,7 +1335,7 @@
   var slidesEl = document.getElementById('slides');
   var dotEls = document.querySelectorAll('.dot');
   function go(n) {
-    cur = (n + 4) % 4;
+    cur = (n + 5) % 5;
     slidesEl.style.transform = 'translateX(-' + (cur * 100) + '%)';
     dotEls.forEach(function(d, i) { d.classList.toggle('active', i === cur); });
   }
